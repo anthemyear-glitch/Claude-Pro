@@ -1,0 +1,75 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><a href="/berita">Berita</a><span class="pisah">/</span><span><%= b.kategori %></span></div>
+    <h1 style="font-size:clamp(1.25rem,3vw,1.9rem);max-width:60ch"><%= b.judul %></h1>
+    <p class="sub">
+      Oleh <%= b.penulis %> · <%= util.tanggalID(b.dibuat) %> ·
+      <svg width="12" height="12" style="vertical-align:-1px"><use href="#i-mata"></use></svg> <%= util.formatAngka(b.dilihat) %> kali dibaca
+    </p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <article>
+      <div class="panel" style="overflow:hidden;margin-bottom:1rem">
+        <img src="/img/sampul/<%= b.sampul || 'polos' %>.svg" alt="<%= b.judul %>" style="width:100%;aspect-ratio:16/7;object-fit:cover">
+      </div>
+      <div class="artikel isi-html">
+        <% if (b.ringkasan) { %><p style="font-size:1.02rem;color:var(--teks)"><strong><%= b.ringkasan %></strong></p><% } %>
+        <%- b.isi %>
+        <hr>
+        <div class="fleks-antara">
+          <span class="kecil samar">Kategori: <span class="lencana aksen"><%= b.kategori %></span></span>
+          <div class="fleks" style="gap:.5rem">
+            <button class="tombol halus kecil" onclick="window.print()"><svg width="14" height="14"><use href="#i-dokumen"></use></svg> Cetak</button>
+            <a class="tombol garis kecil" href="/berita">Semua Berita</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Berita Lainnya</h3></div>
+        <div class="isi-panel">
+          <ul class="daftar-tautan">
+            <% lainnya.forEach(function(o){ %>
+              <li><a href="/halaman-berita/<%= o.slug %>"><svg width="14" height="14"><use href="#i-panah-kanan"></use></svg>
+                <span><%= o.judul %><br><span class="mikro samar"><%= util.tanggalPendek(o.dibuat) %> · <%= o.dilihat %> dibaca</span></span></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Kategori Berita</h3></div>
+        <div class="isi-panel">
+          <ul class="daftar-tautan">
+            <% kategoriList.forEach(function(k){ %>
+              <li><a href="/berita?kategori=<%= encodeURIComponent(k.kategori) %>"><svg width="14" height="14"><use href="#i-berita"></use></svg> <%= k.kategori %> <span class="samar mikro">(<%= k.n %>)</span></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Layanan Terkait</h3></div>
+        <div class="isi-panel">
+          <a class="tombol blok" href="/permohonan-informasi">Ajukan Permohonan Informasi</a>
+          <a class="tombol garis blok mt-1" href="/daftar-informasi-publik">Daftar Informasi Publik</a>
+          <a class="tombol halus blok mt-1" href="/statistik">Statistik Layanan</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

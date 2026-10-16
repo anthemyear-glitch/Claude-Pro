@@ -1,0 +1,140 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Statistik Layanan</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-statistik"></use></svg> Statistik Layanan Informasi Publik</h1>
+    <p class="sub">Rekapitulasi permohonan, kinerja layanan, dan komposisi informasi publik yang dikelola.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+
+    <div class="baris grid-4 mb-2">
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-formulir"></use></svg></span>
+        <div><div class="nilai" data-hitung="<%= total %>">0</div><div class="label">Permohonan Tercatat</div></div></div>
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-sukses"></use></svg></span>
+        <div><div class="nilai" data-hitung="<%= selesai %>">0</div><div class="label">Permohonan Selesai</div></div></div>
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-berkala"></use></svg></span>
+        <div><div class="nilai"><%= rataJam %> <span style="font-size:.9rem">jam</span></div><div class="label">Rata-rata Waktu Penyelesaian</div></div></div>
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-keberatan"></use></svg></span>
+        <div><div class="nilai" data-hitung="<%= keberatan %>">0</div><div class="label">Pengajuan Keberatan</div></div></div>
+    </div>
+
+    <div class="baris grid-2">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Permohonan per Bulan</h3><span class="lencana">12 bulan terakhir</span></div>
+        <div class="isi-panel">
+          <canvas class="grafik" data-tipe="batang"
+            data-data='<%= JSON.stringify(bulan.map(function(b){ return { label: b.ym.slice(5) + '/' + b.ym.slice(2,4), nilai: b.n }; })) %>'></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Status Permohonan</h3></div>
+        <div class="isi-panel">
+          <canvas class="grafik" data-tipe="donat"
+            data-data='<%= JSON.stringify(status.map(function(s){ return { label: s.status, nilai: s.n }; })) %>'></canvas>
+          <div class="daftar-bar mt-2">
+            <% const maks = Math.max.apply(null, status.map(function(s){ return s.n; }).concat([1])); %>
+            <% status.forEach(function(s){ %>
+              <div class="bar">
+                <div class="kepala"><span><%= s.status %></span><strong><%= s.n %></strong></div>
+                <div class="trek"><div class="isi-bar" style="width:<%= Math.round((s.n / maks) * 100) %>%"></div></div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="baris grid-2 mt-2">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Permohonan per Kategori Informasi</h3></div>
+        <div class="isi-panel">
+          <div class="daftar-bar">
+            <% const mk = Math.max.apply(null, kategori.map(function(k){ return k.n; }).concat([1])); %>
+            <% kategori.forEach(function(k){ %>
+              <div class="bar">
+                <div class="kepala"><span><%= k.nama %></span><strong><%= k.n %></strong></div>
+                <div class="trek"><div class="isi-bar" style="width:<%= Math.round((k.n / mk) * 100) %>%"></div></div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Komposisi Jenis Pemohon</h3></div>
+        <div class="isi-panel">
+          <canvas class="grafik" data-tipe="donat"
+            data-data='<%= JSON.stringify(pemohon.map(function(p){ return { label: p.nama, nilai: p.n }; })) %>'></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="baris grid-2 mt-2">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Entri DIP per Kategori</h3></div>
+        <div class="isi-panel">
+          <canvas class="grafik" data-tipe="batang"
+            data-data='<%= JSON.stringify(dipPerKat.map(function(d){ return { label: d.nama.replace('Informasi ', '').slice(0, 10), nilai: d.n }; })) %>'></canvas>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Perangkat Daerah dengan Entri Terbanyak</h3></div>
+        <div class="isi-panel">
+          <div class="daftar-bar">
+            <% const mo = Math.max.apply(null, opd.map(function(o){ return o.n; }).concat([1])); %>
+            <% opd.forEach(function(o){ %>
+              <div class="bar">
+                <div class="kepala"><span><%= o.nama %></span><strong><%= o.n %></strong></div>
+                <div class="trek"><div class="isi-bar" style="width:<%= Math.round((o.n / mo) * 100) %>%"></div></div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel mt-2">
+      <div class="kepala"><h3 style="margin:0">Kunjungan Portal (30 hari terakhir)</h3><span class="lencana">Halaman dibuka &amp; pemohon</span></div>
+      <div class="isi-panel">
+        <canvas class="grafik" data-tipe="garis"
+          data-data='<%= JSON.stringify(harian.map(function(h){ return { label: h.tanggal.slice(5), nilai: h.halaman }; })) %>'></canvas>
+      </div>
+    </div>
+
+    <div class="panel mt-2">
+      <div class="kepala"><h3 style="margin:0">Indeks Kepuasan Layanan</h3><span class="lencana"><%= survei.n || 0 %> responden</span></div>
+      <div class="isi-panel">
+        <div class="baris grid-3">
+          <div class="kartu tengah">
+            <div style="font-size:2rem;font-weight:800;color:var(--aksen)"><%= survei.mutu || '—' %></div>
+            <div class="kecil redup">Mutu Pelayanan</div>
+          </div>
+          <div class="kartu tengah">
+            <div style="font-size:2rem;font-weight:800;color:var(--info)"><%= survei.kecepatan || '—' %></div>
+            <div class="kecil redup">Kecepatan Respon</div>
+          </div>
+          <div class="kartu tengah">
+            <div style="font-size:2rem;font-weight:800;color:var(--ok)"><%= survei.kemudahan || '—' %></div>
+            <div class="kecil redup">Kemudahan Akses</div>
+          </div>
+        </div>
+        <p class="kecil samar mt-1 mb-0">Skala penilaian 1 (sangat kurang) sampai 5 (sangat baik). <a href="/survei-kepuasan">Isi survei kepuasan layanan</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/grafik.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

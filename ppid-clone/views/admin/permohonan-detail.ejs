@@ -1,0 +1,163 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div>
+      <h1>Permohonan <span class="mono"><%= p.nomor_tiket %></span></h1>
+      <span class="kecil samar">Masuk <%= util.tanggalID(p.dibuat) %> · <span class="lencana <%= util.WARNA_STATUS[p.status] || 'info' %>"><%= p.status %></span></span>
+    </div>
+    <div class="kanan">
+      <a class="tombol garis kecil" href="/admin/permohonan"><svg width="14" height="14"><use href="#i-panah-kiri"></use></svg> Kembali ke Daftar</a>
+      <button class="tombol halus kecil" onclick="window.print()">Cetak</button>
+    </div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan ok"><svg width="16" height="16"><use href="#i-sukses"></use></svg> <%= flash %></div><% } %>
+
+    <div class="baris grid-2" style="grid-template-columns: minmax(0,1.35fr) minmax(0,1fr); align-items:start">
+      <div>
+        <div class="panel mb-2">
+          <div class="kepala"><h3 style="margin:0">Data Pemohon</h3><span class="lencana"><%= p.jenis_pemohon %></span></div>
+          <div class="isi-panel">
+            <div class="tabel-bungkus" style="border:0">
+              <table class="tabel"><tbody>
+                <tr><th style="width:190px">Nama</th><td><%= p.nama %></td></tr>
+                <% if (p.nama_badan) { %><tr><th>Nama Badan / Lembaga</th><td><%= p.nama_badan %></td></tr><% } %>
+                <tr><th>NIK</th><td class="mono"><%= p.nik || '—' %></td></tr>
+                <tr><th>Pekerjaan</th><td><%= p.pekerjaan || '—' %></td></tr>
+                <tr><th>Alamat</th><td><%= p.alamat || '—' %></td></tr>
+                <tr><th>Surel</th><td><a href="mailto:<%= p.email %>"><%= p.email %></a></td></tr>
+                <tr><th>Telepon</th><td><a href="tel:<%= p.telepon %>"><%= p.telepon %></a></td></tr>
+                <tr><th>Berkas Identitas</th><td>
+                  <% if (p.berkas_identitas) { %><a class="tombol garis kecil" href="/<%= p.berkas_identitas %>" target="_blank" rel="noopener"><svg width="13" height="13"><use href="#i-mata"></use></svg> Lihat Berkas</a>
+                  <% } else { %><span class="samar">Tidak dilampirkan</span><% } %>
+                </td></tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel mb-2">
+          <div class="kepala"><h3 style="margin:0">Informasi yang Dimohon</h3><span class="lencana aksen"><%= p.kategori_info %></span></div>
+          <div class="isi-panel">
+            <p><%= p.rincian_info %></p>
+            <% if (p.tujuan) { %><p class="kecil redup"><strong>Tujuan penggunaan:</strong> <%= p.tujuan %></p><% } %>
+            <div class="baris grid-3 mt-1">
+              <div class="kartu"><span class="kecil samar">Cara Perolehan</span><div><%= p.cara_peroleh %></div></div>
+              <div class="kartu"><span class="kecil samar">Media Jawaban</span><div><%= p.cara_kirim %></div></div>
+              <div class="kartu"><span class="kecil samar">Penilaian Pemohon</span><div><%= p.puas ? p.puas + ' / 5' : 'Belum dinilai' %></div></div>
+            </div>
+            <% if (dipTerkait) { %>
+              <div class="note mt-1">Terkait entri DIP: <a href="/informasi/<%= dipTerkait.id %>"><%= dipTerkait.ringkas_informasi %></a> (<%= dipTerkait.kategori_nama %>)</div>
+            <% } %>
+          </div>
+        </div>
+
+        <form class="panel" method="post" action="/admin/permohonan/<%= p.id %>/proses" enctype="multipart/form-data">
+          <input type="hidden" name="csrf" value="<%= csrf %>">
+          <div class="kepala"><h3 style="margin:0">Proses &amp; Jawaban</h3><span class="lencana">Petugas: <%= p.petugas_nama || 'belum ditetapkan' %></span></div>
+          <div class="isi-panel">
+            <div class="form-grid">
+              <div class="field kolom-4">
+                <label for="status">Ubah Status</label>
+                <select id="status" name="status">
+                  <% util.STATUS_PERMOHONAN.forEach(function(s){ %>
+                    <option value="<%= s %>" <%= p.status === s ? 'selected' : '' %>><%= s %></option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="field kolom-4">
+                <label for="petugas_id">Petugas Penanggung Jawab</label>
+                <select id="petugas_id" name="petugas_id">
+                  <option value="">— Otomatis (pengguna aktif) —</option>
+                  <% petugasList.forEach(function(u){ %>
+                    <option value="<%= u.id %>" <%= String(p.petugas_id) === String(u.id) ? 'selected' : '' %>><%= u.nama %> (<%= u.username %>)</option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="field kolom-4">
+                <label for="dip_id">Tautkan Entri DIP</label>
+                <select id="dip_id" name="dip_id">
+                  <option value="">— Tidak ditautkan —</option>
+                  <% usulan.forEach(function(d){ %>
+                    <option value="<%= d.id %>" <%= String(p.dip_id) === String(d.id) ? 'selected' : '' %>><%= d.ringkas_informasi.slice(0, 60) %> · <%= d.kategori_nama %></option>
+                  <% }) %>
+                </select>
+                <span class="bantuan">Usulan berdasarkan kemiripan kata kunci.</span>
+              </div>
+              <div class="field kolom-12">
+                <label for="catatan">Catatan Petugas (internal &amp; tampil pada pelacakan)</label>
+                <textarea id="catatan" name="catatan" style="min-height:80px"><%= p.catatan_petugas || '' %></textarea>
+              </div>
+              <div class="field kolom-12">
+                <label for="jawaban">Isi Jawaban Tertulis kepada Pemohon</label>
+                <textarea id="jawaban" name="jawaban" style="min-height:120px"><%= p.jawaban || '' %></textarea>
+              </div>
+              <div class="field kolom-8">
+                <label for="berkas_jawaban">Unggah Berkas Jawaban</label>
+                <input id="berkas_jawaban" name="berkas_jawaban" type="file" accept=".pdf,.docx,.xlsx,.jpg,.png,.zip">
+                <span class="bantuan">Maks. 8 MB. <% if (p.berkas_jawaban) { %>Berkas saat ini: <span class="mono"><%= p.berkas_jawaban %></span><% } %></span>
+              </div>
+              <div class="field kolom-4" style="justify-content:flex-end">
+                <button class="tombol blok" type="submit"><svg width="15" height="15"><use href="#i-sukses"></use></svg> Simpan &amp; Perbarui Status</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div>
+        <div class="panel mb-2">
+          <div class="kepala"><h3 style="margin:0">Batas Waktu Layanan</h3></div>
+          <div class="isi-panel">
+            <% const masuk = new Date(String(p.dibuat).replace(' ', 'T') + 'Z');
+               const batas = new Date(masuk.getTime() + 10 * 864e5);
+               const sisa = Math.ceil((batas - Date.now()) / 864e5); %>
+            <div class="kartu mb-1"><span class="kecil samar">Batas 10 hari kerja (perkiraan)</span>
+              <div class="tebal"><%= util.tanggalPendek(batas.toISOString()) %></div></div>
+            <% if (!p.diselesaikan) { %>
+              <div class="pesan <%= sisa < 0 ? 'galat' : sisa < 3 ? 'warn' : 'info' %>">
+                <svg width="16" height="16"><use href="#i-berkala"></use></svg>
+                <div><%= sisa < 0 ? `Melewati perkiraan batas waktu ${Math.abs(sisa)} hari.` : `Sisa ${sisa} hari menuju perkiraan batas waktu.` %>
+                  <div class="mikro">Perpanjangan 7 hari kerja diperbolehkan dengan pemberitahuan tertulis kepada pemohon.</div></div>
+              </div>
+            <% } else { %>
+              <div class="pesan ok"><svg width="16" height="16"><use href="#i-sukses"></use></svg> Permohonan diselesaikan pada <%= util.tanggalID(p.diselesaikan) %>.</div>
+            <% } %>
+            <div class="kecil samar">Diverifikasi: <%= p.diverifikasi ? util.tanggalID(p.diverifikasi) : '—' %><br>
+              Dijawab: <%= p.dijawab ? util.tanggalID(p.dijawab) : '—' %><br>
+              Selesai: <%= p.diselesaikan ? util.tanggalID(p.diselesaikan) : '—' %></div>
+          </div>
+        </div>
+
+        <div class="panel mb-2">
+          <div class="kepala"><h3 style="margin:0">Riwayat Proses</h3></div>
+          <div class="isi-panel">
+            <ul class="timeline">
+              <% riwayat.forEach(function(r, i){ %>
+                <li class="<%= i === riwayat.length - 1 ? 'akhir' : '' %>">
+                  <span class="w"><%= util.tanggalID(r.waktu) %></span>
+                  <strong><%= r.status %></strong>
+                  <p><%= r.keterangan || '' %> <span class="samar">· <%= r.aktor %></span></p>
+                </li>
+              <% }) %>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="kepala"><h3 style="margin:0">Tindakan Cepat</h3></div>
+          <div class="isi-panel">
+            <a class="tombol garis blok mb-1" href="mailto:<%= p.email %>?subject=Permohonan%20Informasi%20<%= encodeURIComponent(p.nomor_tiket) %>"><svg width="14" height="14"><use href="#i-email"></use></svg> Balas melalui Surel</a>
+            <a class="tombol garis blok mb-1" href="/lacak-permohonan/<%= p.nomor_tiket %>?email=<%= encodeURIComponent(p.email) %>" target="_blank" rel="noopener"><svg width="14" height="14"><use href="#i-lacak"></use></svg> Lihat Tampilan Pemohon</a>
+            <a class="tombol halus blok" href="/pengajuan-keberatan" target="_blank" rel="noopener"><svg width="14" height="14"><use href="#i-keberatan"></use></svg> Halaman Keberatan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

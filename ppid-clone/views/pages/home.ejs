@@ -1,0 +1,299 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<main class="utama" style="padding-top:1.2rem">
+  <div class="wadah">
+
+    <%/* ---------- SLIDER ---------- */%>
+    <section class="slider mb-3" aria-label="Sorotan layanan">
+      <div class="trek">
+        <% slider.forEach(function(s, i){ %>
+          <div class="slide">
+            <div class="lap lap-<%= (i % 4) + 1 %>"></div>
+            <div class="pola-grid"></div>
+            <div class="isi-slide">
+              <span class="badge-klon" style="margin-bottom:.7rem">Portal Klon · <%= cfg.suffix %></span>
+              <h2><%= s.judul %></h2>
+              <p><%= s.subjudul %></p>
+              <div class="fleks" style="justify-content:center;margin-top:.6rem">
+                <a class="tombol" href="<%= s.tautan %>">Selengkapnya <svg width="15" height="15"><use href="#i-panah-kanan"></use></svg></a>
+                <a class="tombol garis" href="/permohonan-informasi">Ajukan Permohonan</a>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <button class="nav-slide prev" aria-label="Slide sebelumnya"><svg width="16" height="16"><use href="#i-panah-kiri"></use></svg></button>
+      <button class="nav-slide next" aria-label="Slide berikutnya"><svg width="16" height="16"><use href="#i-panah-kanan"></use></svg></button>
+      <div class="titik"></div>
+    </section>
+
+    <%/* ---------- INFORMASI PUBLIK ---------- */%>
+    <section class="seksi" id="informasi-publik">
+      <div class="kepala-seksi">
+        <div>
+          <h2>Informasi Publik</h2>
+          <p class="sub">Telusuri daftar informasi yang wajib disediakan badan publik, atau cari langsung dengan kata kunci.</p>
+        </div>
+        <a class="tombol garis" href="/daftar-informasi-publik">Semua Informasi <svg width="15" height="15"><use href="#i-panah-kanan"></use></svg></a>
+      </div>
+
+      <form action="/daftar-informasi-publik" method="get" class="pencarian-besar mb-2" role="search">
+        <svg width="17" height="17" class="samar"><use href="#i-cari"></use></svg>
+        <input type="search" name="q" placeholder="Cari Informasi — contoh: anggaran, perizinan, rencana kerja, data statistik…" aria-label="Cari informasi publik">
+        <button class="tombol" type="submit">Cari Informasi</button>
+      </form>
+
+      <div class="baris grid-5">
+        <a class="kartu-ikon" href="/daftar-informasi-publik">
+          <div class="kotak">
+            <div class="ikon"><svg width="26" height="26"><use href="#i-dokumen"></use></svg></div>
+            <span class="angka"><%= util.formatAngka(statistik.dip) %></span>
+            <strong>Daftar Informasi Publik</strong>
+            <span>Seluruh kategori dalam satu daftar</span>
+          </div>
+        </a>
+        <% kat.forEach(function(k){ %>
+          <a class="kartu-ikon" href="/dip/<%= k.slug %>">
+            <div class="kotak">
+              <div class="ikon"><svg width="26" height="26"><use href="#i-<%= k.ikon %>"></use></svg></div>
+              <span class="angka"><%= util.formatAngka(k.jumlah) %></span>
+              <strong><%= k.nama %></strong>
+              <span><%= k.deskripsi.slice(0, 62) %>…</span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </section>
+
+    <%/* ---------- LAYANAN INFORMASI ---------- */%>
+    <section class="seksi">
+      <div class="kepala-seksi">
+        <div>
+          <h2>Layanan Informasi</h2>
+          <p class="sub">Kanal layanan bagi pemohon informasi, termasuk alur keberatan.</p>
+        </div>
+        <a class="tombol garis" href="/mekanisme">Mekanisme Lengkap</a>
+      </div>
+      <div class="baris grid-4">
+        <% layanan.forEach(function(l){ %>
+          <a class="layanan-item" href="/halaman-informasi/<%= l.slug %>">
+            <span class="ikon"><svg width="22" height="22"><use href="#i-<%= l.ikon || 'dokumen' %>"></use></svg></span>
+            <span class="tumbuh">
+              <strong><%= l.judul %></strong>
+              <span><%= l.subjudul || '' %></span>
+            </span>
+            <svg width="16" height="16" class="samar"><use href="#i-panah-kanan"></use></svg>
+          </a>
+        <% }) %>
+        <a class="layanan-item" href="/ppid-pelaksana">
+          <span class="ikon"><svg width="22" height="22"><use href="#i-opd"></use></svg></span>
+          <span class="tumbuh"><strong>PPID Pelaksana</strong><span><%= util.formatAngka(statistik.opd) %> perangkat daerah &amp; kecamatan</span></span>
+          <svg width="16" height="16" class="samar"><use href="#i-panah-kanan"></use></svg>
+        </a>
+        <a class="layanan-item" href="/permohonan-informasi">
+          <span class="ikon"><svg width="22" height="22"><use href="#i-formulir"></use></svg></span>
+          <span class="tumbuh"><strong>Permohonan Informasi Publik</strong><span>Formulir daring &amp; nomor tiket</span></span>
+          <svg width="16" height="16" class="samar"><use href="#i-panah-kanan"></use></svg>
+        </a>
+        <a class="layanan-item" href="/lacak-permohonan">
+          <span class="ikon"><svg width="22" height="22"><use href="#i-lacak"></use></svg></span>
+          <span class="tumbuh"><strong>Lacak Permohonan</strong><span>Pantau status dengan nomor tiket</span></span>
+          <svg width="16" height="16" class="samar"><use href="#i-panah-kanan"></use></svg>
+        </a>
+      </div>
+    </section>
+
+    <%/* ---------- MENGENAI PPID + STATISTIK ---------- */%>
+    <section class="seksi tata-dua">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Mengenai PPID</h3><span class="lencana aksen">Informasi Singkat</span></div>
+        <div class="isi-panel">
+          <p class="redup">
+            <strong style="color:var(--teks)">PPID</strong> adalah singkatan dari
+            <em>Pejabat Pengelola Informasi dan Dokumentasi</em>, yaitu pejabat yang bertugas mengelola,
+            mendokumentasikan, dan menyampaikan informasi publik yang dikuasai badan publik kepada masyarakat.
+            Keberadaan PPID merupakan amanat Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik.
+          </p>
+          <p class="redup">
+            Melalui portal ini masyarakat dapat menelusuri Daftar Informasi Publik, mengajukan permohonan informasi
+            secara daring, melacak status permohonannya, mengajukan keberatan bila jawaban belum memuaskan,
+            serta menyampaikan penilaian mutu layanan.
+          </p>
+          <div class="fleks mt-2">
+            <a class="tombol" href="/tentang">Baca Selengkapnya <svg width="15" height="15"><use href="#i-panah-kanan"></use></svg></a>
+            <a class="tombol garis" href="/struktur-organisasi">Struktur Organisasi</a>
+            <a class="tombol halus" href="/maklumat-pelayanan">Maklumat Pelayanan</a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="sidebar" style="position:static">
+        <div class="panel">
+          <div class="kepala"><h3 style="margin:0">Ringkasan Layanan</h3></div>
+          <div class="isi-panel">
+            <div class="daftar-bar">
+              <% const ringkas = [
+                ['Entri Daftar Informasi', statistik.dip],
+                ['Perangkat Daerah', statistik.opd],
+                ['Permohonan Tercatat', statistik.permohonan],
+                ['Permohonan Selesai', statistik.selesai],
+                ['Regulasi Tersedia', statistik.regulasi],
+              ];
+              const maks = Math.max.apply(null, ringkas.map(function(r){ return r[1]; })) || 1;
+              ringkas.forEach(function(r){ %>
+                <div class="bar">
+                  <div class="kepala"><span><%= r[0] %></span><strong><%= util.formatAngka(r[1]) %></strong></div>
+                  <div class="trek"><div class="isi-bar" style="width:<%= Math.round((r[1] / maks) * 100) %>%"></div></div>
+                </div>
+              <% }) %>
+            </div>
+            <a class="tombol garis blok mt-2" href="/statistik"><svg width="15" height="15"><use href="#i-statistik"></use></svg> Lihat Statistik Lengkap</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="kepala"><h3 style="margin:0">Belum Menemukan Informasi?</h3></div>
+          <div class="isi-panel">
+            <p class="kecil redup">Ajukan permohonan informasi publik secara daring. Permohonan Anda memperoleh nomor tiket yang dapat dilacak kapan saja.</p>
+            <a class="tombol blok" href="/permohonan-informasi"><svg width="15" height="15"><use href="#i-formulir"></use></svg> Ajukan Permohonan</a>
+            <a class="tombol garis blok mt-1" href="/kontak">Hubungi Petugas Layanan</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <%/* ---------- DIP TERBARU ---------- */%>
+    <section class="seksi">
+      <div class="kepala-seksi">
+        <div><h2>Informasi Terbaru Ditambahkan</h2><p class="sub">Entri Daftar Informasi Publik yang paling akhir diperbarui.</p></div>
+        <a class="tombol garis" href="/daftar-informasi-publik">Lihat Semua</a>
+      </div>
+      <div class="tabel-bungkus">
+        <table class="tabel">
+          <thead><tr><th class="nomor">#</th><th>Ringkasan Informasi</th><th>Kategori</th><th>Perangkat Daerah</th><th>Tahun</th><th>Format</th><th></th></tr></thead>
+          <tbody>
+            <% dipBaru.forEach(function(d, i){ %>
+              <tr>
+                <td class="nomor"><%= i + 1 %></td>
+                <td><a href="/informasi/<%= d.id %>" style="text-decoration:none"><%= d.ringkas_informasi %></a></td>
+                <td><span class="lencana aksen"><%= d.kategori_nama %></span></td>
+                <td class="redup"><%= d.opd_nama || '—' %></td>
+                <td><%= d.tahun || '—' %></td>
+                <td><span class="lencana"><%= d.format %></span></td>
+                <td class="aksi">
+                  <button class="tombol halus kecil" data-modal-buka="<%= d.id %>">Detail</button>
+                  <% if (d.berkas) { %><a class="tombol garis kecil" href="/api/unduh/dip/<%= d.id %>"><svg width="13" height="13"><use href="#i-unduh"></use></svg></a><% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <%/* ---------- VIDEO ---------- */%>
+    <section class="seksi">
+      <div class="kepala-seksi">
+        <div><h2>Video Layanan &amp; Informasi</h2><p class="sub">Materi audiovisual panduan layanan keterbukaan informasi publik.</p></div>
+        <a class="tombol garis" href="/video">Semua Video</a>
+      </div>
+      <div class="baris grid-4">
+        <% video.slice(0, 4).forEach(function(v, i){ %>
+          <div class="kartu-video">
+            <div class="layar">
+              <div class="pola-grid"></div>
+              <span class="main"><svg width="20" height="20"><use href="#i-main"></use></svg></span>
+              <span class="durasi"><%= v.durasi || '—' %></span>
+            </div>
+            <div class="badan">
+              <strong><%= v.judul %></strong>
+              <span><%= (v.keterangan || '').slice(0, 78) %></span>
+              <div class="fleks mt-1" style="gap:.4rem">
+                <span class="lencana"><%= v.kelompok === 'layanan' ? 'Video Layanan' : 'Video Informasi' %></span>
+                <span class="lencana"><svg width="11" height="11"><use href="#i-mata"></use></svg> <%= util.formatAngka(v.dilihat) %></span>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+      <p class="kecil samar mt-1">Catatan klon: pemutar video eksternal tidak dipasang; kartu di atas menampilkan data video dari basis data klon.</p>
+    </section>
+
+    <%/* ---------- INFOGRAFIS ---------- */%>
+    <section class="seksi">
+      <div class="kepala-seksi">
+        <div><h2>Infografis</h2><p class="sub">Penyajian informasi dalam bentuk visual ringkas.</p></div>
+        <a class="tombol garis" href="/infografis">Semua Infografis</a>
+      </div>
+      <div class="baris grid-4">
+        <% infografis.forEach(function(g){ %>
+          <a class="kartu-grafis" href="/halaman-infografis/<%= g.id %>">
+            <div class="gambar"><img src="/img/<%= g.berkas %>.svg" alt="<%= g.judul %>" loading="lazy"></div>
+            <div class="badan">
+              <strong><%= g.judul %></strong>
+              <span class="kecil redup"><%= (g.keterangan || '').slice(0, 70) %></span>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </section>
+
+    <%/* ---------- BERITA ---------- */%>
+    <section class="seksi">
+      <div class="kepala-seksi">
+        <div><h2>Berita Terkini</h2><p class="sub">Kegiatan, pengumuman, dan pembaruan layanan informasi publik.</p></div>
+        <a class="tombol garis" href="/berita">Berita Lainnya</a>
+      </div>
+      <div class="baris grid-3">
+        <% berita.forEach(function(b){ %>
+          <a class="kartu-berita" href="/halaman-berita/<%= b.slug %>">
+            <div class="sampul"><img src="/img/sampul/<%= b.sampul || 'polos' %>.svg" alt="<%= b.judul %>" loading="lazy"></div>
+            <div class="badan">
+              <span class="lencana aksen" style="align-self:flex-start"><%= b.kategori %></span>
+              <h4><%= b.judul %></h4>
+              <p><%= (b.ringkasan || '').slice(0, 132) %>…</p>
+              <div class="meta">
+                <span><svg width="12" height="12"><use href="#i-pengguna"></use></svg> <%= b.penulis %></span>
+                <span><%= util.tanggalID(b.dibuat) %></span>
+                <span><svg width="12" height="12"><use href="#i-mata"></use></svg> <%= b.dilihat %></span>
+              </div>
+            </div>
+          </a>
+        <% }) %>
+      </div>
+    </section>
+
+    <%/* ---------- AJAKAN LAYANAN ---------- */%>
+    <section class="seksi">
+      <div class="panel" style="background:linear-gradient(120deg, var(--panel-2), var(--panel));">
+        <div class="isi-panel fleks-antara">
+          <div style="max-width:60ch">
+            <h2 class="mb-1">Butuh informasi yang belum tersedia di portal?</h2>
+            <p class="redup mb-0">Sampaikan permohonan informasi publik melalui formulir daring. Jawaban tertulis diberikan paling lambat sepuluh hari kerja sejak permohonan diterima, dan dapat diperpanjang tujuh hari kerja dengan pemberitahuan.</p>
+          </div>
+          <div class="fleks">
+            <a class="tombol" href="/permohonan-informasi"><svg width="15" height="15"><use href="#i-formulir"></use></svg> Ajukan Permohonan</a>
+            <a class="tombol garis" href="/faq">Baca FAQ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<%/* modal detail informasi */%>
+<div class="modal-lapis" id="modal-lapis">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="kepala"><h3 style="margin:0">Detail Informasi Publik</h3><button class="tutup" id="modal-tutup" aria-label="Tutup">×</button></div>
+    <div class="badan" id="modal-badan"></div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
+<script src="/js/grafik.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

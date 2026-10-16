@@ -1,0 +1,43 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><a href="/infografis">Infografis</a><span class="pisah">/</span><span><%= g.judul %></span></div>
+    <h1 style="font-size:clamp(1.2rem,2.6vw,1.7rem)"><%= g.judul %></h1>
+    <p class="sub"><%= g.keterangan || '' %> · Kategori <%= g.kategori %><%= g.tahun ? ' · Tahun ' + g.tahun : '' %></p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah" style="max-width:960px">
+    <div class="panel" style="overflow:hidden">
+      <img src="/img/<%= g.berkas %>.svg" alt="<%= g.judul %>" style="width:100%">
+    </div>
+    <div class="fleks mt-2">
+      <a class="tombol" href="/api/unduh/infografis/<%= g.id %>"><svg width="15" height="15"><use href="#i-unduh"></use></svg> Unduh Infografis</a>
+      <a class="tombol garis" href="/infografis">Kembali ke Galeri</a>
+      <span class="lencana"><svg width="11" height="11"><use href="#i-unduh"></use></svg> <%= util.formatAngka(g.unduhan + 1) %> unduhan</span>
+    </div>
+
+    <div class="panel mt-3">
+      <div class="kepala"><h3 style="margin:0">Infografis Lainnya</h3></div>
+      <div class="isi-panel">
+        <div class="baris grid-3">
+          <% lainnya.forEach(function(o){ %>
+            <a class="kartu-grafis" href="/halaman-infografis/<%= o.id %>">
+              <div class="gambar"><img src="/img/<%= o.berkas %>.svg" alt="<%= o.judul %>" loading="lazy"></div>
+              <div class="badan"><strong><%= o.judul %></strong></div>
+            </a>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

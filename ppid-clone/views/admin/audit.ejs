@@ -1,0 +1,37 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar">Rekaman tindakan pengelola dan aktivitas layanan</span></div>
+    <div class="kanan"><span class="badge-klon"><%= cfg.suffix %></span></div>
+  </div>
+
+  <div class="admin-isi">
+    <div class="panel">
+      <div class="kepala"><h3 style="margin:0">Log Aktivitas (300 terakhir)</h3></div>
+      <div class="isi-panel" style="padding:0">
+        <div class="tabel-bungkus" style="border:0;border-radius:0">
+          <table class="tabel">
+            <thead><tr><th class="nomor">#</th><th>Waktu</th><th>Aktor</th><th>Aksi</th><th>Target</th><th>Alamat IP</th></tr></thead>
+            <tbody>
+              <% baris.forEach(function(l, i){ %>
+                <tr>
+                  <td class="nomor"><%= i + 1 %></td>
+                  <td class="mono kecil"><%= util.tanggalID(l.waktu) %></td>
+                  <td><span class="lencana"><%= l.aktor %></span></td>
+                  <td class="kecil"><strong><%= l.aksi %></strong></td>
+                  <td class="kecil redup"><%= l.target || '—' %></td>
+                  <td class="kecil samar mono"><%= l.ip || '—' %></td>
+                </tr>
+              <% }) %>
+              <% if (!baris.length) { %><tr><td colspan="6" class="tengah redup" style="padding:2rem">Belum ada aktivitas tercatat.</td></tr><% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

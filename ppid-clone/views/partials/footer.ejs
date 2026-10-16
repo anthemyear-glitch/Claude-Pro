@@ -1,0 +1,62 @@
+<%/* Kaki situs */%>
+<footer class="footer">
+  <div class="wadah">
+    <div class="kolom">
+      <div>
+        <h4><%= cfg.siteName %></h4>
+        <p class="kecil" style="max-width:34ch">
+          Portal layanan keterbukaan informasi publik. Menyediakan daftar informasi,
+          layanan permohonan, pelacakan status, serta kanal pengaduan dan keberatan.
+        </p>
+        <div class="fleks mt-1">
+          <a href="<%= cfg.instagram %>" target="_blank" rel="noopener nofollow" class="lencana"><svg width="13" height="13"><use href="#i-ig"></use></svg> Instagram</a>
+          <a href="<%= cfg.whatsapp %>" target="_blank" rel="noopener nofollow" class="lencana"><svg width="13" height="13"><use href="#i-wa"></use></svg> WhatsApp</a>
+          <a href="<%= cfg.youtube %>" target="_blank" rel="noopener nofollow" class="lencana"><svg width="13" height="13"><use href="#i-yt"></use></svg> YouTube</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Informasi Publik</h4>
+        <ul>
+          <li><a href="/daftar-informasi-publik">Daftar Informasi Publik</a></li>
+          <% kategoriDip.forEach(function(k){ %>
+            <li><a href="/dip/<%= k.slug %>"><%= k.nama %></a></li>
+          <% }) %>
+          <li><a href="/regulasi">Regulasi</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="/permohonan-informasi">Permohonan Informasi</a></li>
+          <li><a href="/lacak-permohonan">Lacak Permohonan</a></li>
+          <li><a href="/pengajuan-keberatan">Pengajuan Keberatan</a></li>
+          <li><a href="/mekanisme">Mekanisme Pelayanan</a></li>
+          <li><a href="/ppid-pelaksana">PPID Pelaksana</a></li>
+          <li><a href="/survei-kepuasan">Survei Kepuasan</a></li>
+          <li><a href="/statistik">Statistik Layanan</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Kontak Layanan</h4>
+        <div class="kontak-item"><span class="ikon"><svg width="15" height="15"><use href="#i-lokasi"></use></svg></span><span><%= cfg.alamat %></span></div>
+        <div class="kontak-item"><span class="ikon"><svg width="15" height="15"><use href="#i-telepon"></use></svg></span><span><%= cfg.telepon %></span></div>
+        <div class="kontak-item"><span class="ikon"><svg width="15" height="15"><use href="#i-email"></use></svg></span><span><%= cfg.email %></span></div>
+        <div class="kontak-item"><span class="ikon"><svg width="15" height="15"><use href="#i-jam"></use></svg></span><span><%= cfg.jam %></span></div>
+      </div>
+    </div>
+
+    <div class="bawah">
+      <span>© <%= new Date().getFullYear() %> <%= cfg.siteName %> — salinan cadangan <strong style="color:var(--aksen)"><%= cfg.suffix %></strong>. Konten contoh, bukan situs resmi.</span>
+      <span>Alamat klon: <span class="alamat-klon" id="alamat-klon-footer"><%= cfg.alamatKlon %></span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mengapung">
+  <a href="/permohonan-informasi" title="Ajukan permohonan informasi"><svg width="18" height="18"><use href="#i-formulir"></use></svg></a>
+  <a href="<%= cfg.whatsapp %>" target="_blank" rel="noopener nofollow" title="Hubungi melalui WhatsApp"><svg width="18" height="18"><use href="#i-wa"></use></svg></a>
+  <button type="button" id="ke-atas" title="Kembali ke atas"><svg width="18" height="18"><use href="#i-atas"></use></svg></button>
+</div>

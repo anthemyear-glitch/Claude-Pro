@@ -1,0 +1,43 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar"><%= baris.length %> pesan masuk</span></div>
+    <div class="kanan"><span class="badge-klon"><%= cfg.suffix %></span></div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan ok"><%= flash %></div><% } %>
+
+    <% baris.forEach(function(m){ %>
+      <div class="panel mb-2" <%= m.dibaca ? '' : 'style="border-color:var(--aksen)"' %>>
+        <div class="kepala">
+          <div>
+            <h3 style="margin:0"><%= m.subjek %></h3>
+            <span class="kecil samar"><%= m.nama %> · <a href="mailto:<%= m.email %>"><%= m.email %></a> · <%= util.tanggalID(m.dibuat) %></span>
+          </div>
+          <span class="lencana <%= m.dibaca ? '' : 'warn' %>"><%= m.dibaca ? 'Sudah dibaca' : 'Baru' %></span>
+        </div>
+        <div class="isi-panel">
+          <p class="mb-1"><%= m.pesan %></p>
+          <div class="fleks" style="gap:.5rem">
+            <a class="tombol garis kecil" href="mailto:<%= m.email %>?subject=Re:%20<%= encodeURIComponent(m.subjek) %>"><svg width="13" height="13"><use href="#i-email"></use></svg> Balas</a>
+            <form method="post" action="/admin/pesan/<%= m.id %>/tandai" style="display:inline">
+              <input type="hidden" name="csrf" value="<%= csrf %>">
+              <input type="hidden" name="dibaca" value="<%= m.dibaca ? '' : '1' %>">
+              <button class="tombol halus kecil" type="submit"><%= m.dibaca ? 'Tandai belum dibaca' : 'Tandai sudah dibaca' %></button>
+            </form>
+            <form method="post" action="/admin/pesan/<%= m.id %>/hapus" style="display:inline">
+              <input type="hidden" name="csrf" value="<%= csrf %>">
+              <button class="tombol bahaya kecil" data-konfirmasi="Hapus pesan ini?" type="submit"><svg width="13" height="13"><use href="#i-hapus"></use></svg> Hapus</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+    <% if (!baris.length) { %><div class="panel"><div class="isi-panel tengah redup">Belum ada pesan masuk.</div></div><% } %>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>PPID Pelaksana</span></div>
+    <h1>PPID Pelaksana</h1>
+    <p class="sub">Daftar perangkat daerah, kecamatan, dan unit kerja yang menyelenggarakan layanan informasi publik.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <form class="bilah-filter" method="get" action="/ppid-pelaksana">
+      <div class="field grow">
+        <label for="q">Cari Perangkat Daerah</label>
+        <input id="q" type="search" name="q" value="<%= search %>" placeholder="Ketik nama atau singkatan…">
+      </div>
+      <div class="field">
+        <label for="jenis">Jenis</label>
+        <select id="jenis" name="jenis">
+          <option value="">Semua Jenis</option>
+          <% jenisList.forEach(function(j){ %>
+            <option value="<%= j.jenis %>" <%= jenis === j.jenis ? 'selected' : '' %>><%= j.jenis %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="fleks" style="gap:.5rem">
+        <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-cari"></use></svg> Cari</button>
+        <a class="tombol garis" href="/ppid-pelaksana">Atur Ulang</a>
+      </div>
+    </form>
+
+    <p class="kecil redup mb-1"><%= util.formatAngka(hit) %> PPID Pelaksana ditemukan.</p>
+
+    <div class="baris grid-3">
+      <% baris.forEach(function(o){ %>
+        <div class="panel kartu-hover" style="padding:1rem">
+          <div class="fleks-antara mb-1">
+            <span class="lencana"><%= o.jenis %></span>
+            <span class="lencana aksen"><%= o.jumlah_dip %> entri DIP</span>
+          </div>
+          <h3 style="font-size:.98rem"><%= o.nama %></h3>
+          <div class="kecil samar mb-1"><%= o.singkatan ? '(' + o.singkatan + ')' : '' %></div>
+          <div class="kecil redup mb-1">
+            <div><svg width="12" height="12"><use href="#i-lokasi"></use></svg> <%= o.alamat || '—' %></div>
+            <div><svg width="12" height="12"><use href="#i-telepon"></use></svg> <%= o.telepon || '—' %></div>
+            <div><svg width="12" height="12"><use href="#i-email"></use></svg> <%= o.email || '—' %></div>
+          </div>
+          <div class="kecil mb-1"><span class="samar">Petugas:</span> <%= o.nama_ppid || '—' %></div>
+          <div class="fleks" style="gap:.4rem">
+            <a class="tombol halus kecil" href="/daftar-informasi-publik?opd=<%= o.id %>">Lihat Informasinya</a>
+            <% if (o.website && o.website !== '#') { %><a class="tombol garis kecil" href="<%= o.website %>" target="_blank" rel="noopener nofollow">Situs</a><% } %>
+          </div>
+        </div>
+      <% }) %>
+      <% if (!baris.length) { %>
+        <div class="panel" style="padding:2rem;text-align:center;grid-column:1/-1"><span class="redup">Tidak ada perangkat daerah yang cocok.</span></div>
+      <% } %>
+    </div>
+
+    <%- include('../partials/paginasi', { pg: pg, baseUrl: '/ppid-pelaksana', query: query }) %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

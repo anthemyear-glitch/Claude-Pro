@@ -1,0 +1,97 @@
+<%/* Kepala situs + navigasi utama */%>
+<header class="header">
+  <div class="isi">
+    <a href="/" class="brand">
+      <span class="logo">
+        <svg width="52" height="52" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg-brand" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="var(--aksen)"/>
+              <stop offset="1" stop-color="var(--aksen-2)"/>
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="url(#lg-brand)" stroke-width="2.5"/>
+          <path d="M32 12l14 6v12c0 9-6 16-14 18-8-2-14-9-14-18V18z" fill="none" stroke="url(#lg-brand)" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M26 32h12M32 26v12" stroke="url(#lg-brand)" stroke-width="2.2" stroke-linecap="round"/>
+          <text x="32" y="55" text-anchor="middle" font-family="Segoe UI,Arial" font-size="8" font-weight="800" fill="var(--teks-redup)" letter-spacing="1">PPID</text>
+        </svg>
+      </span>
+      <span class="teks">
+        <strong><%= cfg.siteName %></strong>
+        <span><%= cfg.subtitle %> · <em style="color:var(--aksen);font-style:normal"><%= cfg.suffix %></em></span>
+      </span>
+    </a>
+
+    <div class="aksi">
+      <div class="pencarian-nav">
+        <form action="/cari" method="get" role="search" id="form-cari-nav">
+          <input type="search" name="q" placeholder="Cari informasi, berita, regulasi…" autocomplete="off" aria-label="Pencarian situs" id="input-cari-nav">
+          <button type="submit" aria-label="Cari"><svg width="15" height="15"><use href="#i-cari"></use></svg></button>
+          <div class="hasil-cepat" id="hasil-cepat" role="listbox"></div>
+        </form>
+      </div>
+      <a href="/permohonan-informasi" class="tombol"><svg width="15" height="15"><use href="#i-formulir"></use></svg> Ajukan Permohonan</a>
+      <button class="tombol-menu" id="tombol-menu" aria-label="Buka menu"><svg width="18" height="18"><use href="#i-menu"></use></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Navigasi utama">
+  <div class="isi">
+    <ul id="menu-utama">
+      <li><a class="tautan <%= path === '/' ? 'aktif' : '' %>" href="/"><svg width="15" height="15"><use href="#i-dasbor"></use></svg> Beranda</a></li>
+
+      <li>
+        <a class="tautan <%= /^\/(tentang|maklumat|struktur)/.test(path) ? 'aktif' : '' %>" href="/tentang"><svg width="15" height="15"><use href="#i-tentang"></use></svg> Profil <svg width="11" height="11" style="opacity:.6"><use href="#i-panah-kanan"></use></svg></a>
+        <div class="dropdown">
+          <div class="label">Tentang Layanan</div>
+          <a href="/tentang"><svg width="15" height="15"><use href="#i-tentang"></use></svg> Mengenai PPID</a>
+          <a href="/maklumat-pelayanan"><svg width="15" height="15"><use href="#i-sukses"></use></svg> Maklumat Pelayanan</a>
+          <a href="/struktur-organisasi"><svg width="15" height="15"><use href="#i-opd"></use></svg> Struktur Organisasi</a>
+          <a href="/regulasi-kip"><svg width="15" height="15"><use href="#i-regulasi"></use></svg> Dasar Hukum</a>
+          <a href="/ppid-pelaksana"><svg width="15" height="15"><use href="#i-opd"></use></svg> PPID Pelaksana</a>
+        </div>
+      </li>
+
+      <li>
+        <a class="tautan <%= /^\/(daftar-informasi|dip|informasi)/.test(path) ? 'aktif' : '' %>" href="/daftar-informasi-publik"><svg width="15" height="15"><use href="#i-dokumen"></use></svg> Informasi Publik <svg width="11" height="11" style="opacity:.6"><use href="#i-panah-kanan"></use></svg></a>
+        <div class="dropdown">
+          <div class="label">Daftar Informasi</div>
+          <a href="/daftar-informasi-publik"><svg width="15" height="15"><use href="#i-dokumen"></use></svg> Daftar Informasi Publik</a>
+          <% kategoriDip.forEach(function(k){ %>
+            <a href="/dip/<%= k.slug %>"><svg width="15" height="15"><use href="#i-<%= k.ikon %>"></use></svg> <%= k.nama %></a>
+          <% }) %>
+        </div>
+      </li>
+
+      <li>
+        <a class="tautan <%= /^\/(permohonan|lacak|pengajuan|mekanisme|halaman-informasi)/.test(path) ? 'aktif' : '' %>" href="/permohonan-informasi"><svg width="15" height="15"><use href="#i-mekanisme"></use></svg> Layanan <svg width="11" height="11" style="opacity:.6"><use href="#i-panah-kanan"></use></svg></a>
+        <div class="dropdown">
+          <div class="label">Layanan Informasi</div>
+          <a href="/mekanisme"><svg width="15" height="15"><use href="#i-mekanisme"></use></svg> Mekanisme Pelayanan Informasi</a>
+          <a href="/permohonan-informasi"><svg width="15" height="15"><use href="#i-formulir"></use></svg> Permohonan Informasi Publik</a>
+          <a href="/lacak-permohonan"><svg width="15" height="15"><use href="#i-lacak"></use></svg> Lacak Permohonan</a>
+          <div class="pisah"></div>
+          <a href="/pengajuan-keberatan"><svg width="15" height="15"><use href="#i-keberatan"></use></svg> Pengajuan Keberatan Informasi</a>
+          <a href="/halaman-informasi/upaya-tidak-ditanggapi-atas-keberatan"><svg width="15" height="15"><use href="#i-upaya"></use></svg> Upaya Bila Keberatan Tidak Ditanggapi</a>
+        </div>
+      </li>
+
+      <li>
+        <a class="tautan <%= /^\/(berita|regulasi|video|infografis|halaman-)/.test(path) ? 'aktif' : '' %>" href="/berita"><svg width="15" height="15"><use href="#i-berita"></use></svg> Publikasi <svg width="11" height="11" style="opacity:.6"><use href="#i-panah-kanan"></use></svg></a>
+        <div class="dropdown">
+          <div class="label">Publikasi</div>
+          <a href="/berita"><svg width="15" height="15"><use href="#i-berita"></use></svg> Berita &amp; Pengumuman</a>
+          <a href="/regulasi"><svg width="15" height="15"><use href="#i-regulasi"></use></svg> Regulasi</a>
+          <a href="/infografis"><svg width="15" height="15"><use href="#i-grafis"></use></svg> Infografis</a>
+          <a href="/video"><svg width="15" height="15"><use href="#i-video"></use></svg> Galeri Video</a>
+          <a href="/statistik"><svg width="15" height="15"><use href="#i-statistik"></use></svg> Statistik Layanan</a>
+        </div>
+      </li>
+
+      <li><a class="tautan <%= /^\/faq/.test(path) ? 'aktif' : '' %>" href="/faq"><svg width="15" height="15"><use href="#i-faq"></use></svg> FAQ</a></li>
+      <li><a class="tautan <%= /^\/survei/.test(path) ? 'aktif' : '' %>" href="/survei-kepuasan"><svg width="15" height="15"><use href="#i-bintang"></use></svg> Survei</a></li>
+      <li><a class="tautan <%= /^\/kontak/.test(path) ? 'aktif' : '' %>" href="/kontak"><svg width="15" height="15"><use href="#i-email"></use></svg> Kontak</a></li>
+    </ul>
+  </div>
+</nav>

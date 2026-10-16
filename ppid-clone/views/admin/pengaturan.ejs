@@ -1,0 +1,58 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar">Identitas portal, kanal kontak, dan tampilan klon</span></div>
+    <div class="kanan"><span class="badge-klon"><%= cfg.suffix %></span></div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan ok"><%= flash %></div><% } %>
+
+    <form class="panel" method="post" action="/admin/pengaturan/simpan">
+      <input type="hidden" name="csrf" value="<%= csrf %>">
+      <div class="kepala"><h3 style="margin:0">Pengaturan Umum</h3>
+        <button class="tombol kecil" type="submit"><svg width="14" height="14"><use href="#i-sukses"></use></svg> Simpan Semua</button></div>
+      <div class="isi-panel">
+        <div class="form-grid">
+          <% daftar.slice(0, 12).forEach(function(d, i){ %>
+            <div class="field kolom-<%= i % 2 === 0 ? 6 : 6 %>">
+              <label for="s-<%= d.key %>"><%= d.label %></label>
+              <input id="s-<%= d.key %>" name="<%= d.key %>" type="text" value="<%= nilai[d.key] || '' %>">
+              <span class="bantuan mono mikro"><%= d.key %></span>
+            </div>
+          <% }) %>
+        </div>
+
+        <hr>
+        <h3>Tampilan Klon</h3>
+        <div class="form-grid">
+          <% daftar.slice(12).forEach(function(d){ %>
+            <div class="field kolom-4">
+              <label for="s-<%= d.key %>"><%= d.label %></label>
+              <input id="s-<%= d.key %>" name="<%= d.key %>" type="text" value="<%= nilai[d.key] || '' %>">
+              <span class="bantuan mono mikro"><%= d.key %></span>
+            </div>
+          <% }) %>
+          <div class="field kolom-12">
+            <div class="note kecil">
+              <strong>Catatan:</strong> nilai <span class="mono">brand_suffix</span> dan <span class="mono">alamat_klon</span> menentukan
+              tulisan <em>CloneForBackup</em> yang tampil pada bilah alamat di bagian atas setiap halaman serta pada kaki situs.
+              Nilai <span class="mono">watermark_teks</span> menentukan teks watermark diagonal, dan
+              <span class="mono">watermark_aktif</span> (1/0) mengaktifkan atau menonaktifkannya.
+              Tema bawaan <span class="mono">negative</span> menampilkan skema warna gelap hasil inversi.
+            </div>
+          </div>
+        </div>
+
+        <div class="fleks mt-2">
+          <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-sukses"></use></svg> Simpan Pengaturan</button>
+          <a class="tombol garis" href="/" target="_blank" rel="noopener">Pratinjau Situs Publik</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

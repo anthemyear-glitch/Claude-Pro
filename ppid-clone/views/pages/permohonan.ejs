@@ -1,0 +1,201 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><a href="/mekanisme">Layanan</a><span class="pisah">/</span><span>Permohonan Informasi Publik</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-formulir"></use></svg> Permohonan Informasi Publik</h1>
+    <p class="sub">Isi formulir berikut untuk meminta informasi publik yang belum tersedia pada Daftar Informasi Publik.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <div>
+      <div class="pesan info">
+        <svg width="18" height="18"><use href="#i-tentang"></use></svg>
+        <div>
+          <strong>Sebelum mengajukan permohonan:</strong>
+          <ul style="margin:.35rem 0 0 1.1rem">
+            <li>Periksa terlebih dahulu <a href="/daftar-informasi-publik">Daftar Informasi Publik</a> — informasi yang Anda butuhkan mungkin sudah tersedia dan dapat diunduh langsung.</li>
+            <li>Layanan informasi publik <strong>tidak dipungut biaya</strong>.</li>
+            <li>Jawaban tertulis diberikan paling lambat 10 hari kerja, dapat diperpanjang 7 hari kerja dengan pemberitahuan.</li>
+            <li>Setelah mengirim formulir Anda memperoleh <strong>nomor tiket</strong> untuk melacak status permohonan.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="hasil-permohonan"></div>
+
+      <form class="panel" id="form-permohonan" enctype="multipart/form-data" novalidate>
+        <div class="kepala"><h3 style="margin:0">Formulir Permohonan Informasi</h3><span class="lencana">Wajib bertanda <span style="color:var(--danger)">*</span></span></div>
+        <div class="isi-panel">
+
+          <fieldset class="kotak">
+            <legend>A. Data Pemohon</legend>
+            <div class="form-grid">
+              <div class="field kolom-6">
+                <label for="nama">Nama Lengkap <span class="wajib">*</span></label>
+                <input id="nama" name="nama" type="text" required maxlength="120" placeholder="Nama sesuai identitas">
+                <span class="galat">Nama wajib diisi.</span>
+              </div>
+              <div class="field kolom-6">
+                <label for="nik">NIK (16 digit)</label>
+                <input id="nik" name="nik" type="text" inputmode="numeric" maxlength="16" placeholder="Nomor Induk Kependudukan">
+                <span class="bantuan">Opsional untuk pemohon perorangan; wajib bagi yang meminta data terbatas.</span>
+                <span class="galat">NIK harus 16 digit.</span>
+              </div>
+              <div class="field kolom-6">
+                <label for="jenis_pemohon">Kategori Pemohon <span class="wajib">*</span></label>
+                <select id="jenis_pemohon" name="jenis_pemohon">
+                  <% util.JENIS_PEMOHON.forEach(function(j){ %>
+                    <option value="<%= j %>"><%= j %></option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="field kolom-6" style="display:none">
+                <label for="nama_badan">Nama Badan / Lembaga</label>
+                <input id="nama_badan" name="nama_badan" type="text" maxlength="140" placeholder="Nama badan hukum atau organisasi">
+              </div>
+              <div class="field kolom-4">
+                <label for="pekerjaan">Pekerjaan</label>
+                <input id="pekerjaan" name="pekerjaan" type="text" maxlength="80" placeholder="Pekerjaan pemohon">
+              </div>
+              <div class="field kolom-8">
+                <label for="alamat">Alamat <span class="wajib">*</span></label>
+                <input id="alamat" name="alamat" type="text" maxlength="200" placeholder="Alamat lengkap (jalan, kelurahan, kecamatan, kota, kode pos)">
+              </div>
+              <div class="field kolom-6">
+                <label for="email">Surel (Email) <span class="wajib">*</span></label>
+                <input id="email" name="email" type="email" required placeholder="nama@contoh.com">
+                <span class="bantuan">Jawaban dan nomor tiket dikirim ke alamat ini.</span>
+                <span class="galat">Surel wajib diisi dengan format yang benar.</span>
+              </div>
+              <div class="field kolom-6">
+                <label for="telepon">Nomor Telepon / WhatsApp <span class="wajib">*</span></label>
+                <input id="telepon" name="telepon" type="tel" required maxlength="20" placeholder="08xxxxxxxxxx">
+                <span class="galat">Nomor telepon wajib diisi.</span>
+              </div>
+              <div class="field kolom-12">
+                <label for="berkas">Unggah Identitas (KTP / Akta / Surat Kuasa)</label>
+                <div class="berkas-kustom">
+                  <input id="berkas" name="berkas" type="file" accept=".pdf,.jpg,.jpeg,.png">
+                </div>
+                <span class="bantuan">Maksimum 8 MB. Format PDF, JPG, atau PNG. Identitas digunakan untuk verifikasi pemohon.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="kotak">
+            <legend>B. Informasi yang Dimohon</legend>
+            <div class="form-grid">
+              <div class="field kolom-6">
+                <label for="kategori_info">Kategori Informasi <span class="wajib">*</span></label>
+                <select id="kategori_info" name="kategori_info" required>
+                  <% util.KATEGORI_INFO_PUBLIK.forEach(function(k){ %>
+                    <option value="<%= k %>"><%= k %></option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="field kolom-6" style="display:none">
+                <label for="dip_id">Entri pada Daftar Informasi Publik</label>
+                <select id="dip_id" name="dip_id" data-opsi='<%= JSON.stringify(dipTerbaru) %>'></select>
+                <span class="bantuan">Pilih bila informasi yang diminta sudah terdaftar.</span>
+              </div>
+              <div class="field kolom-12">
+                <label for="rincian_info">Rincian Informasi yang Diminta <span class="wajib">*</span></label>
+                <textarea id="rincian_info" name="rincian_info" required placeholder="Uraikan secara spesifik informasi yang Anda butuhkan: jenis dokumen, periode/tahun, lingkup wilayah, dan unit kerja terkait."></textarea>
+                <span class="galat">Rincian informasi wajib diisi.</span>
+              </div>
+              <div class="field kolom-12">
+                <label for="tujuan">Tujuan Penggunaan Informasi</label>
+                <textarea id="tujuan" name="tujuan" style="min-height:80px" placeholder="Contoh: penelitian, penulisan artikel, pemantauan anggaran, keperluan usaha…"></textarea>
+                <span class="bantuan">Tujuan penggunaan tidak menjadi dasar penolakan permohonan, namun membantu petugas menyiapkan informasi yang relevan.</span>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="kotak">
+            <legend>C. Cara Perolehan Informasi</legend>
+            <div class="form-grid">
+              <div class="field kolom-12">
+                <label>Cara Memperoleh Informasi <span class="wajib">*</span></label>
+                <div class="pilihan-radio">
+                  <% util.CARA_PEROLEH.forEach(function(c, i){ %>
+                    <label><input type="radio" name="cara_peroleh" value="<%= c %>" <%= i === 0 ? 'checked' : '' %>> <%= c %></label>
+                  <% }) %>
+                </div>
+              </div>
+              <div class="field kolom-6">
+                <label for="cara_kirim">Media Penyampaian Jawaban</label>
+                <select id="cara_kirim" name="cara_kirim">
+                  <option>Email</option><option>Diunduh dari Website</option><option>Diambil Langsung</option><option>Pos / Kurir</option>
+                </select>
+              </div>
+              <div class="field kolom-6">
+                <label>Format yang Diinginkan</label>
+                <div class="pilihan-radio">
+                  <label><input type="radio" name="format_ingin" value="Salinan Digital" checked> Salinan Digital</label>
+                  <label><input type="radio" name="format_ingin" value="Cetak / Fotokopi"> Cetak</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="field kolom-12">
+            <label style="display:flex;gap:.5rem;align-items:flex-start;font-weight:500;color:var(--teks)">
+              <input type="checkbox" name="pernyataan" value="1" required style="width:auto;margin-top:.25rem">
+              <span>Saya menyatakan informasi yang saya isi benar, dan saya akan menggunakan informasi yang diperoleh sesuai ketentuan peraturan perundang-undangan. <span class="wajib">*</span></span>
+            </label>
+          </div>
+
+          <div class="fleks mt-2">
+            <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-formulir"></use></svg> Kirim Permohonan</button>
+            <button class="tombol garis" type="reset">Kosongkan Formulir</button>
+            <a class="tombol halus" href="/lacak-permohonan"><svg width="15" height="15"><use href="#i-lacak"></use></svg> Sudah Mengajukan? Lacak di Sini</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Tahap Setelah Mengirim</h3></div>
+        <div class="isi-panel">
+          <ul class="timeline">
+            <li><strong>Pencatatan</strong><p>Nomor tiket diterbitkan dan dikirim ke surel Anda.</p></li>
+            <li><strong>Verifikasi</strong><p>Petugas memeriksa kelengkapan identitas dan rincian informasi.</p></li>
+            <li><strong>Proses</strong><p>Permohonan diteruskan ke unit kerja pemilik informasi bila diperlukan.</p></li>
+            <li><strong>Jawaban</strong><p>Jawaban tertulis disampaikan paling lambat 10 hari kerja.</p></li>
+            <li class="akhir"><strong>Penyerahan</strong><p>Informasi diberikan sesuai cara perolehan yang Anda pilih.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Informasi yang Dikecualikan</h3></div>
+        <div class="isi-panel">
+          <p class="kecil redup">Tidak semua informasi dapat diberikan. Informasi yang dikecualikan ditetapkan melalui uji konsekuensi, misalnya yang dapat menghambat proses penegakan hukum, melindungi data pribadi, atau menyangkut kepentingan keamanan.</p>
+          <a class="tombol garis kecil" href="/dip/informasi-dikecualikan">Lihat Daftarnya</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Butuh Pendampingan?</h3></div>
+        <div class="isi-panel">
+          <p class="kecil redup">Petugas layanan membantu pengisian formulir, termasuk bagi pemohon penyandang disabilitas.</p>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-telepon"></use></svg> <%= cfg.telepon %></div>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-email"></use></svg> <%= cfg.email %></div>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-wa"></use></svg> <a href="<%= cfg.whatsapp %>" target="_blank" rel="noopener nofollow">Chat WhatsApp Layanan</a></div>
+          <a class="tombol blok mt-1" href="/kontak">Semua Kanal Layanan</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Infografis</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-grafis"></use></svg> Infografis</h1>
+    <p class="sub">Penyajian informasi publik dalam bentuk visual yang ringkas dan mudah dipahami.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <div class="fleks mb-2">
+      <% kategoriList.forEach(function(k){ %>
+        <span class="lencana"><%= k.kategori %> · <%= k.n %></span>
+      <% }) %>
+    </div>
+
+    <div class="baris grid-3">
+      <% baris.forEach(function(g){ %>
+        <a class="kartu-grafis" href="/halaman-infografis/<%= g.id %>">
+          <div class="gambar"><img src="/img/<%= g.berkas %>.svg" alt="<%= g.judul %>" loading="lazy"></div>
+          <div class="badan">
+            <strong><%= g.judul %></strong>
+            <span class="kecil redup"><%= g.keterangan || '' %></span>
+            <div class="fleks mt-1" style="gap:.4rem">
+              <span class="lencana"><%= g.kategori %></span>
+              <% if (g.tahun) { %><span class="lencana"><%= g.tahun %></span><% } %>
+              <span class="lencana"><svg width="11" height="11"><use href="#i-unduh"></use></svg> <%= util.formatAngka(g.unduhan) %></span>
+            </div>
+          </div>
+        </a>
+      <% }) %>
+      <% if (!baris.length) { %>
+        <div class="panel" style="grid-column:1/-1;padding:2rem;text-align:center"><span class="redup">Belum ada infografis.</span></div>
+      <% } %>
+    </div>
+
+    <p class="kecil samar mt-2">Seluruh visual pada halaman ini dibuat oleh skrip klon sebagai pengganti infografis asli.</p>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

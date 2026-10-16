@@ -1,0 +1,113 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+<style>
+  .bintang { display: inline-flex; gap: .2rem; }
+  .bintang label { cursor: pointer; color: var(--garis); transition: color .12s, transform .12s; }
+  .bintang input { position: absolute; opacity: 0; pointer-events: none; }
+  .bintang label.terpilih, .bintang label:hover { color: var(--aksen); transform: scale(1.08); }
+  .bintang svg { width: 24px; height: 24px; }
+</style>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Survei Kepuasan</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-bintang"></use></svg> Survei Kepuasan Layanan</h1>
+    <p class="sub">Penilaian Anda membantu memperbaiki mutu layanan informasi publik.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <div>
+      <div id="hasil-survei"></div>
+      <form class="panel" id="form-survei">
+        <div class="kepala"><h3 style="margin:0">Formulir Penilaian</h3><span class="lencana">Skala 1–5</span></div>
+        <div class="isi-panel">
+          <div class="form-grid">
+            <div class="field kolom-6">
+              <label for="nama">Nama (opsional)</label>
+              <input id="nama" name="nama" type="text" maxlength="100" placeholder="Boleh dikosongkan">
+            </div>
+            <div class="field kolom-6">
+              <label for="email-s">Surel (opsional)</label>
+              <input id="email-s" name="email" type="email" placeholder="nama@contoh.com">
+            </div>
+            <div class="field kolom-12">
+              <label for="layanan">Layanan yang Dinilai</label>
+              <select id="layanan" name="layanan">
+                <option>Permohonan Informasi</option>
+                <option>Pelacakan Status</option>
+                <option>Unduhan Dokumen</option>
+                <option>Layanan Konsultasi</option>
+                <option>Pengajuan Keberatan</option>
+                <option>Umum</option>
+              </select>
+            </div>
+
+            <% [['mutu', 'Mutu Pelayanan'], ['kecepatan', 'Kecepatan Respon'], ['kemudahan', 'Kemudahan Akses']].forEach(function(p){ %>
+              <div class="field kolom-4">
+                <label><%= p[1] %></label>
+                <div class="bintang">
+                  <% for (let i = 1; i <= 5; i++) { %>
+                    <input type="radio" id="<%= p[0] %>-<%= i %>" name="<%= p[0] %>" value="<%= i %>" <%= i === 5 ? '' : '' %>>
+                    <label for="<%= p[0] %>-<%= i %>" title="<%= i %> dari 5"><svg><use href="#i-bintang"></use></svg></label>
+                  <% } %>
+                </div>
+              </div>
+            <% }) %>
+
+            <div class="field kolom-12">
+              <label for="tanggapan">Tanggapan</label>
+              <textarea id="tanggapan" name="tanggapan" style="min-height:90px" placeholder="Sampaikan pengalaman Anda menggunakan layanan…"></textarea>
+            </div>
+            <div class="field kolom-12">
+              <label for="saran">Saran Perbaikan</label>
+              <textarea id="saran" name="saran" style="min-height:90px" placeholder="Saran untuk meningkatkan layanan…"></textarea>
+            </div>
+          </div>
+          <div class="fleks mt-2">
+            <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-bintang"></use></svg> Kirim Penilaian</button>
+            <button class="tombol garis" type="reset">Kosongkan</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Ringkasan Penilaian</h3><span class="lencana"><%= s.n || 0 %> responden</span></div>
+        <div class="isi-panel">
+          <div class="daftar-bar">
+            <% [['Mutu Pelayanan', s.mutu], ['Kecepatan Respon', s.kecepatan], ['Kemudahan Akses', s.kemudahan]].forEach(function(r){ %>
+              <div class="bar">
+                <div class="kepala"><span><%= r[0] %></span><strong><%= r[1] || '—' %> / 5</strong></div>
+                <div class="trek"><div class="isi-bar" style="width:<%= Math.round(((r[1] || 0) / 5) * 100) %>%"></div></div>
+              </div>
+            <% }) %>
+          </div>
+          <a class="tombol garis blok mt-2" href="/statistik">Statistik Layanan Lengkap</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Tanggapan Terbaru</h3></div>
+        <div class="isi-panel">
+          <% tanggapan.forEach(function(t){ %>
+            <div class="kartu mb-1" style="padding:.7rem .8rem">
+              <div class="fleks-antara mb-1"><span class="lencana"><%= t.layanan %></span><span class="mikro samar"><%= util.waktuRelatif(t.dibuat) %></span></div>
+              <div class="kecil">“<%= t.tanggapan %>”</div>
+              <div class="mikro samar mt-1">Mutu <%= t.mutu %> · Kecepatan <%= t.kecepatan %> · Kemudahan <%= t.kemudahan %></div>
+            </div>
+          <% }) %>
+          <% if (!tanggapan.length) { %><p class="kecil redup">Belum ada tanggapan.</p><% } %>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

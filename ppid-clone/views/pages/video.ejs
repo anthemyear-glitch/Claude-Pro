@@ -1,0 +1,54 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Galeri Video</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-video"></use></svg> Galeri Video</h1>
+    <p class="sub">Materi audiovisual panduan layanan dan informasi publik.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <div class="fleks mb-2">
+      <a class="tombol <%= !kelompok ? '' : 'garis' %> kecil" href="/video">Semua</a>
+      <a class="tombol <%= kelompok === 'layanan' ? '' : 'garis' %> kecil" href="/video?kelompok=layanan">Video Layanan</a>
+      <a class="tombol <%= kelompok === 'informasi' ? '' : 'garis' %> kecil" href="/video?kelompok=informasi">Video Informasi</a>
+    </div>
+
+    <div class="baris grid-3">
+      <% baris.forEach(function(v){ %>
+        <div class="kartu-video">
+          <div class="layar">
+            <div class="pola-grid"></div>
+            <span class="main"><svg width="20" height="20"><use href="#i-main"></use></svg></span>
+            <span class="durasi"><%= v.durasi || '—' %></span>
+          </div>
+          <div class="badan">
+            <strong><%= v.judul %></strong>
+            <span><%= v.keterangan || '' %></span>
+            <div class="fleks mt-1" style="gap:.4rem">
+              <span class="lencana"><%= v.kelompok === 'layanan' ? 'Layanan' : 'Informasi' %></span>
+              <span class="lencana"><svg width="11" height="11"><use href="#i-mata"></use></svg> <%= util.formatAngka(v.dilihat) %></span>
+              <% if (v.tautan && v.tautan !== '#') { %>
+                <a class="lencana aksen" href="<%= v.tautan %>" target="_blank" rel="noopener nofollow" style="text-decoration:none"><svg width="11" height="11"><use href="#i-tautan"></use></svg> Tautan</a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+      <% if (!baris.length) { %>
+        <div class="panel" style="grid-column:1/-1;padding:2rem;text-align:center"><span class="redup">Belum ada video pada kelompok ini.</span></div>
+      <% } %>
+    </div>
+
+    <p class="kecil samar mt-2">Catatan klon: pemutar video pihak ketiga tidak dipasang pada salinan ini; kartu menampilkan metadata video yang tersimpan di basis data klon.</p>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

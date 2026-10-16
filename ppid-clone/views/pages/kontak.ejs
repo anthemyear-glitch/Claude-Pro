@@ -1,0 +1,109 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Kontak</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-email"></use></svg> Kontak &amp; Kanal Layanan</h1>
+    <p class="sub">Sampaikan pertanyaan, permintaan bantuan pengisian formulir, atau pengaduan layanan.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <div>
+      <div id="hasil-kontak"></div>
+      <form class="panel" id="form-kontak">
+        <div class="kepala"><h3 style="margin:0">Kirim Pesan</h3><span class="lencana">Dibalas pada jam kerja</span></div>
+        <div class="isi-panel">
+          <div class="form-grid">
+            <div class="field kolom-6">
+              <label for="nama">Nama <span class="wajib">*</span></label>
+              <input id="nama" name="nama" type="text" required maxlength="100" placeholder="Nama Anda">
+            </div>
+            <div class="field kolom-6">
+              <label for="email">Surel <span class="wajib">*</span></label>
+              <input id="email" name="email" type="email" required placeholder="nama@contoh.com">
+            </div>
+            <div class="field kolom-12">
+              <label for="subjek">Subjek</label>
+              <select id="subjek" name="subjek">
+                <option>Pertanyaan Umum</option>
+                <option>Bantuan Pengisian Formulir Permohonan</option>
+                <option>Status Permohonan</option>
+                <option>Pengaduan Layanan</option>
+                <option>Kerja Sama</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div class="field kolom-12">
+              <label for="pesan">Pesan <span class="wajib">*</span></label>
+              <textarea id="pesan" name="pesan" required placeholder="Tuliskan pertanyaan atau pengaduan Anda…"></textarea>
+            </div>
+          </div>
+          <div class="fleks mt-2">
+            <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-email"></use></svg> Kirim Pesan</button>
+            <a class="tombol garis" href="/permohonan-informasi">Ajukan Permohonan Informasi</a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Kanal Resmi</h3></div>
+        <div class="isi-panel">
+          <div class="kontak-item" style="display:flex;gap:.6rem;margin-bottom:.7rem">
+            <span style="color:var(--aksen)"><svg width="16" height="16"><use href="#i-lokasi"></use></svg></span>
+            <span class="kecil"><%= cfg.alamat %></span>
+          </div>
+          <div class="kontak-item" style="display:flex;gap:.6rem;margin-bottom:.7rem">
+            <span style="color:var(--aksen)"><svg width="16" height="16"><use href="#i-telepon"></use></svg></span>
+            <span class="kecil"><a href="tel:<%= cfg.telepon.replace(/[^\d+]/g,'') %>"><%= cfg.telepon %></a></span>
+          </div>
+          <div class="kontak-item" style="display:flex;gap:.6rem;margin-bottom:.7rem">
+            <span style="color:var(--aksen)"><svg width="16" height="16"><use href="#i-email"></use></svg></span>
+            <span class="kecil"><a href="mailto:<%= cfg.email %>"><%= cfg.email %></a></span>
+          </div>
+          <div class="kontak-item" style="display:flex;gap:.6rem;margin-bottom:.7rem">
+            <span style="color:var(--aksen)"><svg width="16" height="16"><use href="#i-jam"></use></svg></span>
+            <span class="kecil"><%= cfg.jam %></span>
+          </div>
+          <hr>
+          <div class="fleks" style="gap:.4rem">
+            <a class="tombol garis kecil" href="<%= cfg.whatsapp %>" target="_blank" rel="noopener nofollow"><svg width="13" height="13"><use href="#i-wa"></use></svg> WhatsApp</a>
+            <a class="tombol garis kecil" href="<%= cfg.instagram %>" target="_blank" rel="noopener nofollow"><svg width="13" height="13"><use href="#i-ig"></use></svg> Instagram</a>
+            <a class="tombol garis kecil" href="<%= cfg.youtube %>" target="_blank" rel="noopener nofollow"><svg width="13" height="13"><use href="#i-yt"></use></svg> YouTube</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Layanan Darurat Informasi</h3></div>
+        <div class="isi-panel">
+          <p class="kecil redup">Untuk informasi yang menyangkut keselamatan dan ketertiban umum, penyebarluasan dilakukan tanpa penundaan melalui kanal resmi.</p>
+          <a class="tombol garis blok" href="/dip/informasi-serta-merta"><svg width="15" height="15"><use href="#i-sertamerta"></use></svg> Informasi Serta Merta</a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Lokasi Kantor</h3></div>
+        <div class="isi-panel" style="padding:0">
+          <div style="position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--panel-2),var(--bg-lembut));display:grid;place-items:center">
+            <div class="pola-grid" style="opacity:.5"></div>
+            <div class="tengah" style="position:relative">
+              <svg width="34" height="34" style="color:var(--aksen)"><use href="#i-lokasi"></use></svg>
+              <div class="kecil redup" style="max-width:24ch;margin:.3rem auto 0">Peta lokasi ditampilkan sebagai ilustrasi pada klon cadangan.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

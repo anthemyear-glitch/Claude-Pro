@@ -1,0 +1,90 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><a href="/daftar-informasi-publik">Informasi Publik</a><span class="pisah">/</span><span><%= kat.nama %></span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-<%= kat.ikon %>"></use></svg> <%= kat.nama %></h1>
+    <p class="sub"><%= kat.deskripsi %></p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <div class="baris grid-4 mb-2">
+      <% kategoriDip.forEach(function(k){ %>
+        <a class="kartu-ikon" href="/dip/<%= k.slug %>" <%= k.id === kat.id ? 'style="opacity:1"' : '' %>>
+          <div class="kotak" <%= k.id === kat.id ? 'style="border-color:var(--aksen);background:var(--aksen-lembut)"' : '' %>>
+            <div class="ikon"><svg width="24" height="24"><use href="#i-<%= k.ikon %>"></use></svg></div>
+            <strong><%= k.nama %></strong>
+            <span><%= k.slug === kat.slug ? 'Sedang ditampilkan' : k.deskripsi.slice(0, 48) + '…' %></span>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+
+    <form class="bilah-filter" method="get" action="/dip/<%= kat.slug %>">
+      <div class="field grow">
+        <label for="f-q">Kata Kunci</label>
+        <input id="f-q" type="search" name="q" value="<%= query.q || '' %>" placeholder="Cari pada kategori <%= kat.nama %>…">
+      </div>
+      <div class="field">
+        <label for="f-opd">Perangkat Daerah</label>
+        <select id="f-opd" name="opd">
+          <option value="">Semua</option>
+          <% opdList.forEach(function(o){ %>
+            <option value="<%= o.id %>" <%= String(query.opd) === String(o.id) ? 'selected' : '' %>><%= o.singkatan || o.nama %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-th">Tahun</label>
+        <select id="f-th" name="tahun">
+          <option value="">Semua</option>
+          <% tahunList.forEach(function(t){ %>
+            <option value="<%= t.tahun %>" <%= String(query.tahun) === String(t.tahun) ? 'selected' : '' %>><%= t.tahun %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="fleks" style="gap:.5rem">
+        <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-cari"></use></svg> Saring</button>
+        <a class="tombol garis" href="/dip/<%= kat.slug %>">Atur Ulang</a>
+      </div>
+    </form>
+
+    <p class="kecil redup mb-1"><%= util.formatAngka(hit) %> entri pada kategori <strong><%= kat.nama %></strong>.</p>
+
+    <div class="baris grid-3">
+      <% baris.forEach(function(d){ %>
+        <div class="panel kartu-hover" style="padding:1rem">
+          <div class="fleks-antara mb-1">
+            <span class="lencana aksen"><%= d.tahun || '—' %></span>
+            <span class="lencana"><%= d.format %></span>
+          </div>
+          <h3 style="font-size:.98rem"><a href="/informasi/<%= d.id %>" style="text-decoration:none;color:inherit"><%= d.ringkas_informasi %></a></h3>
+          <p class="kecil redup"><%= (d.rincian || '').slice(0, 120) %><%= (d.rincian || '').length > 120 ? '…' : '' %></p>
+          <div class="kecil samar mb-1">
+            <div><svg width="12" height="12"><use href="#i-opd"></use></svg> <%= d.opd_nama || d.opd_singkatan || '—' %></div>
+            <div><svg width="12" height="12"><use href="#i-berkala"></use></svg> <%= d.jangka_waktu || d.periode_penerbitan || '—' %></div>
+          </div>
+          <div class="fleks" style="gap:.4rem">
+            <a class="tombol halus kecil" href="/informasi/<%= d.id %>">Detail</a>
+            <% if (d.berkas) { %><a class="tombol garis kecil" href="/api/unduh/dip/<%= d.id %>"><svg width="13" height="13"><use href="#i-unduh"></use></svg> Unduh</a><% } %>
+            <a class="tombol garis kecil" href="/permohonan-informasi?dip=<%= d.id %>">Mohonkan</a>
+          </div>
+        </div>
+      <% }) %>
+      <% if (!baris.length) { %>
+        <div class="panel kolom-12" style="padding:2rem;text-align:center" class="redup">Belum ada entri pada penyaringan ini.</div>
+      <% } %>
+    </div>
+
+    <%- include('../partials/paginasi', { pg: pg, baseUrl: '/dip/' + kat.slug, query: query }) %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

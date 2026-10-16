@@ -1,0 +1,83 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span><%= h.kelompok === 'layanan' ? 'Layanan Informasi' : 'Profil' %></span><span class="pisah">/</span><span><%= h.judul %></span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-<%= h.ikon || 'dokumen' %>"></use></svg> <%= h.judul %></h1>
+    <% if (h.subjudul) { %><p class="sub"><%= h.subjudul %></p><% } %>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <article class="artikel isi-html">
+      <%- h.isi %>
+      <hr>
+      <div class="fleks-antara">
+        <span class="kecil samar">Terakhir diperbarui: <%= util.tanggalID(h.diperbarui) %></span>
+        <div class="fleks" style="gap:.5rem">
+          <a class="tombol garis kecil" href="/permohonan-informasi"><svg width="14" height="14"><use href="#i-formulir"></use></svg> Ajukan Permohonan</a>
+          <button class="tombol halus kecil" onclick="window.print()"><svg width="14" height="14"><use href="#i-dokumen"></use></svg> Cetak</button>
+        </div>
+      </div>
+    </article>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Layanan Lainnya</h3></div>
+        <div class="isi-panel">
+          <ul class="daftar-tautan">
+            <% terkait.forEach(function(t){ %>
+              <li><a href="<%= t.kelompok === 'profil' && t.slug === 'tentang-ppid' ? '/tentang' : '/halaman-informasi/' + t.slug %>">
+                <svg width="14" height="14"><use href="#i-<%= t.ikon || 'dokumen' %>"></use></svg> <%= t.judul %></a></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+
+      <% if (h.slug === 'mekanisme-pelayanan-informasi-publik') { %>
+        <div class="panel">
+          <div class="kepala"><h3 style="margin:0">Ringkasan Alur</h3></div>
+          <div class="isi-panel">
+            <div class="langkah" style="grid-template-columns:1fr">
+              <% ['Pengajuan permohonan','Pencatatan & nomor tiket','Verifikasi kelengkapan','Koordinasi PPID Pelaksana','Penelaahan & uji konsekuensi','Penyampaian jawaban','Penyerahan informasi'].forEach(function(l, i){ %>
+                <div class="item" style="padding:.7rem .8rem">
+                  <div class="fleks" style="gap:.6rem"><span class="no" style="margin:0"><%= i + 1 %></span><strong style="font-size:.88rem"><%= l %></strong></div>
+                </div>
+              <% }) %>
+            </div>
+            <a class="tombol blok mt-1" href="/permohonan-informasi">Mulai Ajukan Permohonan</a>
+          </div>
+        </div>
+      <% } %>
+
+      <% if (h.slug === 'pengajuan-keberatan-informasi') { %>
+        <div class="panel">
+          <div class="kepala"><h3 style="margin:0">Formulir Keberatan</h3></div>
+          <div class="isi-panel">
+            <p class="kecil redup">Sampaikan keberatan Anda secara daring kepada Atasan PPID.</p>
+            <a class="tombol blok" href="/pengajuan-keberatan"><svg width="15" height="15"><use href="#i-keberatan"></use></svg> Ajukan Keberatan</a>
+            <a class="tombol garis blok mt-1" href="/halaman-informasi/upaya-tidak-ditanggapi-atas-keberatan">Upaya Bila Tidak Ditanggapi</a>
+          </div>
+        </div>
+      <% } %>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Kontak Layanan</h3></div>
+        <div class="isi-panel">
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-telepon"></use></svg> <%= cfg.telepon %></div>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-email"></use></svg> <%= cfg.email %></div>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-jam"></use></svg> <%= cfg.jam %></div>
+          <a class="tombol garis blok mt-1" href="/kontak">Semua Kanal</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

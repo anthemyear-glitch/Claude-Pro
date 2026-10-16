@@ -1,0 +1,28 @@
+<%
+  const temaAktif = cfg.tema;
+  const wmTeks = cfg.watermark || 'CloneForBackup';
+  const wmSvg = cfg.watermarkAktif ? encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="460" height="300" viewBox="0 0 460 300">` +
+    `<text x="0" y="150" transform="rotate(-30 230 150)" font-family="Segoe UI,Arial,sans-serif" font-size="34" font-weight="800" letter-spacing="2" fill="rgba(255,255,255,0.055)">${wmTeks}</text></svg>`
+  ) : '';
+%>
+<!DOCTYPE html>
+<html lang="id" data-tema="<%= temaAktif %>">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= (typeof judul !== 'undefined' ? judul + ' · ' : '') %>Panel Pengelola — <%= cfg.suffix %></title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/tema.css">
+<link rel="stylesheet" href="/css/gaya.css">
+<link rel="stylesheet" href="/css/admin.css">
+<style id="watermark-vars">:root{ --wm-svg: url("data:image/svg+xml,<%= wmSvg %>"); }</style>
+<meta name="csrf-token" content="<%= csrf %>">
+</head>
+<body class="admin-body">
+<% if (cfg.watermarkAktif) { %>
+<div class="watermark-lapis" aria-hidden="true"></div>
+<div class="watermark-besar" aria-hidden="true"><%= wmTeks %></div>
+<% } %>
+<%- include('icons') %>

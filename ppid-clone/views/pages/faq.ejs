@@ -1,0 +1,66 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>FAQ</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-faq"></use></svg> Pertanyaan yang Sering Diajukan</h1>
+    <p class="sub">Jawaban singkat atas pertanyaan yang paling sering disampaikan pemohon informasi.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah" style="max-width:900px">
+    <div class="pencarian-besar mb-2">
+      <svg width="17" height="17" class="samar"><use href="#i-cari"></use></svg>
+      <input type="search" id="cari-faq" placeholder="Ketik kata kunci untuk menyaring pertanyaan…" aria-label="Cari pertanyaan">
+    </div>
+
+    <div id="daftar-faq">
+      <% let kelompokAktif = ''; %>
+      <% baris.forEach(function(f, i){ %>
+        <% if (f.kelompok !== kelompokAktif) { kelompokAktif = f.kelompok; %>
+          <h3 class="mt-2" style="color:var(--teks-redup);font-size:.95rem;text-transform:uppercase;letter-spacing:.06em"><%= f.kelompok %></h3>
+        <% } %>
+        <div class="akordeon <%= i === 0 ? 'buka' : '' %>" data-teks="<%= (f.pertanyaan + ' ' + f.jawaban).toLowerCase() %>">
+          <button type="button" aria-expanded="<%= i === 0 %>">
+            <span><%= f.pertanyaan %></span>
+            <span class="tanda"><svg width="16" height="16"><use href="#i-plus"></use></svg></span>
+          </button>
+          <div class="badan"><%= f.jawaban %></div>
+        </div>
+      <% }) %>
+    </div>
+
+    <div class="panel mt-3">
+      <div class="isi-panel fleks-antara">
+        <div>
+          <h3 class="mb-0">Pertanyaan Anda belum terjawab?</h3>
+          <p class="kecil redup mb-0">Hubungi petugas layanan atau ajukan permohonan informasi secara daring.</p>
+        </div>
+        <div class="fleks" style="gap:.5rem">
+          <a class="tombol" href="/kontak">Hubungi Kami</a>
+          <a class="tombol garis" href="/permohonan-informasi">Ajukan Permohonan</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+<script>
+  (function () {
+    const input = document.getElementById('cari-faq');
+    if (!input) return;
+    input.addEventListener('input', function () {
+      const k = input.value.trim().toLowerCase();
+      document.querySelectorAll('#daftar-faq .akordeon').forEach(function (a) {
+        a.style.display = !k || a.dataset.teks.indexOf(k) > -1 ? '' : 'none';
+      });
+    });
+  })();
+</script>
+</body>
+</html>

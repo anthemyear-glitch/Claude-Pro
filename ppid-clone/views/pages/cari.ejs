@@ -1,0 +1,164 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Pencarian</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-cari"></use></svg> <%= judul %></h1>
+    <p class="sub"><%= qstr ? total + ' hasil ditemukan di seluruh kanal konten portal.' : 'Ketik kata kunci untuk mencari informasi publik, berita, regulasi, perangkat daerah, dan halaman layanan.' %></p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <form action="/cari" method="get" class="pencarian-besar mb-2" style="max-width:640px" role="search">
+      <svg width="17" height="17" class="samar"><use href="#i-cari"></use></svg>
+      <input type="search" name="q" value="<%= qstr %>" placeholder="Cari di seluruh portal…" aria-label="Pencarian global">
+      <button class="tombol" type="submit">Cari</button>
+    </form>
+
+    <% if (!qstr) { %>
+      <div class="panel"><div class="isi-panel tengah redup">
+        <p class="mb-1">Contoh kata kunci: <em>anggaran</em>, <em>perizinan</em>, <em>rencana kerja</em>, <em>keberatan</em>, <em>bencana</em>.</p>
+        <div class="fleks" style="justify-content:center">
+          <% ['anggaran', 'perizinan', 'rencana kerja', 'keberatan', 'statistik'].forEach(function(k){ %>
+            <a class="lencana aksen" href="/cari?q=<%= k %>" style="text-decoration:none"><%= k %></a>
+          <% }) %>
+        </div>
+      </div></div>
+    <% } else if (!total) { %>
+      <div class="panel"><div class="isi-panel tengah redup">
+        <svg width="38" height="38" style="opacity:.5"><use href="#i-cari"></use></svg>
+        <p>Tidak ada hasil untuk “<%= qstr %>”.</p>
+        <div class="fleks" style="justify-content:center">
+          <a class="tombol garis" href="/daftar-informasi-publik">Jelajahi Daftar Informasi Publik</a>
+          <a class="tombol halus" href="/permohonan-informasi">Ajukan Permohonan Informasi</a>
+        </div>
+      </div></div>
+    <% } %>
+
+    <% if (hasil.dip.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Informasi Publik <span class="lencana aksen"><%= hasil.dip.length %></span></h2></div></div>
+        <div class="tabel-bungkus">
+          <table class="tabel">
+            <thead><tr><th>Ringkasan Informasi</th><th>Kategori</th><th class="kanan">Aksi</th></tr></thead>
+            <tbody>
+              <% hasil.dip.forEach(function(d){ %>
+                <tr>
+                  <td><a href="/informasi/<%= d.id %>" style="text-decoration:none;font-weight:600"><%= d.judul || d.ringkas_informasi %></a>
+                    <div class="kecil samar"><%= (d.rincian || '').slice(0, 110) %></div></td>
+                  <td><span class="lencana"><%= d.kategori_nama %></span></td>
+                  <td class="aksi"><a class="tombol garis kecil" href="/informasi/<%= d.id %>">Detail</a></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.berita.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Berita <span class="lencana aksen"><%= hasil.berita.length %></span></h2></div></div>
+        <div class="baris grid-3">
+          <% hasil.berita.forEach(function(b){ %>
+            <a class="layanan-item" href="/halaman-berita/<%= b.slug %>">
+              <span class="ikon"><svg width="20" height="20"><use href="#i-berita"></use></svg></span>
+              <span class="tumbuh"><strong><%= b.judul %></strong><span><%= (b.ringkasan || '').slice(0, 80) %>… · <%= util.tanggalPendek(b.dibuat) %></span></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.halaman.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Halaman Layanan <span class="lencana aksen"><%= hasil.halaman.length %></span></h2></div></div>
+        <div class="baris grid-2">
+          <% hasil.halaman.forEach(function(h){ %>
+            <a class="layanan-item" href="<%= h.slug === 'tentang-ppid' ? '/tentang' : '/halaman-informasi/' + h.slug %>">
+              <span class="ikon"><svg width="20" height="20"><use href="#i-dokumen"></use></svg></span>
+              <span class="tumbuh"><strong><%= h.judul %></strong><span><%= h.subjudul || '' %></span></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.regulasi.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Regulasi <span class="lencana aksen"><%= hasil.regulasi.length %></span></h2></div><a class="tombol garis kecil" href="/regulasi">Semua Regulasi</a></div>
+        <div class="tabel-bungkus">
+          <table class="tabel">
+            <thead><tr><th>Judul</th><th>Nomor</th><th>Jenis</th><th>Tahun</th><th class="kanan">Unduh</th></tr></thead>
+            <tbody>
+              <% hasil.regulasi.forEach(function(r){ %>
+                <tr><td><%= r.judul %></td><td><span class="lencana"><%= r.nomor %></span></td><td class="redup"><%= r.jenis %></td><td><%= r.tahun %></td>
+                <td class="aksi"><a class="tombol garis kecil" href="/api/unduh/regulasi/<%= r.id %>"><svg width="13" height="13"><use href="#i-unduh"></use></svg></a></td></tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.opd.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Perangkat Daerah <span class="lencana aksen"><%= hasil.opd.length %></span></h2></div><a class="tombol garis kecil" href="/ppid-pelaksana">Semua PPID Pelaksana</a></div>
+        <div class="baris grid-3">
+          <% hasil.opd.forEach(function(o){ %>
+            <a class="layanan-item" href="/daftar-informasi-publik?opd=<%= o.id %>">
+              <span class="ikon"><svg width="20" height="20"><use href="#i-opd"></use></svg></span>
+              <span class="tumbuh"><strong><%= o.nama %></strong><span><%= o.singkatan || '' %> · <%= o.jenis %></span></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.video.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Video <span class="lencana aksen"><%= hasil.video.length %></span></h2></div><a class="tombol garis kecil" href="/video">Galeri Video</a></div>
+        <div class="baris grid-3">
+          <% hasil.video.forEach(function(v){ %>
+            <div class="kartu-video"><div class="layar"><div class="pola-grid"></div><span class="main"><svg width="18" height="18"><use href="#i-main"></use></svg></span></div>
+              <div class="badan"><strong><%= v.judul %></strong><span><%= (v.keterangan || '').slice(0, 70) %></span></div></div>
+          <% }) %>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.infografis.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Infografis <span class="lencana aksen"><%= hasil.infografis.length %></span></h2></div><a class="tombol garis kecil" href="/infografis">Galeri Infografis</a></div>
+        <div class="baris grid-3">
+          <% hasil.infografis.forEach(function(g){ %>
+            <a class="layanan-item" href="/halaman-infografis/<%= g.id %>">
+              <span class="ikon"><svg width="20" height="20"><use href="#i-grafis"></use></svg></span>
+              <span class="tumbuh"><strong><%= g.judul %></strong><span><%= (g.keterangan || '').slice(0, 80) %></span></span>
+            </a>
+          <% }) %>
+        </div>
+      </section>
+    <% } %>
+
+    <% if (hasil.faq.length) { %>
+      <section class="seksi">
+        <div class="kepala-seksi"><div><h2>Pertanyaan Umum <span class="lencana aksen"><%= hasil.faq.length %></span></h2></div><a class="tombol garis kecil" href="/faq">Semua FAQ</a></div>
+        <% hasil.faq.forEach(function(f){ %>
+          <div class="akordeon">
+            <button type="button"><span><%= f.pertanyaan %></span><span class="tanda"><svg width="16" height="16"><use href="#i-plus"></use></svg></span></button>
+            <div class="badan"><%= f.jawaban %></div>
+          </div>
+        <% }) %>
+      </section>
+    <% } %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

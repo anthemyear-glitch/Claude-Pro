@@ -1,0 +1,39 @@
+<%/* Bilah alamat (menampilkan alamat klon berakhiran CloneForBackup) + topbar */%>
+<div class="bilah-alamat">
+  <div class="isi">
+    <span class="titik" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="kotak-url">
+      <svg class="ikon" width="12" height="12" aria-hidden="true"><use href="#i-gembok"></use></svg>
+      <span class="gembok sr">https://</span>ppid.surakarta.go.id<span class="akhiran">/<%= cfg.suffix %></span>
+      <span class="samar" id="alamat-jalur"></span>
+    </span>
+    <span class="badge-klon" title="Salinan cadangan — bukan situs resmi"><%= cfg.suffix %></span>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="isi">
+    <div class="kiri">
+      <div class="sosmed">
+        <a href="<%= cfg.instagram %>" target="_blank" rel="noopener nofollow" title="Instagram"><svg width="14" height="14"><use href="#i-ig"></use></svg></a>
+        <a href="<%= cfg.whatsapp %>" target="_blank" rel="noopener nofollow" title="WhatsApp"><svg width="14" height="14"><use href="#i-wa"></use></svg></a>
+        <a href="<%= cfg.youtube %>" target="_blank" rel="noopener nofollow" title="YouTube"><svg width="14" height="14"><use href="#i-yt"></use></svg></a>
+        <a href="<%= cfg.facebook %>" target="_blank" rel="noopener nofollow" title="Facebook"><svg width="14" height="14"><use href="#i-fb"></use></svg></a>
+      </div>
+      <a href="tel:<%= cfg.telepon.replace(/[^\d+]/g, '') %>"><svg width="13" height="13"><use href="#i-telepon"></use></svg> <%= cfg.telepon %></a>
+      <a href="mailto:<%= cfg.email %>"><svg width="13" height="13"><use href="#i-email"></use></svg> <%= cfg.email %></a>
+    </div>
+    <div class="kanan">
+      <span class="jam" id="jam-wib" title="Waktu Indonesia Barat">--:--:-- WIB</span>
+      <span class="samar" id="tanggal-wib"></span>
+      <button type="button" class="tombol garis kecil" id="saklar-tema" title="Ganti tema warna">
+        <svg width="13" height="13"><use href="#i-gelap"></use></svg> <span>Negative</span>
+      </button>
+      <% if (user) { %>
+        <a href="/admin" class="tombol kecil"><svg width="13" height="13"><use href="#i-dasbor"></use></svg> Panel</a>
+      <% } else { %>
+        <a href="/admin/login" class="tombol garis kecil"><svg width="13" height="13"><use href="#i-pengguna"></use></svg> Masuk</a>
+      <% } %>
+    </div>
+  </div>
+</div>

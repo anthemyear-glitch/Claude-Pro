@@ -1,0 +1,27 @@
+<%/* Paginasi bersama. Butuh: pg, baseUrl, query */
+  const buatUrl = function(hal) {
+    const p = new URLSearchParams();
+    Object.keys(query || {}).forEach(function(k) { if (k !== 'halaman' && query[k]) p.set(k, query[k]); });
+    if (hal > 1) p.set('halaman', hal);
+    const s = p.toString();
+    return baseUrl + (s ? '?' + s : '');
+  };
+%>
+<% if (pg.totalHal > 1) { %>
+<nav class="paginasi" aria-label="Navigasi halaman">
+  <% if (pg.halaman > 1) { %>
+    <a href="<%= buatUrl(pg.halaman - 1) %>">‹ Sebelumnya</a>
+  <% } else { %><span class="nonaktif">‹ Sebelumnya</span><% } %>
+
+  <% if (pg.awal > 1) { %><a href="<%= buatUrl(1) %>">1</a><% if (pg.awal > 2) { %><span class="nonaktif">…</span><% } %><% } %>
+  <% pg.items.forEach(function(i){ %>
+    <% if (i === pg.halaman) { %><span class="aktif"><%= i %></span><% } else { %><a href="<%= buatUrl(i) %>"><%= i %></a><% } %>
+  <% }) %>
+  <% if (pg.akhir < pg.totalHal) { %><% if (pg.akhir < pg.totalHal - 1) { %><span class="nonaktif">…</span><% } %><a href="<%= buatUrl(pg.totalHal) %>"><%= pg.totalHal %></a><% } %>
+
+  <% if (pg.halaman < pg.totalHal) { %>
+    <a href="<%= buatUrl(pg.halaman + 1) %>">Berikutnya ›</a>
+  <% } else { %><span class="nonaktif">Berikutnya ›</span><% } %>
+  <span class="nonaktif">Halaman <%= pg.halaman %> dari <%= pg.totalHal %></span>
+</nav>
+<% } %>

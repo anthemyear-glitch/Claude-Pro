@@ -1,0 +1,100 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div>
+      <h1><%= judul %></h1>
+      <span class="kecil samar">Ringkasan operasional layanan informasi publik</span>
+    </div>
+    <div class="kanan">
+      <span class="badge-klon"><%= cfg.suffix %></span>
+      <span class="lencana"><svg width="12" height="12"><use href="#i-pengguna"></use></svg> <%= user.nama %> · <%= user.role %></span>
+      <button class="tombol garis kecil" id="saklar-tema"><svg width="13" height="13"><use href="#i-gelap"></use></svg> <span>Negative</span></button>
+    </div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan ok"><svg width="16" height="16"><use href="#i-sukses"></use></svg> <%= flash %></div><% } %>
+
+    <div class="baris grid-4 mb-2">
+      <% kartu.forEach(function(k){ %>
+        <a class="kartu-stat kartu-hover" href="<%= k.url %>" style="text-decoration:none;color:inherit">
+          <span class="ikon"><svg width="22" height="22"><use href="#i-<%= k.ikon === 'proses' ? 'berkala' : k.ikon === 'selesai' ? 'sukses' : k.ikon %>"></use></svg></span>
+          <div><div class="nilai"><%= util.formatAngka(k.nilai) %></div><div class="label"><%= k.label %></div></div>
+        </a>
+      <% }) %>
+    </div>
+
+    <div class="baris grid-2">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Permohonan per Bulan</h3><span class="lencana">6 bulan terakhir</span></div>
+        <div class="isi-panel">
+          <canvas class="grafik" data-tipe="batang"
+            data-data='<%= JSON.stringify(bulanan.map(function(b){ return { label: b.ym.slice(5) + '/' + b.ym.slice(2,4), nilai: b.n }; })) %>'></canvas>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Distribusi Status</h3></div>
+        <div class="isi-panel">
+          <canvas class="grafik" data-tipe="donat"
+            data-data='<%= JSON.stringify(status.map(function(s){ return { label: s.nama, nilai: s.n }; })) %>'></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel mt-2">
+      <div class="kepala"><h3 style="margin:0">Kunjungan Portal (30 hari)</h3></div>
+      <div class="isi-panel">
+        <canvas class="grafik" data-tipe="garis"
+          data-data='<%= JSON.stringify(harian.map(function(h){ return { label: h.tanggal.slice(5), nilai: h.halaman }; })) %>'></canvas>
+      </div>
+    </div>
+
+    <div class="baris grid-2 mt-2">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Permohonan Terbaru</h3><a class="tombol garis kecil" href="/admin/permohonan">Kelola Semua</a></div>
+        <div class="isi-panel" style="padding:0">
+          <div class="tabel-bungkus" style="border:0;border-radius:0">
+            <table class="tabel">
+              <thead><tr><th>Tiket</th><th>Pemohon</th><th>Kategori</th><th>Status</th><th>Masuk</th></tr></thead>
+              <tbody>
+                <% terbaru.forEach(function(p){ %>
+                  <tr>
+                    <td><a href="/admin/permohonan/<%= p.id %>" class="mono" style="text-decoration:none"><%= p.nomor_tiket %></a></td>
+                    <td><%= p.nama %><div class="mikro samar"><%= p.email %></div></td>
+                    <td class="kecil redup"><%= p.kategori_info %></td>
+                    <td><span class="lencana <%= util.WARNA_STATUS[p.status] || 'info' %>"><%= p.status %></span></td>
+                    <td class="kecil samar"><%= util.waktuRelatif(p.dibuat) %></td>
+                  </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Aktivitas Terakhir</h3><a class="tombol garis kecil" href="/admin/audit">Log Lengkap</a></div>
+        <div class="isi-panel" style="padding:0">
+          <ul class="timeline" style="padding:1rem 1rem 0 2.2rem">
+            <% log.forEach(function(l){ %>
+              <li><span class="w"><%= util.tanggalID(l.waktu) %></span><strong><%= l.aksi %></strong>
+                <p><%= l.target || '—' %> <span class="samar">· oleh <%= l.aktor %></span></p></li>
+            <% }) %>
+            <% if (!log.length) { %><li><span class="redup kecil">Belum ada aktivitas.</span></li><% } %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="note mt-2 kecil">
+      <strong>Catatan klon:</strong> panel ini adalah salinan cadangan fungsional. Seluruh konten contoh ditulis ulang,
+      gambar dibuat oleh skrip klon, dan berkas unduhan digantikan berkas yang dihasilkan sistem.
+      Alamat klon: <span class="mono" style="color:var(--aksen)"><%= cfg.alamatKlon %></span>
+    </div>
+  </div>
+</div>
+<script src="/js/grafik.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

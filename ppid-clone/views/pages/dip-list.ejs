@@ -1,0 +1,140 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span><%= judul %></span></div>
+    <h1><%= judul %></h1>
+    <p class="sub"><%= subjudul %></p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+
+    <%/* ringkasan per kategori */%>
+    <div class="baris grid-4 mb-2">
+      <% kategoriDip.forEach(function(k){ %>
+        <a class="kartu-ikon" href="/dip/<%= k.slug %>">
+          <div class="kotak">
+            <div class="ikon"><svg width="24" height="24"><use href="#i-<%= k.ikon %>"></use></svg></div>
+            <strong><%= k.nama %></strong>
+            <span><%= k.deskripsi.slice(0, 54) %>…</span>
+          </div>
+        </a>
+      <% }) %>
+    </div>
+
+    <form class="bilah-filter" id="form-filter-dip" method="get" action="/daftar-informasi-publik">
+      <div class="field grow">
+        <label for="f-q">Kata Kunci</label>
+        <input id="f-q" type="search" name="q" value="<%= query.q || '' %>" placeholder="Cari ringkasan informasi…">
+      </div>
+      <div class="field">
+        <label for="f-kat">Kategori</label>
+        <select id="f-kat" name="kategori">
+          <option value="">Semua Kategori</option>
+          <% kategoriDip.forEach(function(k){ %>
+            <option value="<%= k.slug %>" <%= query.kategori === k.slug ? 'selected' : '' %>><%= k.nama %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-opd">Perangkat Daerah</label>
+        <select id="f-opd" name="opd">
+          <option value="">Semua Perangkat Daerah</option>
+          <% opdList.forEach(function(o){ %>
+            <option value="<%= o.id %>" <%= String(query.opd) === String(o.id) ? 'selected' : '' %>><%= o.singkatan || o.nama %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-th">Tahun</label>
+        <select id="f-th" name="tahun">
+          <option value="">Semua Tahun</option>
+          <% tahunList.forEach(function(t){ %>
+            <option value="<%= t.tahun %>" <%= String(query.tahun) === String(t.tahun) ? 'selected' : '' %>><%= t.tahun %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-per">Tampil per Halaman</label>
+        <select id="f-per" name="per">
+          <% [12, 24, 48].forEach(function(n){ %>
+            <option value="<%= n %>" <%= String(query.per || 12) === String(n) ? 'selected' : '' %>><%= n %> baris</option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="fleks" style="gap:.5rem">
+        <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-cari"></use></svg> Terapkan</button>
+        <a class="tombol garis" href="/daftar-informasi-publik">Atur Ulang</a>
+      </div>
+    </form>
+
+    <div class="fleks-antara mb-1">
+      <span class="kecil redup">Menampilkan <strong><%= baris.length %></strong> dari <strong><%= util.formatAngka(hit) %></strong> entri informasi publik.</span>
+      <span class="kecil samar">Klik “Detail” untuk melihat metadata lengkap atau mengunduh berkas.</span>
+    </div>
+
+    <div class="tabel-bungkus">
+      <table class="tabel">
+        <thead>
+          <tr>
+            <th class="nomor">#</th>
+            <th>Ringkasan Informasi</th>
+            <th>Kategori</th>
+            <th>Perangkat Daerah</th>
+            <th>Jenis</th>
+            <th>Format</th>
+            <th>Sarana</th>
+            <th>Tahun</th>
+            <th class="kanan">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (!baris.length) { %>
+            <tr><td colspan="9" class="tengah redup" style="padding:2rem">Tidak ada entri yang cocok dengan penyaringan ini.</td></tr>
+          <% } %>
+          <% baris.forEach(function(d, i){ %>
+            <tr>
+              <td class="nomor"><%= pg.offset + i + 1 %></td>
+              <td>
+                <a href="/informasi/<%= d.id %>" style="text-decoration:none;font-weight:600"><%= d.ringkas_informasi %></a>
+                <% if (d.rincian) { %><div class="kecil samar"><%= d.rincian.slice(0, 96) %><%= d.rincian.length > 96 ? '…' : '' %></div><% } %>
+              </td>
+              <td><span class="lencana aksen"><%= d.kategori_nama %></span></td>
+              <td class="redup"><%= d.opd_nama || '—' %></td>
+              <td><span class="lencana"><%= d.jenis %></span></td>
+              <td><%= d.format %></td>
+              <td class="kecil redup"><%= d.sarana %></td>
+              <td><%= d.tahun || '—' %></td>
+              <td class="aksi">
+                <button class="tombol halus kecil" data-modal-buka="<%= d.id %>">Detail</button>
+                <% if (d.berkas && d.kategori_slug !== 'informasi-dikecualikan') { %>
+                  <a class="tombol garis kecil" href="/api/unduh/dip/<%= d.id %>" title="Unduh berkas"><svg width="13" height="13"><use href="#i-unduh"></use></svg></a>
+                <% } else if (d.kategori_slug === 'informasi-dikecualikan') { %>
+                  <span class="lencana danger" title="Termasuk informasi yang dikecualikan"><svg width="11" height="11"><use href="#i-dikecualikan"></use></svg> Dikecualikan</span>
+                <% } %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+    <%- include('../partials/paginasi', { pg: pg, baseUrl: '/daftar-informasi-publik', query: query }) %>
+  </div>
+</main>
+
+<div class="modal-lapis" id="modal-lapis">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="kepala"><h3 style="margin:0">Detail Informasi Publik</h3><button class="tutup" id="modal-tutup" aria-label="Tutup">×</button></div>
+    <div class="badan" id="modal-badan"></div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

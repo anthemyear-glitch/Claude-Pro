@@ -1,0 +1,101 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><a href="/mekanisme">Layanan</a><span class="pisah">/</span><span>Pengajuan Keberatan</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-keberatan"></use></svg> Pengajuan Keberatan Informasi</h1>
+    <p class="sub">Sampaikan keberatan kepada Atasan PPID apabila jawaban atas permohonan informasi belum memuaskan.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <div>
+      <div id="hasil-keberatan"></div>
+
+      <form class="panel" id="form-keberatan" novalidate>
+        <div class="kepala"><h3 style="margin:0">Formulir Keberatan</h3><span class="lencana warn">Batas waktu: 30 hari kerja</span></div>
+        <div class="isi-panel">
+          <div class="form-grid">
+            <div class="field kolom-6">
+              <label for="nama">Nama Lengkap <span class="wajib">*</span></label>
+              <input id="nama" name="nama" type="text" required maxlength="120" placeholder="Nama pemohon informasi">
+            </div>
+            <div class="field kolom-6">
+              <label for="nomor_permohonan">Nomor Tiket Permohonan Sebelumnya</label>
+              <input id="nomor_permohonan" name="nomor_permohonan" type="text" class="mono" placeholder="PPID-2026-00001">
+              <span class="bantuan">Isi bila keberatan merujuk permohonan tertentu. Surel harus sama dengan data permohonan.</span>
+            </div>
+            <div class="field kolom-6">
+              <label for="email">Surel <span class="wajib">*</span></label>
+              <input id="email" name="email" type="email" required placeholder="nama@contoh.com">
+            </div>
+            <div class="field kolom-6">
+              <label for="telepon">Nomor Telepon</label>
+              <input id="telepon" name="telepon" type="tel" maxlength="20" placeholder="08xxxxxxxxxx">
+            </div>
+            <div class="field kolom-12">
+              <label for="alamat">Alamat</label>
+              <input id="alamat" name="alamat" type="text" maxlength="200" placeholder="Alamat lengkap pemohon">
+            </div>
+            <div class="field kolom-12">
+              <label for="alasan">Alasan Keberatan <span class="wajib">*</span></label>
+              <select id="alasan" name="alasan" required>
+                <option value="">— Pilih alasan keberatan —</option>
+                <option>Permohonan informasi ditolak</option>
+                <option>Permohonan informasi tidak ditanggapi</option>
+                <option>Permohonan ditanggapi tidak sebagaimana yang diminta</option>
+                <option>Permohonan informasi tidak dipenuhi sebagaimana mestinya</option>
+                <option>Pembebanan biaya yang tidak wajar</option>
+                <option>Penyampaian informasi melebihi batas waktu</option>
+                <option>Lainnya</option>
+              </select>
+            </div>
+            <div class="field kolom-12">
+              <label for="uraian">Uraian Keberatan <span class="wajib">*</span></label>
+              <textarea id="uraian" name="uraian" required placeholder="Jelaskan informasi yang dimohon, jawaban yang diterima (atau tidak diterimanya jawaban), serta alasan Anda menilai jawaban tersebut belum sesuai."></textarea>
+            </div>
+          </div>
+          <div class="fleks mt-2">
+            <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-keberatan"></use></svg> Kirim Keberatan</button>
+            <button class="tombol garis" type="reset">Kosongkan</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Proses Setelah Pengajuan</h3></div>
+        <div class="isi-panel">
+          <ul class="timeline">
+            <li><strong>Pencatatan</strong><p>Keberatan dicatat dan memperoleh nomor tiket.</p></li>
+            <li><strong>Telaah</strong><p>Atasan PPID menelaah alasan dan dokumen terkait.</p></li>
+            <li><strong>Tanggapan</strong><p>Tanggapan tertulis diberikan paling lambat 30 hari kerja.</p></li>
+            <li class="akhir"><strong>Upaya lanjutan</strong><p>Bila masih belum puas, pemohon dapat mengajukan sengketa ke Komisi Informasi paling lambat 14 hari kerja setelah menerima tanggapan.</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Tautan Terkait</h3></div>
+        <div class="isi-panel">
+          <ul class="daftar-tautan">
+            <li><a href="/halaman-informasi/pengajuan-keberatan-informasi"><svg width="14" height="14"><use href="#i-keberatan"></use></svg> Prosedur Keberatan</a></li>
+            <li><a href="/halaman-informasi/upaya-tidak-ditanggapi-atas-keberatan"><svg width="14" height="14"><use href="#i-upaya"></use></svg> Bila Keberatan Tidak Ditanggapi</a></li>
+            <li><a href="/mekanisme"><svg width="14" height="14"><use href="#i-mekanisme"></use></svg> Mekanisme Pelayanan Informasi</a></li>
+            <li><a href="/lacak-permohonan"><svg width="14" height="14"><use href="#i-lacak"></use></svg> Lacak Permohonan</a></li>
+            <li><a href="/faq"><svg width="14" height="14"><use href="#i-faq"></use></svg> Pertanyaan Umum</a></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

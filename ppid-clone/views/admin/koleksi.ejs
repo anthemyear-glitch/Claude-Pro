@@ -1,0 +1,159 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar"><%= baris.length %> data <%= def.label.toLowerCase() %></span></div>
+    <div class="kanan">
+      <button class="tombol kecil" id="btn-tambah"><svg width="14" height="14"><use href="#i-plus"></use></svg> Tambah <%= def.label %></button>
+      <span class="badge-klon"><%= cfg.suffix %></span>
+    </div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan ok"><%= flash %></div><% } %>
+
+    <div class="panel mb-2" id="form-panel" style="display:none">
+      <div class="kepala"><h3 style="margin:0" id="form-judul">Tambah <%= def.label %></h3>
+        <button class="tombol garis kecil" type="button" id="btn-tutup-form">Tutup</button></div>
+      <div class="isi-panel">
+        <form method="post" action="/admin/<%= kunci %>/simpan" enctype="multipart/form-data" id="form-koleksi">
+          <input type="hidden" name="csrf" value="<%= csrf %>">
+          <input type="hidden" name="id" id="f-id" value="">
+          <%/* sakelar aktif/tampil dirender sebagai kotak centang di bawah */%>
+          <div class="form-grid">
+            <% def.kolom.forEach(function(k){ %>
+              <div class="field kolom-<%= k.lebar || 6 %>">
+                <label for="f-<%= k.nama %>"><%= k.label %> <% if (k.wajib) { %><span class="wajib">*</span><% } %></label>
+                <% if (k.tipe === 'textarea') { %>
+                  <textarea id="f-<%= k.nama %>" name="<%= k.nama %>" style="min-height:<%= (k.tinggi || 5) * 22 %>px"></textarea>
+                <% } else if (k.tipe === 'select') { %>
+                  <select id="f-<%= k.nama %>" name="<%= k.nama %>">
+                    <% k.opsi.forEach(function(o){ %><option value="<%= o %>"><%= o %></option><% }) %>
+                  </select>
+                <% } else { %>
+                  <input id="f-<%= k.nama %>" name="<%= k.nama %>" type="<%= k.tipe === 'number' ? 'number' : 'text' %>" <%= k.wajib ? 'required' : '' %>>
+                <% } %>
+                <% if (k.bantuan) { %><span class="bantuan"><%= k.bantuan %></span><% } %>
+              </div>
+            <% }) %>
+            <% if (def.sakelar) { %>
+              <div class="field kolom-3">
+                <label>Status</label>
+                <div class="pilihan-radio" style="margin-top:.4rem">
+                  <label><input type="checkbox" name="<%= def.sakelar %>" id="f-<%= def.sakelar %>" value="1" checked>
+                    <%= def.sakelar === 'tampil' ? 'Tampilkan di situs' : 'Aktif' %></label>
+                </div>
+              </div>
+            <% } %>
+            <% if (def.unggah) { %>
+              <div class="field kolom-6">
+                <label for="f-unggah">Unggah Berkas (<%= def.unggah %>)</label>
+                <input id="f-unggah" name="<%= def.unggah %>" type="file" accept=".pdf,.docx,.xlsx,.pptx,.csv,.jpg,.jpeg,.png,.webp,.zip">
+                <span class="bantuan">Maks. 8 MB. Menggantikan nilai kolom “<%= def.unggah %>” bila diisi.</span>
+              </div>
+            <% } %>
+          </div>
+          <div class="fleks mt-2">
+            <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-sukses"></use></svg> Simpan</button>
+            <button class="tombol garis" type="reset">Kosongkan</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="tabel-bungkus">
+      <table class="tabel" id="tabel-koleksi">
+        <thead>
+          <tr>
+            <th class="nomor">#</th>
+            <% def.tampil.forEach(function(t){ %><th><%= t.replace(/_/g, ' ') %></th><% }) %>
+            <% if (def.sakelar) { %><th>Status</th><% } %>
+            <% if (def.unggah) { %><th>Berkas</th><% } %>
+            <th class="kanan">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% baris.forEach(function(b, i){ %>
+            <tr data-id="<%= b.id %>">
+              <td class="nomor"><%= i + 1 %></td>
+              <% def.tampil.forEach(function(t){ %>
+                <td class="kecil">
+                  <% if (t === 'judul' || t === 'nama' || t === 'pertanyaan') { %>
+                    <strong><%= b[t] %></strong>
+                  <% } else { %>
+                    <%= b[t] === null || b[t] === undefined || b[t] === '' ? '—' : b[t] %>
+                  <% } %>
+                </td>
+              <% }) %>
+              <% if (def.sakelar) { %><td><span class="lencana <%= b[def.sakelar] ? 'ok' : 'warn' %>"><%= b[def.sakelar] ? 'Aktif' : 'Nonaktif' %></span></td><% } %>
+              <% if (def.unggah) { %>
+                <td class="kecil">
+                  <% if (b[def.unggah]) { %>
+                    <% const p = String(b[def.unggah]); %>
+                    <% if (p.startsWith('uploads/')) { %>
+                      <a class="lencana" href="/<%= p %>" target="_blank" rel="noopener">unggah</a>
+                    <% } else { %>
+                      <span class="lencana">bawaan</span>
+                    <% } %>
+                  <% } else { %><span class="samar mikro">—</span><% } %>
+                </td>
+              <% } %>
+              <td class="aksi">
+                <button class="tombol garis kecil btn-sunting" type="button"><svg width="13" height="13"><use href="#i-sunting"></use></svg></button>
+                <form method="post" action="/admin/<%= kunci %>/<%= b.id %>/hapus" style="display:inline">
+                  <input type="hidden" name="csrf" value="<%= csrf %>">
+                  <button class="tombol garis kecil" data-konfirmasi="Hapus data ini?" title="Hapus"><svg width="13" height="13"><use href="#i-hapus"></use></svg></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+          <% if (!baris.length) { %><tr><td colspan="<%= def.tampil.length + 3 %>" class="tengah redup" style="padding:2rem">Belum ada data.</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script id="data-baris" type="application/json"><%= JSON.stringify(baris).replace(/</g, '\\u003c') %></script>
+<script id="def-kolom" type="application/json"><%= JSON.stringify(def.kolom.map(function(k){ return k.nama; })).replace(/</g, '\\u003c') %></script>
+<script>
+  (function () {
+    const panel = document.getElementById('form-panel');
+    const judulForm = document.getElementById('form-judul');
+    const form = document.getElementById('form-koleksi');
+    const kolom = JSON.parse(document.getElementById('def-kolom').textContent);
+    const baris = JSON.parse(document.getElementById('data-baris').textContent);
+    const label = '<%= def.label %>';
+
+    document.getElementById('btn-tambah').addEventListener('click', function () {
+      form.reset();
+      document.getElementById('f-id').value = '';
+      judulForm.textContent = 'Tambah ' + label;
+      panel.style.display = '';
+      panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    document.getElementById('btn-tutup-form').addEventListener('click', function () { panel.style.display = 'none'; });
+
+    document.querySelectorAll('.btn-sunting').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const id = Number(btn.closest('tr').dataset.id);
+        const data = baris.find(function (b) { return b.id === id; });
+        if (!data) return;
+        form.reset();
+        document.getElementById('f-id').value = id;
+        kolom.forEach(function (k) {
+          const el = document.getElementById('f-' + k);
+          if (el && data[k] !== undefined && data[k] !== null) el.value = data[k];
+        });
+        const sw = document.getElementById('f-<%= def.sakelar || '__tidak_ada__' %>');
+        if (sw && sw.type === 'checkbox') sw.checked = String(data[sw.name]) === '1';
+        judulForm.textContent = 'Sunting ' + label + ' #' + id;
+        panel.style.display = '';
+        panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  })();
+</script>
+<script src="/js/app.js"></script>
+</body>
+</html>

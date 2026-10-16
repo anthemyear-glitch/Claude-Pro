@@ -1,0 +1,109 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar">Lengkapi metadata informasi publik agar mudah ditemukan pemohon</span></div>
+    <div class="kanan"><a class="tombol garis kecil" href="/admin/dip">Kembali ke Daftar</a></div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan warn"><%= flash %></div><% } %>
+
+    <form class="panel" method="post" action="/admin/dip/simpan" enctype="multipart/form-data">
+      <input type="hidden" name="csrf" value="<%= csrf %>">
+      <% if (item) { %><input type="hidden" name="id" value="<%= item.id %>"><% } %>
+      <div class="kepala"><h3 style="margin:0"><%= item ? 'Sunting Entri' : 'Entri Baru' %></h3>
+        <button class="tombol kecil" type="submit"><svg width="14" height="14"><use href="#i-sukses"></use></svg> Simpan</button></div>
+      <div class="isi-panel">
+        <div class="form-grid">
+          <div class="field kolom-12">
+            <label for="ringkas_informasi">Ringkasan Informasi <span class="wajib">*</span></label>
+            <input id="ringkas_informasi" name="ringkas_informasi" type="text" required maxlength="240" value="<%= item ? item.ringkas_informasi : '' %>" placeholder="Contoh: Ringkasan laporan kinerja instansi pemerintah">
+          </div>
+          <div class="field kolom-4">
+            <label for="kategori_id">Kategori <span class="wajib">*</span></label>
+            <select id="kategori_id" name="kategori_id" required>
+              <% kategoriDip.forEach(function(k){ %>
+                <option value="<%= k.id %>" <%= item && String(item.kategori_id) === String(k.id) ? 'selected' : '' %>><%= k.nama %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="field kolom-8">
+            <label for="opd_id">Perangkat Daerah Penyedia</label>
+            <select id="opd_id" name="opd_id">
+              <option value="">— Tidak ditentukan —</option>
+              <% opdList.forEach(function(o){ %>
+                <option value="<%= o.id %>" <%= item && String(item.opd_id) === String(o.id) ? 'selected' : '' %>><%= o.nama %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="field kolom-12">
+            <label for="rincian">Rincian / Keterangan</label>
+            <textarea id="rincian" name="rincian" style="min-height:90px"><%= item ? (item.rincian || '') : '' %></textarea>
+          </div>
+          <div class="field kolom-3">
+            <label for="jenis">Jenis Informasi</label>
+            <select id="jenis" name="jenis">
+              <% ['Dokumen','Data','Grafik','Video','Laporan','Peraturan'].forEach(function(j){ %>
+                <option <%= item && item.jenis === j ? 'selected' : '' %>><%= j %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="field kolom-3">
+            <label for="format">Format Berkas</label>
+            <select id="format" name="format">
+              <% ['PDF','DOCX','XLSX','PPTX','CSV','JPG','Portal','Teks','Tertutup'].forEach(function(f){ %>
+                <option <%= item && item.format === f ? 'selected' : '' %>><%= f %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="field kolom-3">
+            <label for="sarana">Sarana Pengumuman</label>
+            <input id="sarana" name="sarana" type="text" value="<%= item ? (item.sarana || 'Website') : 'Website' %>">
+          </div>
+          <div class="field kolom-3">
+            <label for="tahun">Tahun</label>
+            <input id="tahun" name="tahun" type="number" min="1990" max="2100" value="<%= item ? (item.tahun || '') : new Date().getFullYear() %>">
+          </div>
+          <div class="field kolom-4">
+            <label for="jangka_waktu">Jangka Waktu Penerbitan</label>
+            <input id="jangka_waktu" name="jangka_waktu" type="text" value="<%= item ? (item.jangka_waktu || '') : '' %>" placeholder="Contoh: Tahunan, Semester">
+          </div>
+          <div class="field kolom-4">
+            <label for="periode_penerbitan">Periode Publikasi</label>
+            <input id="periode_penerbitan" name="periode_penerbitan" type="text" value="<%= item ? (item.periode_penerbitan || '') : '' %>" placeholder="Contoh: Setiap 6 bulan">
+          </div>
+          <div class="field kolom-4">
+            <label for="ukuran">Ukuran Berkas</label>
+            <input id="ukuran" name="ukuran" type="text" value="<%= item ? (item.ukuran || '') : '' %>" placeholder="Contoh: 780 KB">
+          </div>
+          <div class="field kolom-8">
+            <label for="berkas">Unggah Berkas Informasi</label>
+            <input id="berkas" name="berkas" type="file" accept=".pdf,.docx,.xlsx,.pptx,.csv,.jpg,.png,.zip">
+            <span class="bantuan">
+              Maks. 8 MB.
+              <% if (item && item.berkas) { %>Berkas saat ini: <span class="mono"><%= item.berkas %></span>
+                <input type="hidden" name="berkas_lama" value="<%= item.berkas %>">
+              <% } %>
+            </span>
+          </div>
+          <div class="field kolom-4">
+            <label>Pratinjau Publik</label>
+            <% if (item) { %>
+              <a class="tombol garis blok" href="/informasi/<%= item.id %>" target="_blank" rel="noopener"><svg width="14" height="14"><use href="#i-mata"></use></svg> Lihat Halaman Detail</a>
+            <% } else { %>
+              <span class="bantuan">Tersedia setelah entri disimpan.</span>
+            <% } %>
+          </div>
+        </div>
+        <div class="fleks mt-2">
+          <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-sukses"></use></svg> Simpan Entri</button>
+          <a class="tombol garis" href="/admin/dip">Batal</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

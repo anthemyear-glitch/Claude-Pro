@@ -1,0 +1,67 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Regulasi</span></div>
+    <h1><svg width="20" height="20" style="vertical-align:-2px;color:var(--aksen)"><use href="#i-regulasi"></use></svg> Regulasi Keterbukaan Informasi</h1>
+    <p class="sub">Himpunan peraturan, pedoman, dan standar operasional yang menjadi dasar layanan informasi publik.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <form class="bilah-filter" method="get" action="/regulasi">
+      <div class="field grow">
+        <label for="q">Cari Regulasi</label>
+        <input id="q" type="search" name="q" value="<%= search %>" placeholder="Judul atau nomor peraturan…">
+      </div>
+      <div class="field">
+        <label for="jenis">Jenis</label>
+        <select id="jenis" name="jenis">
+          <option value="">Semua Jenis</option>
+          <% jenisList.forEach(function(j){ %>
+            <option value="<%= j.jenis %>" <%= jenis === j.jenis ? 'selected' : '' %>><%= j.jenis %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="fleks" style="gap:.5rem">
+        <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-cari"></use></svg> Cari</button>
+        <a class="tombol garis" href="/regulasi">Atur Ulang</a>
+      </div>
+    </form>
+
+    <p class="kecil redup mb-1"><%= util.formatAngka(hit) %> dokumen regulasi tersedia.</p>
+
+    <div class="tabel-bungkus">
+      <table class="tabel">
+        <thead><tr><th class="nomor">#</th><th>Judul</th><th>Nomor</th><th>Jenis</th><th>Tahun</th><th>Penerbit</th><th>Unduhan</th><th class="kanan">Berkas</th></tr></thead>
+        <tbody>
+          <% baris.forEach(function(r, i){ %>
+            <tr>
+              <td class="nomor"><%= pg.offset + i + 1 %></td>
+              <td style="font-weight:600"><%= r.judul %></td>
+              <td><span class="lencana"><%= r.nomor || '—' %></span></td>
+              <td class="redup"><%= r.jenis %></td>
+              <td><%= r.tahun || '—' %></td>
+              <td class="redup"><%= r.penerbit || '—' %></td>
+              <td><%= util.formatAngka(r.unduhan) %></td>
+              <td class="aksi"><a class="tombol garis kecil" href="/api/unduh/regulasi/<%= r.id %>"><svg width="13" height="13"><use href="#i-unduh"></use></svg> Unduh</a></td>
+            </tr>
+          <% }) %>
+          <% if (!baris.length) { %><tr><td colspan="8" class="tengah redup" style="padding:2rem">Tidak ada regulasi yang cocok.</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <%- include('../partials/paginasi', { pg: pg, baseUrl: '/regulasi', query: query }) %>
+
+    <div class="note mt-2">Catatan klon: berkas yang diunduh adalah berkas pengganti yang dihasilkan sistem. Naskah peraturan asli tidak disalin ke dalam klon ini.</div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

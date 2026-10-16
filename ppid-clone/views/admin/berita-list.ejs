@@ -1,0 +1,43 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar"><%= baris.length %> artikel</span></div>
+    <div class="kanan"><a class="tombol kecil" href="/admin/berita/form"><svg width="14" height="14"><use href="#i-plus"></use></svg> Tulis Berita</a></div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan ok"><%= flash %></div><% } %>
+    <div class="tabel-bungkus">
+      <table class="tabel">
+        <thead><tr><th class="nomor">#</th><th>Sampul</th><th>Judul</th><th>Kategori</th><th>Penulis</th><th>Terbit</th><th>Dibaca</th><th>Tanggal</th><th class="kanan">Aksi</th></tr></thead>
+        <tbody>
+          <% baris.forEach(function(b, i){ %>
+            <tr>
+              <td class="nomor"><%= i + 1 %></td>
+              <td style="width:88px"><img src="/img/sampul/<%= b.sampul || 'polos' %>.svg" alt="" style="width:80px;border-radius:6px"></td>
+              <td style="max-width:320px"><a href="/halaman-berita/<%= b.slug %>" target="_blank" rel="noopener" style="text-decoration:none;font-weight:600"><%= b.judul %></a>
+                <div class="mikro samar mono">/<%= b.slug %></div></td>
+              <td><span class="lencana"><%= b.kategori %></span></td>
+              <td class="kecil redup"><%= b.penulis %></td>
+              <td><span class="lencana <%= b.terbit ? 'ok' : 'warn' %>"><%= b.terbit ? 'Terbit' : 'Draf' %></span></td>
+              <td class="kecil"><%= b.dilihat %></td>
+              <td class="kecil samar"><%= util.tanggalPendek(b.dibuat) %></td>
+              <td class="aksi">
+                <a class="tombol garis kecil" href="/admin/berita/form/<%= b.id %>"><svg width="13" height="13"><use href="#i-sunting"></use></svg></a>
+                <form method="post" action="/admin/berita/<%= b.id %>/hapus" style="display:inline">
+                  <input type="hidden" name="csrf" value="<%= csrf %>">
+                  <button class="tombol garis kecil" data-konfirmasi="Hapus berita ini?" title="Hapus"><svg width="13" height="13"><use href="#i-hapus"></use></svg></button>
+                </form>
+              </td>
+            </tr>
+          <% }) %>
+          <% if (!baris.length) { %><tr><td colspan="9" class="tengah redup" style="padding:2rem">Belum ada berita.</td></tr><% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

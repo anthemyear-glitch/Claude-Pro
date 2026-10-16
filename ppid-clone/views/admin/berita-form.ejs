@@ -1,0 +1,74 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar">Isi berita ditulis oleh redaksi portal klon</span></div>
+    <div class="kanan"><a class="tombol garis kecil" href="/admin/berita">Kembali ke Daftar</a></div>
+  </div>
+
+  <div class="admin-isi">
+    <% if (flash) { %><div class="pesan warn"><%= flash %></div><% } %>
+
+    <form class="panel" method="post" action="/admin/berita/simpan" enctype="multipart/form-data">
+      <input type="hidden" name="csrf" value="<%= csrf %>">
+      <% if (item) { %><input type="hidden" name="id" value="<%= item.id %>"><% } %>
+      <div class="kepala"><h3 style="margin:0"><%= item ? 'Sunting Artikel' : 'Artikel Baru' %></h3>
+        <div class="fleks" style="gap:.5rem">
+          <label class="kecil redup" style="display:flex;gap:.35rem;align-items:center">
+            <input type="checkbox" name="terbit" value="1" <%= !item || item.terbit ? 'checked' : '' %>> Tayangkan di situs
+          </label>
+          <button class="tombol kecil" type="submit"><svg width="14" height="14"><use href="#i-sukses"></use></svg> Simpan</button>
+        </div>
+      </div>
+      <div class="isi-panel">
+        <div class="form-grid">
+          <div class="field kolom-12">
+            <label for="judul">Judul <span class="wajib">*</span></label>
+            <input id="judul" name="judul" type="text" required maxlength="200" value="<%= item ? item.judul : '' %>" placeholder="Judul berita atau pengumuman">
+            <span class="bantuan">Slug URL dibuat otomatis dari judul.</span>
+          </div>
+          <div class="field kolom-8">
+            <label for="ringkasan">Ringkasan</label>
+            <textarea id="ringkasan" name="ringkasan" style="min-height:70px" placeholder="Satu–dua kalimat ringkasan untuk kartu berita"><%= item ? (item.ringkasan || '') : '' %></textarea>
+          </div>
+          <div class="field kolom-4">
+            <label for="kategori">Kategori</label>
+            <select id="kategori" name="kategori">
+              <% ['Kegiatan','Pengumuman','Layanan','Serta Merta','Regulasi'].forEach(function(k){ %>
+                <option <%= item && item.kategori === k ? 'selected' : '' %>><%= k %></option>
+              <% }) %>
+            </select>
+          </div>
+          <div class="field kolom-6">
+            <label for="penulis">Penulis</label>
+            <input id="penulis" name="penulis" type="text" value="<%= item ? (item.penulis || 'Admin PPID') : 'Admin PPID' %>">
+          </div>
+          <div class="field kolom-6">
+            <label for="sampul">Unggah Gambar Sampul</label>
+            <input id="sampul" name="sampul" type="file" accept=".jpg,.jpeg,.png,.webp">
+            <span class="bantuan">
+              Kosongkan untuk memakai sampul generatif.
+              <% if (item && item.sampul) { %>
+                Saat ini: <span class="mono"><%= item.sampul %></span>
+                <input type="hidden" name="sampul_lama" value="<%= item.sampul %>">
+              <% } %>
+            </span>
+          </div>
+          <div class="field kolom-12">
+            <label for="isi">Isi Berita (HTML diizinkan) <span class="wajib">*</span></label>
+            <textarea id="isi" name="isi" required style="min-height:320px;font-family:var(--font-mono);font-size:.84rem" placeholder="&lt;p&gt;Paragraf pembuka…&lt;/p&gt;&lt;h3&gt;Subjudul&lt;/h3&gt;&lt;p&gt;Isi berita…&lt;/p&gt;"><%= item ? item.isi : '' %></textarea>
+            <span class="bantuan">Tag &lt;script&gt;, &lt;iframe&gt;, dan atribut peristiwa (on*) dibersihkan otomatis saat disimpan.</span>
+          </div>
+        </div>
+        <div class="fleks mt-2">
+          <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-sukses"></use></svg> Simpan Artikel</button>
+          <% if (item) { %><a class="tombol garis" href="/halaman-berita/<%= item.slug %>" target="_blank" rel="noopener">Pratinjau</a><% } %>
+          <a class="tombol halus" href="/admin/berita">Batal</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>

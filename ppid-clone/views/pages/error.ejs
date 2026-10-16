@@ -1,0 +1,24 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<main class="utama">
+  <div class="wadah" style="max-width:720px">
+    <div class="panel tengah" style="padding:3rem 1.5rem">
+      <div style="font-size:5rem;font-weight:900;line-height:1;color:var(--aksen);text-shadow:var(--bayangan-teks)"><%= kode %></div>
+      <h1 style="margin:.6rem 0 .3rem"><%= judul %></h1>
+      <p class="redup"><%= pesan %></p>
+      <div class="fleks mt-2" style="justify-content:center">
+        <a class="tombol" href="<%= tautan %>"><%= labelTautan %></a>
+        <a class="tombol garis" href="/">Beranda</a>
+        <a class="tombol halus" href="/cari">Cari Informasi</a>
+      </div>
+      <p class="kecil samar mt-3 mb-0">Alamat klon: <span class="mono" style="color:var(--aksen)"><%= cfg.alamatKlon %></span></p>
+    </div>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb">
+      <a href="/">Beranda</a><span class="pisah">/</span>
+      <a href="/daftar-informasi-publik">Informasi Publik</a><span class="pisah">/</span>
+      <a href="/dip/<%= item.kategori_slug %>"><%= item.kategori_nama %></a><span class="pisah">/</span>
+      <span>Detail</span>
+    </div>
+    <h1 style="font-size:clamp(1.2rem,2.6vw,1.7rem)"><%= item.ringkas_informasi %></h1>
+    <p class="sub">Entri Daftar Informasi Publik nomor <%= String(item.id).padStart(4, '0') %></p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah tata-dua">
+    <div>
+      <div class="panel">
+        <div class="kepala">
+          <div class="fleks" style="gap:.4rem">
+            <span class="lencana aksen"><svg width="12" height="12"><use href="#i-<%= (kategoriDip.find(function(k){return k.slug===item.kategori_slug})||{ikon:'dokumen'}).ikon %>"></use></svg> <%= item.kategori_nama %></span>
+            <span class="lencana"><%= item.jenis %></span>
+            <span class="lencana"><%= item.format %></span>
+            <% if (item.tahun) { %><span class="lencana"><%= item.tahun %></span><% } %>
+          </div>
+          <span class="kecil samar">Diperbarui <%= util.tanggalID(item.diperbarui) %></span>
+        </div>
+        <div class="isi-panel">
+          <h3>Deskripsi Informasi</h3>
+          <p class="redup"><%= item.rincian || 'Tidak ada rincian tambahan untuk entri ini.' %></p>
+          <div class="note mb-2"><%= item.kategori_deskripsi %></div>
+
+          <h3>Metadata</h3>
+          <div class="tabel-bungkus mb-2">
+            <table class="tabel">
+              <tbody>
+                <tr><th style="width:230px">Ringkasan Informasi</th><td><%= item.ringkas_informasi %></td></tr>
+                <tr><th>Kategori</th><td><%= item.kategori_nama %></td></tr>
+                <tr><th>Perangkat Daerah</th><td><%= item.opd_nama || '—' %></td></tr>
+                <tr><th>Jenis Informasi</th><td><%= item.jenis %></td></tr>
+                <tr><th>Format Berkas</th><td><%= item.format %></td></tr>
+                <tr><th>Sarana Pengumuman</th><td><%= item.sarana %></td></tr>
+                <tr><th>Tahun</th><td><%= item.tahun || '—' %></td></tr>
+                <tr><th>Jangka Waktu Penerbitan</th><td><%= item.jangka_waktu || '—' %></td></tr>
+                <tr><th>Periode Publikasi</th><td><%= item.periode_penerbitan || '—' %></td></tr>
+                <tr><th>Ukuran Berkas</th><td><%= item.ukuran || '—' %></td></tr>
+                <tr><th>Jumlah Diunduh</th><td><%= util.formatAngka(item.unduhan) %> kali</td></tr>
+                <tr><th>Jumlah Dilihat</th><td><%= util.formatAngka(item.dilihat) %> kali</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <% if (item.opd_nama) { %>
+            <h3>Kontak Penyedia Informasi</h3>
+            <div class="baris grid-2 mb-2">
+              <div class="kartu"><span class="kecil samar">Perangkat Daerah</span><div class="tebal"><%= item.opd_nama %></div></div>
+              <div class="kartu"><span class="kecil samar">Alamat</span><div><%= item.opd_alamat || '—' %></div></div>
+              <div class="kartu"><span class="kecil samar">Telepon</span><div><%= item.opd_telepon || '—' %></div></div>
+              <div class="kartu"><span class="kecil samar">Surel</span><div><%= item.opd_email || '—' %></div></div>
+            </div>
+          <% } %>
+
+          <div class="fleks">
+            <% if (item.berkas && item.kategori_slug !== 'informasi-dikecualikan') { %>
+              <a class="tombol" href="/api/unduh/dip/<%= item.id %>"><svg width="15" height="15"><use href="#i-unduh"></use></svg> Unduh Berkas (<%= item.format %>)</a>
+            <% } %>
+            <a class="tombol garis" href="/permohonan-informasi?dip=<%= item.id %>"><svg width="15" height="15"><use href="#i-formulir"></use></svg> Ajukan Permohonan Informasi Ini</a>
+            <a class="tombol halus" href="/dip/<%= item.kategori_slug %>">Kembali ke Kategori</a>
+          </div>
+
+          <% if (item.kategori_slug === 'informasi-dikecualikan') { %>
+            <div class="pesan warn mt-2">
+              <svg width="18" height="18"><use href="#i-peringatan"></use></svg>
+              <div>Informasi ini termasuk yang <strong>dikecualikan</strong> berdasarkan hasil uji konsekuensi, sehingga berkasnya tidak tersedia untuk diunduh. Pemohon tetap dapat mengajukan permohonan; petugas akan menyampaikan penjelasan tertulis mengenai dasar pengecualiannya.</div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Informasi Terkait</h3></div>
+        <div class="isi-panel">
+          <ul class="daftar-tautan">
+            <% terkait.forEach(function(t){ %>
+              <li><a href="/informasi/<%= t.id %>"><svg width="14" height="14"><use href="#i-panah-kanan"></use></svg> <%= t.ringkas_informasi %></a></li>
+            <% }) %>
+            <% if (!terkait.length) { %><li><span class="kecil samar">Tidak ada entri terkait.</span></li><% } %>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Kategori Lain</h3></div>
+        <div class="isi-panel">
+          <ul class="daftar-tautan">
+            <% kategoriDip.forEach(function(k){ %>
+              <li><a href="/dip/<%= k.slug %>" class="<%= k.slug === item.kategori_slug ? 'aktif' : '' %>">
+                <svg width="15" height="15"><use href="#i-<%= k.ikon %>"></use></svg> <%= k.nama %></a></li>
+            <% }) %>
+            <li><a href="/daftar-informasi-publik"><svg width="15" height="15"><use href="#i-dokumen"></use></svg> Seluruh Daftar Informasi</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kepala"><h3 style="margin:0">Butuh Bantuan?</h3></div>
+        <div class="isi-panel">
+          <p class="kecil redup">Petugas layanan siap membantu pada jam kerja.</p>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-telepon"></use></svg> <%= cfg.telepon %></div>
+          <div class="kecil mb-1"><svg width="13" height="13"><use href="#i-email"></use></svg> <%= cfg.email %></div>
+          <a class="tombol garis blok" href="/kontak">Kanal Layanan</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

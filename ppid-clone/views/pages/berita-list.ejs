@@ -1,0 +1,65 @@
+<%- include('../partials/head') %>
+<%- include('../partials/topbar') %>
+<%- include('../partials/header') %>
+
+<section class="judul-halaman">
+  <div class="wadah">
+    <div class="breadcrumb"><a href="/">Beranda</a><span class="pisah">/</span><span>Berita &amp; Pengumuman</span></div>
+    <h1>Berita &amp; Pengumuman</h1>
+    <p class="sub">Kegiatan layanan, pengumuman resmi, dan pembaruan keterbukaan informasi publik.</p>
+  </div>
+</section>
+
+<main class="utama">
+  <div class="wadah">
+    <form class="bilah-filter" method="get" action="/berita">
+      <div class="field grow">
+        <label for="q">Cari Berita</label>
+        <input id="q" type="search" name="q" value="<%= search %>" placeholder="Kata kunci judul atau isi berita…">
+      </div>
+      <div class="field">
+        <label for="kategori">Kategori</label>
+        <select id="kategori" name="kategori">
+          <option value="">Semua Kategori</option>
+          <% kategoriList.forEach(function(k){ %>
+            <option value="<%= k.kategori %>" <%= kategori === k.kategori ? 'selected' : '' %>><%= k.kategori %> (<%= k.n %>)</option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="fleks" style="gap:.5rem">
+        <button class="tombol" type="submit"><svg width="15" height="15"><use href="#i-cari"></use></svg> Cari</button>
+        <a class="tombol garis" href="/berita">Atur Ulang</a>
+      </div>
+    </form>
+
+    <p class="kecil redup mb-1"><%= util.formatAngka(hit) %> berita ditemukan.</p>
+
+    <div class="baris grid-3">
+      <% baris.forEach(function(b){ %>
+        <a class="kartu-berita" href="/halaman-berita/<%= b.slug %>">
+          <div class="sampul"><img src="/img/sampul/<%= b.sampul || 'polos' %>.svg" alt="<%= b.judul %>" loading="lazy"></div>
+          <div class="badan">
+            <span class="lencana aksen" style="align-self:flex-start"><%= b.kategori %></span>
+            <h4><%= b.judul %></h4>
+            <p><%= (b.ringkasan || '').slice(0, 140) %>…</p>
+            <div class="meta">
+              <span><%= b.penulis %></span>
+              <span><%= util.tanggalID(b.dibuat) %></span>
+              <span><svg width="12" height="12"><use href="#i-mata"></use></svg> <%= b.dilihat %></span>
+            </div>
+          </div>
+        </a>
+      <% }) %>
+      <% if (!baris.length) { %>
+        <div class="panel" style="grid-column:1/-1;padding:2rem;text-align:center"><span class="redup">Belum ada berita pada penyaringan ini.</span></div>
+      <% } %>
+    </div>
+
+    <%- include('../partials/paginasi', { pg: pg, baseUrl: '/berita', query: query }) %>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/app.js"></script>
+</body>
+</html>

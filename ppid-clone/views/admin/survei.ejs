@@ -1,0 +1,49 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-sisi') %>
+<div class="admin-utama">
+  <div class="admin-topbar">
+    <div><h1><%= judul %></h1><span class="kecil samar"><%= baris.length %> tanggapan responden</span></div>
+    <div class="kanan"><a class="tombol garis kecil" href="/survei-kepuasan" target="_blank" rel="noopener">Lihat Halaman Publik</a></div>
+  </div>
+
+  <div class="admin-isi">
+    <div class="baris grid-3 mb-2">
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-bintang"></use></svg></span>
+        <div><div class="nilai"><%= ringkas.mutu || '—' %></div><div class="label">Rata-rata Mutu Pelayanan</div></div></div>
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-berkala"></use></svg></span>
+        <div><div class="nilai"><%= ringkas.kecepatan || '—' %></div><div class="label">Rata-rata Kecepatan Respon</div></div></div>
+      <div class="kartu-stat"><span class="ikon"><svg width="22" height="22"><use href="#i-sukses"></use></svg></span>
+        <div><div class="nilai"><%= ringkas.kemudahan || '—' %></div><div class="label">Rata-rata Kemudahan Akses</div></div></div>
+    </div>
+
+    <div class="panel">
+      <div class="kepala"><h3 style="margin:0">Daftar Tanggapan</h3></div>
+      <div class="isi-panel" style="padding:0">
+        <div class="tabel-bungkus" style="border:0;border-radius:0">
+          <table class="tabel">
+            <thead><tr><th class="nomor">#</th><th>Responden</th><th>Layanan</th><th>Mutu</th><th>Kecepatan</th><th>Kemudahan</th><th>Tanggapan</th><th>Saran</th><th>Tanggal</th></tr></thead>
+            <tbody>
+              <% baris.forEach(function(s, i){ %>
+                <tr>
+                  <td class="nomor"><%= i + 1 %></td>
+                  <td><%= s.nama || 'Anonim' %><% if (s.email) { %><div class="mikro samar"><%= s.email %></div><% } %></td>
+                  <td><span class="lencana"><%= s.layanan %></span></td>
+                  <td><strong><%= s.mutu %></strong></td>
+                  <td><strong><%= s.kecepatan %></strong></td>
+                  <td><strong><%= s.kemudahan %></strong></td>
+                  <td class="kecil" style="max-width:240px"><%= s.tanggapan || '—' %></td>
+                  <td class="kecil" style="max-width:240px"><%= s.saran || '—' %></td>
+                  <td class="kecil samar"><%= util.tanggalPendek(s.dibuat) %></td>
+                </tr>
+              <% }) %>
+              <% if (!baris.length) { %><tr><td colspan="9" class="tengah redup" style="padding:2rem">Belum ada tanggapan survei.</td></tr><% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/app.js"></script>
+</body>
+</html>
