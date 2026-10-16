@@ -1,0 +1,14 @@
+{
+  "name": "download-accelerator",
+  "version": "1.0.0",
+  "description": "IDM-style multi-segment download accelerator: parallel range downloads, pause/resume, queue, live speed stats. Zero dependencies.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node start.js",
+    "test": "node test/engine.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
