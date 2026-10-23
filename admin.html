@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BackEnd CMS Admin — Dinas Sosial Kota Surakarta (Frest Admin)</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/lambang-surakarta.svg">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/frest-admin.css">
+</head>
+<body class="frest-body">
+
+  <div class="frest-wrapper">
+    <!-- LEFT VERTICAL SIDEBAR (PIXINVENT Frest Admin Structure) -->
+    <aside class="frest-sidebar" id="frestSidebar">
+      <div class="frest-sidebar-brand">
+        <a href="admin.html" class="d-flex align-items-center gap-2 text-decoration-none">
+          <img src="assets/images/lambang-surakarta.svg" alt="Logo" style="height:36px;">
+          <div>
+            <div class="fw-bold text-dark" style="font-size:15px;line-height:1.1;">CMS DINSOS</div>
+            <small class="text-muted" style="font-size:11px;">Kota Surakarta</small>
+          </div>
+        </a>
+      </div>
+
+      <ul class="frest-sidebar-menu">
+        <li><button type="button" class="frest-menu-btn active" data-mod="dashboard"><i class="bx bx-home-circle"></i><span>Dashboard Analitik</span></button></li>
+
+        <li class="frest-nav-header">Pengaturan Utama</li>
+        <li><button type="button" class="frest-menu-btn" data-mod="profil_website"><i class="bx bx-cog"></i><span>Profil &amp; Identitas Web</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="slide_show"><i class="bx bx-carousel"></i><span>Hero Slide Show</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="tupoksi"><i class="bx bx-task"></i><span>Tugas Pokok &amp; Fungsi</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="profil_menu"><i class="bx bx-buildings"></i><span>Halaman Profil &amp; SK</span></button></li>
+
+        <li class="frest-nav-header">Pelayanan &amp; Publikasi</li>
+        <li><button type="button" class="frest-menu-btn" data-mod="standar_pelayanan"><i class="bx bx-layer"></i><span>15 Layanan &amp; SOP</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="berita"><i class="bx bx-news"></i><span>Berita Terkini</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="pengumuman"><i class="bx bx-bullhorn"></i><span>Pengumuman</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="artikel"><i class="bx bx-book-content"></i><span>Artikel Sosial</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="agenda"><i class="bx bx-calendar-event"></i><span>Agenda Kegiatan</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="bank_data"><i class="bx bx-data"></i><span>Bank Data (e-SIK)</span></button></li>
+
+        <li class="frest-nav-header">Media, PPID &amp; Aduan</li>
+        <li><button type="button" class="frest-menu-btn" data-mod="galeri_gambar"><i class="bx bx-images"></i><span>Galeri Gambar</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="galeri_video"><i class="bx bxl-youtube"></i><span>Galeri Video</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="ppid_informasi"><i class="bx bx-folder-open"></i><span>Dokumen PPID &amp; DIP</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="ppid_pimpinan"><i class="bx bx-id-card"></i><span>Profil Pimpinan PPID</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="aduan_masyarakat"><i class="bx bx-message-rounded-dots"></i><span>Aduan Masyarakat</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="unduhan"><i class="bx bx-download"></i><span>Unduhan Dokumen</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="faq"><i class="bx bx-help-circle"></i><span>Manajemen FAQ</span></button></li>
+
+        <li class="frest-nav-header">Sistem &amp; Database</li>
+        <li><button type="button" class="frest-menu-btn" data-mod="pmks_psks"><i class="bx bx-pie-chart-alt-2"></i><span>Statistik SIM PMKS</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="users"><i class="bx bx-user-check"></i><span>Pengguna &amp; RBAC</span></button></li>
+        <li><button type="button" class="frest-menu-btn" data-mod="database_tools"><i class="bx bx-cloud-download"></i><span>Export SQL &amp; Backup</span></button></li>
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="frest-main">
+      <header class="frest-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-outline-secondary d-lg-none" id="sidebarMobileToggle" aria-label="Menu">
+            <i class="bx bx-menu fs-4"></i>
+          </button>
+          <span id="backendModeBadge" class="badge bg-success">Connecting...</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="text-end d-none d-sm-block">
+            <div class="fw-bold text-dark small" id="adminUserName">Administrator</div>
+            <div class="text-muted" style="font-size:11.5px;" id="adminUserRole">Superadmin</div>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-danger fw-semibold" id="btnAdminLogout">
+            <i class="bx bx-power-off me-1"></i>Logout
+          </button>
+        </div>
+      </header>
+
+      <main class="frest-content" id="adminContentMount"></main>
+    </div>
+  </div>
+
+  <!-- CRUD Modal -->
+  <div class="modal fade" id="crudFormModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <form class="modal-content border-0 shadow-lg" id="crudModalForm">
+        <div class="modal-header bg-light">
+          <h5 class="modal-title fw-bold" id="crudModalTitle">Form Data</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="crudModalFields"></div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+          <button type="submit" class="btn btn-frest-primary px-4"><i class="bx bx-save me-1"></i>Simpan ke Database</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="adminToastArea" class="position-fixed bottom-0 end-0 p-3" style="z-index:1090;"></div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chartjs/chart.umd.js"></script>
+  <script src="assets/js/seed-data.js"></script>
+  <script src="assets/js/db-engine.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

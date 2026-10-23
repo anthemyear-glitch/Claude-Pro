@@ -1,0 +1,20 @@
+# Apache / cPanel Clean URL Rewrite Rules (Mirrors CodeIgniter 3 on dinsos.surakarta.go.id)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Existing files and directories pass through directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Specific Portal, Auth, CMS, and Sub-Apps
+  RewriteRule ^layanan/?$ index.html [L]
+  RewriteRule ^login/?$ login.html [L]
+  RewriteRule ^(dashboard|backend|cms)/?$ admin.html [L]
+  RewriteRule ^pmks/?$ pmks.html [L]
+  RewriteRule ^research/?$ research.html [L]
+
+  # Main Public Website Routes (Bkro CodeIgniter Controllers)
+  RewriteRule ^(home|profil|standar_pelayanan|berita|pengumuman|artikel|agenda|bank_data|galeri|ppid|aduan|unduhan|faq|pencarian)(/.*)?$ home.html [L]
+</IfModule>

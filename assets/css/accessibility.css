@@ -1,0 +1,172 @@
+/* UserWay-Style Disabilitas & Accessibility Widget for Dinas Sosial Kota Surakarta */
+.uwy-trigger-btn {
+  position: fixed;
+  left: 20px;
+  bottom: 22px;
+  z-index: 9998;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #30296c, #1d4ed8);
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(48, 41, 108, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+.uwy-trigger-btn:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #f68820, #ff5e29);
+}
+.uwy-panel {
+  position: fixed;
+  left: 20px;
+  bottom: 84px;
+  width: 330px;
+  max-width: calc(100vw - 40px);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.24);
+  border: 1px solid #e2e8f0;
+  z-index: 9999;
+  display: none;
+  overflow: hidden;
+}
+.uwy-panel.open {
+  display: block;
+  animation: uwyFadeUp 0.22s ease-out;
+}
+@keyframes uwyFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.uwy-header {
+  background: linear-gradient(135deg, #30296c, #1e1b4b);
+  color: #ffffff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.uwy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 16px;
+}
+.uwy-opt-btn {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #30296c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.uwy-opt-btn i {
+  font-size: 22px;
+  color: #f68820;
+}
+.uwy-opt-btn:hover, .uwy-opt-btn.active {
+  background: #fff8f0;
+  border-color: #f68820;
+  color: #c2410c;
+}
+
+/* Accessibility Modifier Classes */
+html.a11y-contrast {
+  filter: contrast(135%) !important;
+}
+html.a11y-grayscale {
+  filter: grayscale(100%) !important;
+}
+html.a11y-links a {
+  text-decoration: underline !important;
+  outline: 2px dashed #f68820 !important;
+  outline-offset: 2px;
+}
+html.a11y-spacing body,
+html.a11y-spacing p,
+html.a11y-spacing li {
+  letter-spacing: 0.06em !important;
+  line-height: 1.9 !important;
+}
+html.a11y-readable body,
+html.a11y-readable h1,
+html.a11y-readable h2,
+html.a11y-readable h3,
+html.a11y-readable h4 {
+  font-family: Verdana, Tahoma, Arial, sans-serif !important;
+}
+.a11y-reading-guide {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: rgba(246, 136, 32, 0.55);
+  border-top: 2px solid #30296c;
+  border-bottom: 2px solid #30296c;
+  pointer-events: none;
+  z-index: 10000;
+  display: none;
+}
+html.a11y-guide .a11y-reading-guide {
+  display: block;
+}
+
+/* Floating Go-Top & WhatsApp */
+.dinsos-float-right {
+  position: fixed;
+  right: 20px;
+  bottom: 22px;
+  z-index: 9997;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.dinsos-wa-float {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.4);
+  transition: transform 0.25s ease;
+}
+.dinsos-wa-float:hover {
+  transform: translateY(-3px) scale(1.06);
+  color: #ffffff !important;
+}
+.dinsos-gotop-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: linear-gradient(to right, #ffa203, #ff5e29);
+  color: #ffffff;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 6px 18px rgba(246, 136, 32, 0.35);
+  cursor: pointer;
+}
+.dinsos-gotop-btn.visible {
+  display: flex;
+}

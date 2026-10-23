@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+  <rect width="800" height="520" rx="18" fill="#f9fbfe" stroke="#30296c" stroke-width="3"/>
+  <rect width="800" height="92" rx="18" fill="#30296c"/>
+  <rect y="58" width="800" height="34" fill="#30296c"/>
+  <text x="400" y="44" font-family="Barlow" font-size="23" font-weight="800" fill="#ffffff" text-anchor="middle">INDEKS KEPUASAN MASYARAKAT (IKM / SKM)</text>
+  <text x="400" y="72" font-family="Nunito" font-size="15" font-weight="700" fill="#ffa203" text-anchor="middle">DINAS SOSIAL KOTA SURAKARTA — TAHUN 2026</text>
+
+  <circle cx="230" cy="275" r="115" fill="#fff8f0" stroke="#f68820" stroke-width="10"/>
+  <text x="230" y="268" font-family="Barlow" font-size="56" font-weight="800" fill="#30296c" text-anchor="middle">89,64</text>
+  <text x="230" y="305" font-family="Barlow" font-size="20" font-weight="800" fill="#059669" text-anchor="middle">MUTU A (SANGAT BAIK)</text>
+
+  <rect x="395" y="150" width="350" height="250" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="425" y="190" font-family="Barlow" font-size="18" font-weight="800" fill="#30296c">RINGKASAN RESPONDEN SKM</text>
+  <text x="425" y="226" font-family="Nunito" font-size="14.5" fill="#475569">• Jumlah Responden: 412 Warga</text>
+  <text x="425" y="256" font-family="Nunito" font-size="14.5" fill="#475569">• Laki-laki: 194 | Perempuan: 218</text>
+  <text x="425" y="286" font-family="Nunito" font-size="14.5" fill="#475569">• Unsur Tertinggi: Biaya/Tarif (Gratis - 96,50)</text>
+  <text x="425" y="316" font-family="Nunito" font-size="14.5" fill="#475569">• Kompetensi &amp; Perilaku Petugas: 90,12</text>
+  <text x="425" y="346" font-family="Nunito" font-size="14.5" fill="#475569">• Penanganan Pengaduan: 89,80</text>
+  <text x="425" y="378" font-family="Nunito" font-size="13.5" font-weight="700" fill="#f68820">Terima kasih atas penilaian masyarakat Kota Surakarta!</text>
+  <text x="400" y="468" font-family="Nunito" font-size="14" font-weight="700" fill="#30296c" text-anchor="middle">Instrumen Realtime Bagian Organisasi Setda Kota Surakarta: appbagor.surakarta.go.id/sop/skm/instrumen/isi/25</text>
+</svg>

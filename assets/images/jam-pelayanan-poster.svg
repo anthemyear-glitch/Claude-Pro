@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520">
+  <rect width="800" height="520" rx="18" fill="#fff8f0" stroke="#f68820" stroke-width="3"/>
+  <rect width="800" height="95" rx="18" fill="#30296c"/>
+  <rect y="60" width="800" height="35" fill="#30296c"/>
+  <text x="400" y="46" font-family="Barlow" font-size="24" font-weight="800" fill="#ffffff" text-anchor="middle">PENYESUAIAN JAM PELAYANAN</text>
+  <text x="400" y="75" font-family="Nunito" font-size="15" font-weight="700" fill="#ffa203" text-anchor="middle">DINAS SOSIAL KOTA SURAKARTA TAHUN 2026</text>
+  <rect x="65" y="135" width="315" height="240" rx="14" fill="#ffffff" stroke="#30296c" stroke-width="2"/>
+  <rect x="65" y="135" width="315" height="52" rx="14" fill="#f68820"/>
+  <text x="222" y="168" font-family="Barlow" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">SENIN – KAMIS</text>
+  <text x="222" y="245" font-family="Barlow" font-size="34" font-weight="800" fill="#30296c" text-anchor="middle">07.30 – 15.30</text>
+  <text x="222" y="278" font-family="Nunito" font-size="16" font-weight="700" fill="#696687" text-anchor="middle">WIB</text>
+  <rect x="112" y="305" width="220" height="36" rx="18" fill="#ecfdf5"/>
+  <text x="222" y="328" font-family="Nunito" font-size="13.5" font-weight="800" fill="#059669" text-anchor="middle">TANPA JAM ISTIRAHAT</text>
+
+  <rect x="420" y="135" width="315" height="240" rx="14" fill="#ffffff" stroke="#30296c" stroke-width="2"/>
+  <rect x="420" y="135" width="315" height="52" rx="14" fill="#30296c"/>
+  <text x="577" y="168" font-family="Barlow" font-size="20" font-weight="800" fill="#ffa203" text-anchor="middle">HARI JUMAT</text>
+  <text x="577" y="245" font-family="Barlow" font-size="34" font-weight="800" fill="#30296c" text-anchor="middle">07.30 – 14.30</text>
+  <text x="577" y="278" font-family="Nunito" font-size="16" font-weight="700" fill="#696687" text-anchor="middle">WIB</text>
+  <rect x="457" y="305" width="240" height="36" rx="18" fill="#fef3c7"/>
+  <text x="577" y="328" font-family="Nunito" font-size="13" font-weight="800" fill="#b45309" text-anchor="middle">Istirahat: 11.30 – 13.00 WIB</text>
+
+  <text x="400" y="430" font-family="Barlow" font-size="20" font-weight="700" fill="#30296c" text-anchor="middle">"Menyapa dengan Senyum, Melayani dengan Ikhlas"</text>
+  <text x="400" y="462" font-family="Nunito" font-size="14" fill="#696687" text-anchor="middle">Jl. Slamet Riyadi No.368, Penumping, Kec. Laweyan, Kota Surakarta | WA: 0811-2811-919</text>
+</svg>

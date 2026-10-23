@@ -1,0 +1,1683 @@
+{
+  "meta": {
+    "version": "2026.10.23",
+    "engine": "DinsosSurakarta-FullStack-CMS",
+    "source_url": "https://dinsos.surakarta.go.id/",
+    "cms_architecture": "CodeIgniter 3 MVC + Bkro Bootstrap 5 (Frontend) + Frest Admin (Backend)",
+    "last_updated": "2026-10-23T00:00:00Z"
+  },
+  "tb_profil_website": {
+    "id": 1,
+    "nama_instansi": "Dinas Sosial Kota Surakarta",
+    "pemerintah": "Pemerintah Kota Surakarta",
+    "tagline_portal": "SUGENG RAWUH WONTEN",
+    "judul_portal": "Layanan Dinas Sosial Kota Surakarta",
+    "deskripsi_portal": "Pada Laman Website ini, terdapat 15 layanan yang terintegrasi pada Dinas Sosial Kota Surakarta.",
+    "motto_pelayanan": "Menyapa dengan Senyum , Melayani dengan Ikhlas",
+    "tagline_footer": "Dinsos Hadir Di Tengah Masyarakat Kota Surakarta",
+    "inovasi_unggulan": "PEKA (Penerbitan rEkomendasi Keringanan pAjak Kendaraan Bermotor)",
+    "visi_pelayanan": "Terwujudnya Kesejahteraan dan Pelayanan Prima Kepada Masyarakat di Bidang Sosial",
+    "misi_pelayanan": "Peningkatan Kualitas pelayanan Bagi Pemerlu Pelayanan Kesejahtraan Sosial Melalui Rehabilitasi Sosial, Pemberdayaan Sosial, Perlindungan dan Jaminan Sosial.",
+    "visi_ppid": "Terwujudnya kesejahteraan dan pelayanan prima melalui pembangunan di bidang sosial",
+    "misi_ppid": "Peningkatan kualitas pelayanan bagi penyandang masalah kesejahteraan sosial melalui rehabilitasi, jaminan sosial, pemberdayaan sosial dan perlindungan sosial",
+    "alamat": "Jl. Slamet Riyadi No.368, Penumping, Kec. Laweyan, Kota Surakarta, Jawa Tengah 57141",
+    "email": "dinsos@surakarta.go.id",
+    "telepon": "(0271) 734123",
+    "whatsapp": "+628112811919",
+    "whatsapp_clean": "628112811919",
+    "jam_pelayanan_header": "Senin – Kamis: 07:30 – 15:30 WIB (Tanpa Istirahat) | Jum'at: 07:30 – 14:30 WIB",
+    "jam_pelayanan_footer": "Senin – Kamis: 08:00 – 15:00 | Hari Jum'at: 08:00 – 11:00 (Update 2026: Senin–Kamis 07.30–15.30, Jumat 07.30–14.30)",
+    "skm_url": "https://appbagor.surakarta.go.id/sop/skm/instrumen/isi/25",
+    "skm_nilai_ikm": "89,64",
+    "skm_mutu": "A (Sangat Baik)",
+    "ulas_url": "https://ulas.surakarta.go.id/index.php?mod=complain&sub=frameForm&act=view&typ=html&layout=horizontal&oid=85",
+    "lapor_url": "https://surakarta.lapor.go.id/",
+    "sippn_url": "https://sippn.menpan.go.id/instansi/173742/pemerintah-kota-surakarta/dinas-sosial-kota-surakarta",
+    "moniks_url": "https://moniks.surakarta.go.id/",
+    "instagram_url": "https://www.instagram.com/dinsos_surakarta/",
+    "twitter_url": "https://twitter.com/dinsosjateng",
+    "facebook_url": "https://www.facebook.com/profile.php?id=100092218391317",
+    "youtube_url": "https://www.youtube.com/channel/UCRqfUK0smUc3LY4XCF_y68A",
+    "logo_dark": "assets/images/logo-dinsos-surakarta.svg",
+    "logo_light": "assets/images/logo-dinsos-white.svg",
+    "gedung_portal": "assets/images/portal/img-gedung-dinsos.png"
+  },
+  "tb_slide_show": [
+    {
+      "id": 1,
+      "urutan": 1,
+      "judul": "Dinas Sosial Kota Surakarta",
+      "subjudul": "Revaluasi Target Kinerja RPJMD Tahun 2021-2026 Dinas Sosial Kota Surakarta",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg",
+      "tautan": "#/profil/detail/7",
+      "aktif": 1
+    },
+    {
+      "id": 2,
+      "urutan": 2,
+      "judul": "Dinas Sosial Kota Surakarta",
+      "subjudul": "Pelaksanaan DKT (Diskusi Kelompok Terbatas) Tahun 2024",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "tautan": "#/standar_pelayanan",
+      "aktif": 1
+    },
+    {
+      "id": 3,
+      "urutan": 3,
+      "judul": "Dinas Sosial Kota Surakarta",
+      "subjudul": "Penandatanganan Berita Acara DKT",
+      "gambar": "assets/images/slider/slide-ba-3.jpg",
+      "tautan": "#/berita",
+      "aktif": 1
+    },
+    {
+      "id": 4,
+      "urutan": 4,
+      "judul": "Dinas Sosial Kota Surakarta",
+      "subjudul": "Dokumentasi Pelaksanaan DKT Tahun 2024 Dinas Sosial Kota Surakarta",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "tautan": "#/galeri/gambar",
+      "aktif": 1
+    },
+    {
+      "id": 5,
+      "urutan": 5,
+      "judul": "Dinas Sosial Kota Surakarta",
+      "subjudul": "Diskusi Kelompok Terbatas Dinas Sosial Kota Surakarta Tahun 2023",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg",
+      "tautan": "#/ppid/profil",
+      "aktif": 1
+    }
+  ],
+  "tb_tupoksi": [
+    {
+      "id": 1,
+      "urutan": 1,
+      "ikon": "bx bx-file-find",
+      "judul": "Perumusan Kebijakan terkait Pemberdayaan Sosial",
+      "deskripsi": "Penanganan warga migran korban tindak kekerasan, rehabilitasi sosial, perlindungan dan jaminan sosial, penanganan bencana, pemeliharaan taman makam pahlawan."
+    },
+    {
+      "id": 2,
+      "urutan": 2,
+      "ikon": "bx bx-buildings",
+      "judul": "Penyelenggaraan urusan pemerintahan dan pelayanan umum terkait pemberdayaan sosial",
+      "deskripsi": "Penyelenggaraan urusan pemerintahan dan pelayanan umum terkait pemberdayaan sosial, penanganan warga migran korban tindak kekerasan, rehabilitasi sosial, perlindungan dan jaminan sosial, penanganan bencana, pemeliharaan taman makam pahlawan."
+    },
+    {
+      "id": 3,
+      "urutan": 3,
+      "ikon": "bx bx-group",
+      "judul": "Pembinaan dan pelaksanaan tugas",
+      "deskripsi": "Pembinaan dan pelaksanaan tugas terkait pemberdayaan sosial, penanganan warga migran korban tindak kekerasan, rehabilitasi sosial, perlindungan dan jaminan sosial, penanganan bencana, pemeliharaan taman makam pahlawan."
+    },
+    {
+      "id": 4,
+      "urutan": 4,
+      "ikon": "bx bx-line-chart",
+      "judul": "Pemantauan, evaluasi dan pelaporan",
+      "deskripsi": "Pemantauan, evaluasi dan pelaporan terkait pemberdayaan sosial, penanganan warga migran korban tindak kekerasan, rehabilitasi sosial, perlindungan dan jaminan sosial, penanganan bencana, pemeliharaan taman makam pahlawan;"
+    },
+    {
+      "id": 5,
+      "urutan": 5,
+      "ikon": "bx bx-briefcase-alt-2",
+      "judul": "Pelaksanaan kesekretariatan",
+      "deskripsi": "Pelaksanaan kesekretariatan dinas terkait perencanaan dan penganggaran, administrasi dan umum serta organisasi dan kepegawaian."
+    },
+    {
+      "id": 6,
+      "urutan": 6,
+      "ikon": "bx bx-award",
+      "judul": "Pelaksanaan tugas lain",
+      "deskripsi": "Pelaksanaan tugas lain yang diberikan oleh Walikota sesuai dengan tugas dan fungsinya."
+    }
+  ],
+  "tb_profil": [
+    {
+      "id": 7,
+      "slug": "profil-kami",
+      "urutan": 1,
+      "judul": "Profil Kami",
+      "gambar": "assets/images/portal/img-gedung-dinsos.png",
+      "konten": "<p>Pembangunan bidang kesejahteraan sosial sebagai bagian tak terpisahkan dari pembangunan nasional telah mengambil peran aktif dalam meningkatkan kualitas hidup masyarakat untuk mewujudkan kehidupan yang layak dan bermartabat, memenuhi hak kebutuhan dasar yang diselenggarakan melalui pelayanan dan pengembangan kesejahteraan sosial secara terprogram, terarah, dan berkelanjutan sebagaimana diamanatkan oleh Undang-Undang RI Nomor 11 Tahun 2009 tentang Kesejahteraan Sosial Provinsi Jawa Tengah dengan fokus pada <strong>7 (tujuh) permasalahan sosial</strong> yakni:</p>\n        <ol>\n          <li>Kemiskinan</li>\n          <li>Keterlantaran</li>\n          <li>Kecacatan / Disabilitas</li>\n          <li>Ketunaan Sosial dan Penyimpangan Perilaku</li>\n          <li>Keterpencilan</li>\n          <li>Korban Bencana Alam maupun Sosial</li>\n          <li>Tindak Korban Kekerasan dan Pekerja Migran, baik yang bersifat primer maupun akibat/dampak non sosial.</li>\n        </ol>\n        <p>Dinas Sosial Kota Surakarta mempunyai tugas pokok menyelenggarakan urusan pemerintahan daerah bidang sosial berdasarkan asas otonomi daerah dan tugas pembantuan guna mendukung visi Kota Surakarta yang Waras, Wasis, Wareg, Mapan, dan Papan (3WMP).</p>"
+    },
+    {
+      "id": 8,
+      "slug": "visi-dan-misi",
+      "urutan": 2,
+      "judul": "Visi dan Misi",
+      "gambar": "assets/images/maklumat-pelayanan.svg",
+      "konten": "<div class=\"p-4 rounded-3 mb-4\" style=\"background:#fff8f0;border-left:5px solid #f68820;\">\n          <h4 class=\"mb-2\">VISI PELAYANAN :</h4>\n          <p class=\"fst-italic fw-bold mb-0\" style=\"color:#30296c;font-size:18px;\">\"TERWUJUDNYA KESEJAHTERAAN SOSIAL DAN PELAYANAN PRIMA KEPADA MASYARAKAT DI BIDANG SOSIAL.\"</p>\n        </div>\n        <div class=\"p-4 rounded-3\" style=\"background:#f0f9ff;border-left:5px solid #30296c;\">\n          <h4 class=\"mb-2\">MISI PELAYANAN :</h4>\n          <p class=\"fst-italic fw-bold mb-0\" style=\"color:#30296c;font-size:18px;\">\"PENINGKATAN KUALITAS PELAYANAN BAGI PEMERLU PELAYANAN KESEJAHTERAAN SOSIAL MELALUI REHABILITASI SOSIAL, PEMBERDAYAAN SOSIAL, PERLINDUNGAN DAN JAMINAN SOSIAL.\"</p>\n        </div>"
+    },
+    {
+      "id": 9,
+      "slug": "visi-dan-misi-layanan",
+      "urutan": 3,
+      "judul": "Visi dan Misi Layanan",
+      "gambar": "",
+      "konten": "<p>Seluruh penyelenggaraan pelayanan publik pada Loket Terpadu (Front Office) Dinas Sosial Kota Surakarta berpedoman pada prinsip <strong>5S (Senyum, Salam, Sapa, Sopan, dan Santun)</strong> dengan target layanan cepat, transparan, akuntabel, ramah kelompok rentan/disabilitas, dan <strong>100% Tanpa Biaya (Gratis)</strong>.</p>"
+    },
+    {
+      "id": 10,
+      "slug": "susunan-organisasi",
+      "urutan": 4,
+      "judul": "Susunan Organisasi",
+      "gambar": "",
+      "konten": "<p><strong>Susunan Organisasi Dinas Sosial Kota Surakarta terdiri dari:</strong></p>\n        <ul>\n          <li><strong>a. Kepala Dinas:</strong> Drs. Samsu Tri Wahyudin, M.Si.</li>\n          <li><strong>b. Sekretariat</strong> (Margono, S.STP, M.Si), terdiri dari:\n            <ol>\n              <li>Subbagian Perencanaan dan Penganggaran;</li>\n              <li>Subbagian Administrasi dan Umum;</li>\n              <li>Subbagian Kepegawaian dan Organisasi.</li>\n            </ol>\n          </li>\n          <li><strong>c. Bidang Pemberdayaan Sosial, Kepahlawanan, dan Penanganan Bencana</strong>, terdiri dari:\n            <ol>\n              <li>Seksi Pemberdayaan Sosial;</li>\n              <li>Seksi Pengelolaan Taman Makam Pahlawan dan Penanganan Bencana;</li>\n            </ol>\n          </li>\n          <li><strong>d. Bidang Rehabilitasi Sosial</strong>, terdiri dari:\n            <ol>\n              <li>Seksi Rehabilitasi Sosial Dasar;</li>\n              <li>Seksi Rehabilitasi Sosial PMKS Lainnya;</li>\n            </ol>\n          </li>\n          <li><strong>e. Bidang Penanganan Fakir Miskin dan Perlindungan Sosial</strong>, terdiri dari:\n            <ol>\n              <li>Seksi Pendataan dan Pengelolaan Data Kemiskinan;</li>\n              <li>Seksi Penanganan Fakir Miskin dan Anak Terlantar;</li>\n              <li>Seksi Perlindungan Sosial;</li>\n            </ol>\n          </li>\n          <li><strong>f. UPT (Rumah Singgah &amp; SLRT Puskesos);</strong> dan</li>\n          <li><strong>g. Kelompok Jabatan Fungsional</strong> (Pekerja Sosial &amp; Penyuluh Sosial).</li>\n        </ul>"
+    },
+    {
+      "id": 11,
+      "slug": "bagan-organisasi",
+      "urutan": 5,
+      "judul": "Bagan Organisasi",
+      "gambar": "assets/images/bagan-organisasi.svg",
+      "konten": "<p>Bagan Struktur Organisasi Dinas Sosial Pemerintah Kota Surakarta sesuai Peraturan Wali Kota Surakarta tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Serta Tata Kerja Dinas Sosial Kota Surakarta.</p>"
+    },
+    {
+      "id": 12,
+      "slug": "rekognisasi",
+      "urutan": 6,
+      "judul": "Penghargaan & Rekognisasi",
+      "gambar": "assets/images/skm-poster.svg",
+      "konten": "<ul>\n          <li><strong>Penghargaan Penilaian Maladministrasi Pelayanan Publik Ombudsman RI Tahun 2026</strong> — Kategori Kepatuhan Tinggi / Opini Kualitas Tertinggi.</li>\n          <li><strong>Juara 1 Gelar Inovasi Perangkat Daerah Kota Surakarta Tahun 2024</strong> — Inovasi <em>\"SIAGA RESCUE\"</em> Dinas Sosial Kota Surakarta.</li>\n          <li><strong>Juara III ASN Berprestasi Kota Surakarta Tahun 2024</strong> — Inovasi Pelayanan Sosial Terpadu.</li>\n          <li><strong>Predikat Mutu Pelayanan A (Sangat Baik — IKM 89,64)</strong> pada Survei Kepuasan Masyarakat (SKM) Tahun 2025–2026.</li>\n        </ul>"
+    },
+    {
+      "id": 13,
+      "slug": "motto-pelayanan",
+      "urutan": 7,
+      "judul": "Motto Pelayanan",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "konten": "<div class=\"text-center p-5 rounded-4\" style=\"background:linear-gradient(135deg,#30296c,#1e1b4b);color:#fff;\">\n          <span class=\"badge bg-warning text-dark mb-3 px-3 py-2\">MOTTO PELAYANAN DINSOS SURAKARTA</span>\n          <h2 class=\"text-white fw-bold\">\"Menyapa dengan Senyum , Melayani dengan Ikhlas\"</h2>\n          <p class=\"mt-3 mb-0 text-light\">Selalu Ada, Bersahaja, Bangga Melayani Masyarakat Kota Surakarta.</p>\n        </div>"
+    },
+    {
+      "id": 14,
+      "slug": "renstra-dinsos-2021-2026",
+      "urutan": 8,
+      "judul": "RENSTRA DINSOS 2021-2026",
+      "gambar": "",
+      "konten": "<p>Dokumen Rencana Strategis (RENSTRA) Dinas Sosial Kota Surakarta Tahun 2021–2026 memuat tujuan, sasaran, strategi, kebijakan, serta indikator kinerja utama penanganan Pemerlu Pelayanan Kesejahteraan Sosial (PPKS) dan penguatan Potensi dan Sumber Kesejahteraan Sosial (PSKS) di Kota Surakarta.</p>\n        <div class=\"alert alert-info\"><strong>Dokumen Terlampir:</strong> Keputusan Kepala Dinas Sosial Kota Surakarta tentang Revaluasi Target Kinerja RPJMD &amp; Renstra Perubahan Tahun 2021–2026.</div>"
+    },
+    {
+      "id": 15,
+      "slug": "maklumat-pelayanan-2026",
+      "urutan": 9,
+      "judul": "Maklumat Pelayanan 2026",
+      "gambar": "assets/images/maklumat-pelayanan.svg",
+      "konten": "<p>Maklumat Pelayanan Dinas Sosial Kota Surakarta Tahun 2026 ditetapkan melalui Surat Keputusan Kepala Dinas Sosial Kota Surakarta tentang Penetapan Maklumat Pelayanan, Visi, dan Misi Pelayanan Tahun 2026 sebagai wujud komitmen penyelenggaraan pelayanan publik berkualitas.</p>"
+    },
+    {
+      "id": 16,
+      "slug": "sk-standar-pelayanan-2026",
+      "urutan": 10,
+      "judul": "SK STANDAR PELAYANAN DINSOS 2026",
+      "gambar": "",
+      "konten": "<p>Surat Keputusan Kepala Dinas Sosial Kota Surakarta Tahun 2026 tentang Penetapan <strong>15 Standar Pelayanan Publik</strong> pada Dinas Sosial Kota Surakarta yang meliputi komponen Service Delivery dan Manufacturing sesuai PermenPANRB Nomor 15 Tahun 2014.</p>"
+    },
+    {
+      "id": 17,
+      "slug": "sk-kompensasi-pelayanan-2026",
+      "urutan": 11,
+      "judul": "SK KOMPENSASI PELAYANAN DINSOS 2026",
+      "gambar": "",
+      "konten": "<p>Surat Keputusan Kepala Dinas Sosial Kota Surakarta Tahun 2026 tentang Pemberian Kompensasi Pelayanan Publik apabila layanan tidak sesuai dengan Standar Operasional Prosedur (SOP) dan jangka waktu penyelesaian yang telah ditetapkan.</p>"
+    },
+    {
+      "id": 18,
+      "slug": "sk-front-office-2026",
+      "urutan": 12,
+      "judul": "SK FRONT OFFICE 2026",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "konten": "<p>Surat Keputusan Kepala Dinas Sosial Kota Surakarta Tahun 2026 tentang Penunjukan Petugas Loket Pelayanan Terpadu (Front Office) dan Pendampingan Layanan Ramah Kelompok Rentan/Disabilitas.</p>"
+    },
+    {
+      "id": 19,
+      "slug": "sk-jam-pelayanan-2026",
+      "urutan": 13,
+      "judul": "SK JAM PELAYANAN DINSOS 2026",
+      "gambar": "assets/images/jam-pelayanan-poster.svg",
+      "konten": "<p>Surat Keputusan Kepala Dinas Sosial Kota Surakarta Tahun 2026 tentang Penyesuaian Jam Pelayanan Publik: <strong>Senin–Kamis pukul 07.30–15.30 WIB (Tanpa Jam Istirahat)</strong> dan <strong>Jumat pukul 07.30–14.30 WIB (Istirahat 11.30–13.00 WIB)</strong>.</p>"
+    },
+    {
+      "id": 20,
+      "slug": "sk-kode-etik-2026",
+      "urutan": 14,
+      "judul": "SK KODE ETIK DINSOS 2026",
+      "gambar": "",
+      "konten": "<p>Surat Keputusan Kepala Dinas Sosial Kota Surakarta Tahun 2026 tentang Kode Etik dan Kode Perilaku Pelaksana Pelayanan Publik BerAKHLAK (Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, dan Kolaboratif) serta Budaya Kerja 5S.</p>"
+    }
+  ],
+  "ref_bidang": [
+    {
+      "id": 1,
+      "nama_bidang": "Bidang Pemberdayaan Sosial",
+      "slug": "pemberdayaan-sosial",
+      "deskripsi": "Seksi Pemberdayaan Sosial serta Seksi Pengelolaan Taman Makam Pahlawan (TMP) Kusuma Bhakti dan Penanganan Bencana."
+    },
+    {
+      "id": 2,
+      "nama_bidang": "Bidang Rehabilitasi Sosial",
+      "slug": "rehabilitasi-sosial",
+      "deskripsi": "Seksi Rehabilitasi Sosial Dasar dan Seksi Rehabilitasi Sosial PMKS Lainnya (Disabilitas, Anak, Lansia, Tuna Sosial)."
+    },
+    {
+      "id": 3,
+      "nama_bidang": "Bidang Perlindungan Dan Jaminan Sosial",
+      "slug": "perlindungan-jaminan-sosial",
+      "deskripsi": "Pendataan & Pengelolaan Data Kemiskinan (DTKS/DTSEN/E-SIK), Penanganan Fakir Miskin, PKH, BPNT/BSP, PBI JKN-KIS."
+    },
+    {
+      "id": 4,
+      "nama_bidang": "Sekretariat / Bidang Lainnya",
+      "slug": "sekretariat",
+      "deskripsi": "Perencanaan & Penganggaran, Administrasi Umum, serta Kepegawaian & Organisasi Dinas Sosial Kota Surakarta."
+    }
+  ],
+  "tb_standar_pelayanan": [
+    {
+      "id": 1,
+      "layanan_id": 24,
+      "bidang_id": 2,
+      "urutan_portal": 1,
+      "ikon": "bx bx-handicap",
+      "nama_portal": "Layanan Penyediaan Alat Bantu",
+      "nama": "Penyediaan Alat Bantu",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "persyaratan": [
+        "Surat Permohonan kepada Walikota Surakarta yang ditandatangani Penerima Manfaat (PM) tanpa meterai",
+        "Terdaftar dalam SK Gakin / DTKS / Surat Keterangan Tidak Mampu (SKTM) dari Kelurahan",
+        "Fotokopi Kartu Tanda Penduduk (KTP) Penerima Manfaat",
+        "Fotokopi Kartu Keluarga (KK) / Akta Kelahiran",
+        "Laporan Sosial Hasil Assessment Pekerja Sosial",
+        "Surat Keterangan Domisili dari Kelurahan",
+        "Foto Berwarna Seluruh Badan ukuran 4R"
+      ],
+      "prosedur": [
+        "Pemohon mengajukan Surat Permohonan beserta berkas persyaratan ke Loket Layanan Dinas Sosial",
+        "Petugas memverifikasi dan melakukan assessment lapangan terhadap calon penerima manfaat",
+        "Petugas membuat Laporan Hasil Assessment",
+        "Penyusunan Rencana Anggaran Belanja Barang dan Jasa / usulan Sentra Kemensos",
+        "Penetapan SK Penerima Alat Bantu",
+        "Pengadaan dan Penyerahan Alat Bantu disertai penandatanganan Berita Acara Penyerahan Barang"
+      ],
+      "waktu": "15 Menit Verifikasi Berkas (Realisasi Pengadaan maks. 6 Bulan)",
+      "biaya": "Gratis",
+      "produk": "Alat Bantu Mobilitas Disabilitas / Lansia (Kursi Roda, Kruk, Alat Bantu Dengar, Tongkat Netra)",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123 | Email: dinsos@surakarta.go.id"
+    },
+    {
+      "id": 2,
+      "layanan_id": 27,
+      "bidang_id": 2,
+      "urutan_portal": 2,
+      "ikon": "bx bx-happy-heart-eyes",
+      "nama_portal": "Layanan Kesejahteraan Sosial Anak",
+      "nama": "Layanan Kesejahteraan Sosial Anak",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Fotokopi KTP Pelapor / Orang Tua / Wali",
+        "Fotokopi Kartu Keluarga (KK) dan Akta Kelahiran Anak",
+        "Surat Pengantar dari Kelurahan setempat / Laporan Kepolisian (khusus kasus penelantaran)",
+        "Dokumen pendukung kondisi kerentanan sosial anak"
+      ],
+      "prosedur": [
+        "Pelapor menyerahkan berkas permohonan ke Loket Pelayanan / PLKSAI",
+        "Petugas Sakti Peksos melakukan penjangkauan dan asesmen komprehensif anak",
+        "Konferensi kasus dan penentuan rencana intervensi kesejahteraan sosial anak",
+        "Pendampingan sosial, psikososial, atau rujukan layanan perlindungan anak"
+      ],
+      "waktu": "1 – 3 Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Pendampingan, Rekomendasi & Layanan Kesejahteraan Sosial Anak Integratif (PLKSAI)",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 3,
+      "layanan_id": 26,
+      "bidang_id": 2,
+      "urutan_portal": 3,
+      "ikon": "bx bx-heart-circle",
+      "nama_portal": "Layanan Rehabilitasi Sosial Dasar",
+      "nama": "Rehabilitasi Sosial Dasar",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Surat Pengantar / Berita Acara Penyerahan dari Kelurahan / Satpol PP / Kepolisian / Relawan",
+        "Fotokopi KTP dan KK (apabila memiliki identitas) atau Perekaman Biometrik Dukcapil bagi PPKS tanpa identitas",
+        "Surat Keterangan Sehat / Hasil Pemeriksaan Medis Awal (bila diperlukan rujukan panti)"
+      ],
+      "prosedur": [
+        "PPKS diterima di Loket Layanan / Rumah Singgah (Rumsing) Dinas Sosial Kota Surakarta",
+        "Petugas membuat Berita Acara penerimaan PPKS dan melakukan asesmen awal",
+        "Layanan masa singgah 1–7 hari di Rumah Singgah untuk pemenuhan kebutuhan dasar",
+        "Penelusuran keluarga untuk reunifikasi atau rujukan ke Panti Provinsi Jawa Tengah / Sentra Kemensos"
+      ],
+      "waktu": "1 – 7 Hari Masa Singgah",
+      "biaya": "Gratis",
+      "produk": "Layanan Rumah Singgah, Reunifikasi Keluarga, Pemulangan Orang Terlantar, & Rujukan Panti",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 4,
+      "layanan_id": 28,
+      "bidang_id": 1,
+      "urutan_portal": 4,
+      "ikon": "bx bx-certification",
+      "nama_portal": "Layanan Penerbitan Tanda Daftar LKS/Orsos",
+      "nama": "Penerbitan Tanda Daftar LKS/Orsos",
+      "gambar": "assets/images/slider/slide-ba-3.jpg",
+      "persyaratan": [
+        "Surat Permohonan Keterangan Terdaftar LKS kepada Kepala Dinas Sosial Kota Surakarta",
+        "Anggaran Dasar dan Anggaran Rumah Tangga (AD/ART)",
+        "Fotokopi Akta Notaris Pendirian Yayasan/Lembaga",
+        "Fotokopi Surat Pengesahan Kemenkumham RI",
+        "Fotokopi KTP Ketua, Sekretaris, dan Bendahara",
+        "Fotokopi NPWP Lembaga",
+        "Surat Keterangan Domisili dari Kelurahan setempat",
+        "Susunan Pengurus LKS dan Data Binaan",
+        "Foto Sekretariat, Papan Nama, dan Dokumentasi Kegiatan",
+        "Surat Rekomendasi dari LKKS Kota Surakarta"
+      ],
+      "prosedur": [
+        "Pengurus LKS menyerahkan berkas permohonan lengkap ke Loket Layanan Dinas Sosial",
+        "Petugas Bidang Pemberdayaan Sosial memverifikasi kelengkapan dokumen administrasi",
+        "Tim melakukan peninjauan lapangan (visitasi) ke sekretariat dan lokasi kegiatan LKS",
+        "Penerbitan dan penandatanganan Sertifikat Tanda Daftar LKS/Orsos oleh Kepala Dinas Sosial"
+      ],
+      "waktu": "3 – 5 Hari Kerja (termasuk visitasi lapangan)",
+      "biaya": "Gratis",
+      "produk": "Surat Tanda Daftar Lembaga Kesejahteraan Sosial (LKS) / Organisasi Sosial",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 5,
+      "layanan_id": 33,
+      "bidang_id": 1,
+      "urutan_portal": 5,
+      "ikon": "bx bx-car",
+      "nama_portal": "Layanan Penerbitan Rekomendasi Keringanan Pajak Kendaraan Bermotor",
+      "nama": "Penerbitan Rekomendasi Keringanan Pajak Kendaraan Bermotor",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Surat Permohonan resmi dari Yayasan / LKS / Lembaga Sosial Keagamaan",
+        "Fotokopi STNK Kendaraan Operasional Sosial/Keagamaan",
+        "Fotokopi BPKB Kendaraan",
+        "Surat Rekomendasi dari Kementerian Agama (Khusus Masjid / Gereja / Lembaga Keagamaan)"
+      ],
+      "prosedur": [
+        "Pemohon mengajukan Surat Permohonan beserta lampiran melalui layanan PEKA / Loket Dinsos",
+        "Petugas memverifikasi Permohonan Keringanan Pajak Kendaraan Bermotor",
+        "Pencetakan dan Pengesahan Surat Rekomendasi",
+        "Penyerahan Surat Rekomendasi kepada Pemohon untuk pengurusan ke UPPD Samsat"
+      ],
+      "waktu": "1 Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Surat Rekomendasi Keringanan Pajak Kendaraan Bermotor (Inovasi PEKA)",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 6,
+      "layanan_id": 29,
+      "bidang_id": 1,
+      "urutan_portal": 6,
+      "ikon": "bx bx-donate-heart",
+      "nama_portal": "Layanan Penerbitan Rekomendasi Bantuan Sosial/Hibah Bagi LKS",
+      "nama": "Penerbitan Rekomendasi Bantuan Sosial/Hibah Bagi LKS",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg",
+      "persyaratan": [
+        "Surat Permohonan Rekomendasi Hibah/Bansos kepada Kepala Dinas Sosial Kota Surakarta",
+        "Proposal Kegiatan dan Rencana Anggaran Biaya (RAB)",
+        "Fotokopi Tanda Daftar LKS yang masih berlaku",
+        "Fotokopi KTP Pengurus dan Rekening Bank atas nama Lembaga"
+      ],
+      "prosedur": [
+        "LKS mengajukan berkas permohonan dan proposal kegiatan",
+        "Verifikasi kelayakan administrasi dan teknis oleh Bidang Pemberdayaan Sosial",
+        "Visitasi / evaluasi kegiatan LKS apabila diperlukan",
+        "Penerbitan Surat Rekomendasi Bantuan Sosial / Hibah bagi LKS"
+      ],
+      "waktu": "2 Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Surat Rekomendasi Bantuan Sosial / Hibah Bagi LKS",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 7,
+      "layanan_id": 31,
+      "bidang_id": 1,
+      "urutan_portal": 7,
+      "ikon": "bx bx-Bookmark-heart",
+      "nama_portal": "Layanan Pemberian Izin Ziarah ke TMP",
+      "nama": "Pemberian Izin Ziarah ke TMP",
+      "gambar": "assets/images/portal/img-gedung-dinsos.png",
+      "persyaratan": [
+        "Surat Permohonan Izin Ziarah Rombongan / Instansi ditujukan ke Kepala Dinas Sosial Kota Surakarta",
+        "Mencantumkan hari, tanggal, waktu pelaksanaan, jumlah peserta, dan penanggung jawab kegiatan"
+      ],
+      "prosedur": [
+        "Pemohon menyerahkan surat permohonan ke Loket Layanan Dinas Sosial",
+        "Petugas mengecek jadwal ziarah Taman Makam Pahlawan (TMP) Kusuma Bhakti Jurug",
+        "Penerbitan Surat Izin Ziarah dan koordinasi petugas pemandu TMP Kusuma Bhakti"
+      ],
+      "waktu": "1 Hari Kerja (30 Menit apabila berkas lengkap)",
+      "biaya": "Gratis",
+      "produk": "Surat Pemberian Izin Ziarah ke Taman Makam Pahlawan (TMP) Kusuma Bhakti",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 8,
+      "layanan_id": 30,
+      "bidang_id": 1,
+      "urutan_portal": 8,
+      "ikon": "bx bx-medal",
+      "nama_portal": "Layanan Pemakaman TMP",
+      "nama": "Pelayanan Pemakaman TMP",
+      "gambar": "assets/images/portal/img-gedung-dinsos.png",
+      "persyaratan": [
+        "Surat Permohonan dari Ahli Waris / Instansi Militer/Sipil terkait",
+        "Fotokopi Piagam Tanda Kehormatan Bintang Gerilya / Bintang Republik / SK Pahlawan/Pejuang yang memenuhi syarat pemakaman TMP",
+        "Surat Keterangan Kematian dari Rumah Sakit / Kelurahan",
+        "Fotokopi KTP Almarhum dan Ahli Waris"
+      ],
+      "prosedur": [
+        "Ahli waris / instansi menyerahkan berkas persyaratan ke Dinas Sosial",
+        "Verifikasi keabsahan tanda jasa/kehormatan bersama Kodim/Garnisun dan Bagian Kesra",
+        "Penyiapan petak makam dan fasilitasi upacara pemakaman di TMP Kusuma Bhakti"
+      ],
+      "waktu": "1 Hari (Layanan Segera / Serta Merta)",
+      "biaya": "Gratis",
+      "produk": "Fasilitasi Pelayanan Pemakaman di TMP Kusuma Bhakti Surakarta",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 9,
+      "layanan_id": 32,
+      "bidang_id": 1,
+      "urutan_portal": 9,
+      "ikon": "bx bx-first-aid",
+      "nama_portal": "Layanan Perlindungan Sosial Kebencanaan",
+      "nama": "Perlindungan Sosial Kebencanaan",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "persyaratan": [
+        "Surat Permohonan / Nota Dinas dari Kelurahan lokasi kejadian bencana",
+        "Fotokopi Kartu Keluarga (KK) dan KTP warga yang terdampak",
+        "Foto dokumentasi kejadian / rumah terdampak bencana",
+        "Laporan Hasil Assessment Cepat dari TAGANA Kota Surakarta"
+      ],
+      "prosedur": [
+        "Laporan kejadian bencana diterima dari Kelurahan / BPBD / Masyarakat",
+        "Tim TAGANA Dinas Sosial turun ke lokasi melakukan kaji cepat (assessment)",
+        "Penyiapan logistik permakanan, sandang, terpal, kasur, atau dapur umum",
+        "Pendistribusian bantuan sosial kebencanaan kepada korban terdampak"
+      ],
+      "waktu": "1 x 24 Jam (Tanggap Darurat)",
+      "biaya": "Gratis",
+      "produk": "Bantuan Logistik Permakanan, Sandang, Family Kit & Santunan Sosial Kebencanaan",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 10,
+      "layanan_id": 34,
+      "bidang_id": 3,
+      "urutan_portal": 10,
+      "ikon": "bx bx-package",
+      "nama_portal": "Layanan Pengajuan Sembako Karantina Mandiri (Isoman)",
+      "nama": "Pengajuan Sembako Karantina Mandiri (Isoman)",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "persyaratan": [
+        "Fotokopi KTP dan Kartu Keluarga (KK) warga Kota Surakarta",
+        "Surat Keterangan Puskesmas / Kelurahan terkait pelaksanaan Karantina Mandiri / Kondisi Kedaruratan Kesehatan",
+        "Pengajuan kolektif melalui Kelurahan / Puskesos setempat"
+      ],
+      "prosedur": [
+        "Kelurahan / Pemohon menyampaikan data warga yang menjalani karantina mandiri",
+        "Petugas memverifikasi data kependudukan dan kerentanan sosial",
+        "Penyiapan paket sembako bantuan pangan darurat",
+        "Penyaluran bantuan melalui Kelurahan / Satgas untuk diteruskan ke rumah warga"
+      ],
+      "waktu": "1 – 2 Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Paket Bantuan Sembako / Pangan Darurat Karantina Mandiri",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 11,
+      "layanan_id": 20,
+      "bidang_id": 3,
+      "urutan_portal": 11,
+      "ikon": "bx bx-home-heart",
+      "nama_portal": "Layanan Bansos PKH",
+      "nama": "Bansos (Bantuan Sosial) PKH ( Program Keluarga Harapan)",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Fotokopi Kartu Tanda Penduduk (KTP)",
+        "Fotokopi Kartu Keluarga (KK)"
+      ],
+      "prosedur": [
+        "Pemohon menyerahkan berkas persyaratan ke Loket Layanan",
+        "Petugas mengecek apakah yang bersangkutan masuk di dalam Sistem E-SIK",
+        "Petugas mengecek apakah yang bersangkutan masuk DTKS/DTSEN di dalam Sistem SIKS-NG",
+        "Petugas mengecek apakah yang bersangkutan masuk komponen penerima PKH atau tidak",
+        "Menjelaskan kepada yang bersangkutan sesuai kebutuhan dan koordinasi Pendamping PKH Kecamatan"
+      ],
+      "waktu": "10 Menit / Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Pendampingan dan Verifikasi Validasi (Verval) Data PKH",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123 | Email: dinsos@surakarta.go.id"
+    },
+    {
+      "id": 12,
+      "layanan_id": 21,
+      "bidang_id": 3,
+      "urutan_portal": 12,
+      "ikon": "bx bx-basket",
+      "nama_portal": "Layanan Bansos BPNT / BSP",
+      "nama": "Bansos (Bantuan Sosial) BPNT (Bantuan Pangan Non Tunai) / BSP (Bantuan Sosial Pangan)",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "persyaratan": [
+        "Fotokopi Kartu Tanda Penduduk (KTP)",
+        "Fotokopi Kartu Keluarga (KK)"
+      ],
+      "prosedur": [
+        "Pemohon menyerahkan berkas persyaratan",
+        "Petugas mengecek apakah yang bersangkutan masuk di dalam Sistem E-SIK",
+        "Petugas mengecek apakah yang bersangkutan masuk DTKS di dalam Sistem SIKS-NG",
+        "Petugas mengecek yang bersangkutan masuk penerima BPNT / Sembako atau tidak",
+        "Menjelaskan kepada yang bersangkutan sesuai kebutuhan yang diinginkan"
+      ],
+      "waktu": "10 Menit / Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Pendampingan dan Verval Data BPNT / Bantuan Sosial Pangan (BSP)",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123 | Email: dinsos@surakarta.go.id"
+    },
+    {
+      "id": 13,
+      "layanan_id": 19,
+      "bidang_id": 3,
+      "urutan_portal": 13,
+      "ikon": "bx bx-id-card",
+      "nama_portal": "Layanan Pemberian Informasi mengenai Pengajuan GAKIN",
+      "nama": "Pemberian Informasi mengenai Pengajuan GAKIN",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Surat Pengantar RT/RW untuk pengajuan Home Visit di Kelurahan",
+        "Fotokopi Kartu Tanda Penduduk (KTP) Kepala Keluarga",
+        "Fotokopi Kartu Keluarga (KK)"
+      ],
+      "prosedur": [
+        "Pemohon berkonsultasi ke Loket Layanan Dinas Sosial atau Puskesos Kelurahan",
+        "Petugas mengecek status kepesertaan keluarga pada database E-SIK Kota Surakarta",
+        "Memberikan informasi lengkap mekanisme pengajuan Home Visit GAKIN melalui Kelurahan",
+        "Verifikasi lapangan (Ground Check) oleh petugas Kelurahan & penetapan E-SIK"
+      ],
+      "waktu": "10 Menit / Hari Kerja (Layanan Informasi Loket)",
+      "biaya": "Gratis",
+      "produk": "Informasi Status E-SIK & Panduan Pengajuan Keluarga Miskin (GAKIN)",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123"
+    },
+    {
+      "id": 14,
+      "layanan_id": 22,
+      "bidang_id": 3,
+      "urutan_portal": 14,
+      "ikon": "bx bx-search-alt-2",
+      "nama_portal": "Layanan Pengecekan status DTKS beserta Bantuan Sosial dari Pemerintah Pusat",
+      "nama": "Pengecekan status DTKS beserta Bantuan Sosial dari Pemerintah Pusat",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Fotokopi Kartu Tanda Penduduk (KTP);",
+        "Fotokopi Kartu Keluarga (KK)."
+      ],
+      "prosedur": [
+        "Pemohon menyerahkan berkas yang akan dicek status DTKS/DTSEN oleh petugas;",
+        "Petugas melakukan cek di sistem SIKS-NG Kemensos;",
+        "Memberi Informasi Status DTKS beserta kepesertaan bantuan sosial (PKH, BPNT, PBI-JK) kepada yang bersangkutan;",
+        "Print Out Hasil DTKS jika pemohon masuk ke dalam sistem SIKS-NG."
+      ],
+      "waktu": "10 Menit / Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Print Out Hasil Status DTKS / Surat Keterangan ID DTKS dari SIKS-NG",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | Telp: (0271) 734123 | Email: dinsos@surakarta.go.id"
+    },
+    {
+      "id": 27,
+      "layanan_id": 35,
+      "bidang_id": 2,
+      "urutan_portal": 15,
+      "ikon": "bx bx-child",
+      "nama_portal": "Layanan Pelaksanaan pengangkatan Anak Adopsi (COTA)",
+      "nama": "Pelaksanaan pengangkatan Anak Adopsi (COTA)",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "persyaratan": [
+        "Fotokopi Kartu Tanda Penduduk (KTP) Calon Orang Tua Angkat (COTA)",
+        "Fotokopi Kartu Keluarga (KK) dan Buku Nikah / Akta Perkawinan (minimal menikah 5 tahun)",
+        "Persyaratan administrasi lanjutan (SKCK, Surat Sehat Jasmani/Jiwa, Penghasilan, Pernyataan) setelah konsultasi dengan Pekerja Sosial (PEKSOS)"
+      ],
+      "prosedur": [
+        "Pemohon menyerahkan berkas awal kepada petugas pelayanan",
+        "Petugas melakukan cek kelengkapan berkas persyaratan awal",
+        "Konsultasi dan Kunjungan Rumah (Home Visit) oleh Pekerja Sosial (PEKSOS) Dinas Sosial",
+        "Pemohon diinformasikan tindak lanjut proses rekomendasi ke Dinas Sosial Provinsi Jawa Tengah (Tim PIPA) hingga penetapan Pengadilan"
+      ],
+      "waktu": "10 Menit Konsultasi Awal / Hari Kerja",
+      "biaya": "Gratis",
+      "produk": "Laporan Sosial & Rekomendasi Pelaksanaan Pengangkatan Anak Adopsi (COTA)",
+      "pengaduan": "WA: 08112811919 | ULAS: ulas.surakarta.go.id | SP4N LAPOR | Telp: (0271) 734123 | Email: dinsos@surakarta.go.id"
+    }
+  ],
+  "tb_berita": [
+    {
+      "id": 398,
+      "judul": "PENYESUAIAN JAM PELAYANAN DINAS SOSIAL KOTA SURAKARTA",
+      "tanggal": "2026-10-01",
+      "tanggal_label": "01 Oktober 2026",
+      "penulis": "Admin Dinsos Surakarta",
+      "kategori": "Pelayanan Publik",
+      "gambar": "assets/images/jam-pelayanan-poster.svg",
+      "ringkasan": "Sahabat Sosial, yuk catat jam pelayanan kami! Senin–Kamis 07.30–15.30 WIB Tanpa jam istirahat, Jumat 07.30–14.30 WIB.",
+      "isi": "<p>⏰ <strong>PENYESUAIAN JAM PELAYANAN DINAS SOSIAL KOTA SURAKARTA</strong></p>\n        <p>Sahabat Sosial, yuk catat jam pelayanan kami!</p>\n        <p><strong># Senin–Kamis</strong><br>07.30–15.30 WIB<br>✨ Tanpa jam istirahat</p>\n        <p><strong># Jumat</strong><br>07.30–14.30 WIB<br>☕ Istirahat 11.30–13.00 WIB</p>\n        <p>Kami siap memberikan pelayanan yang ramah, cepat, dan mudah diakses bagi masyarakat Kota Surakarta.</p>\n        <p><em>Selalu Ada, Bersahaja, Bangga Melayani.</em></p>"
+    },
+    {
+      "id": 397,
+      "judul": "PEMBERIAN PENGHARGAAN ASN BERPRESTASI",
+      "tanggal": "2026-08-31",
+      "tanggal_label": "31 Agustus 2026",
+      "penulis": "Admin Dinsos Surakarta",
+      "kategori": "Kepegawaian",
+      "gambar": "assets/images/slider/slide-ba-3.jpg",
+      "ringkasan": "Apresiasi atas dedikasi, integritas, dan inovasi pegawai Aparatur Sipil Negara di lingkungan Dinas Sosial Kota Surakarta.",
+      "isi": "<p>Surakarta, 31 Agustus 2026 — Dinas Sosial Kota Surakarta melaksanakan kegiatan pemberian penghargaan kepada Aparatur Sipil Negara (ASN) Berprestasi sebagai bentuk apresiasi atas kinerja unggul, kedisiplinan, serta inovasi pelayanan sosial kepada masyarakat.</p>\n        <p>Kepala Dinas Sosial Kota Surakarta, Drs. Samsu Tri Wahyudin, M.Si., menyampaikan bahwa budaya kerja BerAKHLAK dan prinsip 5S (Senyum, Salam, Sapa, Sopan, dan Santun) harus terus dijaga demi menghadirkan pelayanan prima bagi Pemerlu Pelayanan Kesejahteraan Sosial (PPKS) di Kota Surakarta.</p>"
+    },
+    {
+      "id": 396,
+      "judul": "TINDAK LANJUT PENGADUAN",
+      "tanggal": "2026-08-28",
+      "tanggal_label": "28 Agustus 2026",
+      "penulis": "Tim SP4N & ULAS",
+      "kategori": "Pengaduan",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "ringkasan": "Respon cepat Tim Reaksi Cepat dan Pekerja Sosial Dinas Sosial Kota Surakarta dalam menindaklanjuti laporan warga melalui kanal ULAS dan WhatsApp.",
+      "isi": "<p>Surakarta, 28 Agustus 2026 — Tim Pengelola Pengaduan bersama Pekerja Sosial dan TAGANA Dinas Sosial Kota Surakarta bergerak cepat menindaklanjuti aduan masyarakat yang masuk melalui kanal ULAS Pemkot Surakarta dan Hotline WhatsApp Dinas Sosial.</p>\n        <p>Penanganan dilakukan melalui asesmen langsung ke lokasi (home visit), koordinasi bersama Pemerintah Kelurahan dan Puskesos SLRT, serta pemberian intervensi bantuan sosial sesuai kebutuhan penerima manfaat.</p>"
+    },
+    {
+      "id": 395,
+      "judul": "DINAS SOSIAL KOTA SURAKARTA IKUT MERAMAIKAN PERTANDINGAN FUTSAL PERSAHABATAN SOEHARSO CUP",
+      "tanggal": "2026-08-27",
+      "tanggal_label": "27 Agustus 2026",
+      "penulis": "Admin Dinsos Surakarta",
+      "kategori": "Kegiatan",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg",
+      "ringkasan": "Mempererat sinergi dan kolaborasi antar instansi penyelenggara kesejahteraan sosial bersama Sentra Terpadu Prof. Dr. Soeharso Surakarta.",
+      "isi": "<p>Surakarta, 27 Agustus 2026 — Keluarga besar Dinas Sosial Kota Surakarta turut berpartisipasi memeriahkan pertandingan futsal persahabatan Soeharso Cup yang diselenggarakan oleh Sentra Terpadu Prof. Dr. Soeharso Surakarta.</p>\n        <p>Kegiatan olahraga bersama ini bertujuan meningkatkan kebugaran jasmani sekaligus memperkuat sinergitas kemitraan dalam pelayanan rehabilitasi sosial di wilayah Surakarta.</p>"
+    },
+    {
+      "id": 394,
+      "judul": "DINAS SOSIAL KOTA SURAKARTA HADIR DITENGAH MASYARAKAT",
+      "tanggal": "2026-08-26",
+      "tanggal_label": "26 Agustus 2026",
+      "penulis": "Admin Dinsos Surakarta",
+      "kategori": "Pelayanan Publik",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "ringkasan": "Layanan jemput bola pengecekan status DTKS/DTSEN, konsultasi bansos, dan reaktivasi PBI JKN-KIS langsung di ruang publik Kota Surakarta.",
+      "isi": "<p>Surakarta, 26 Agustus 2026 — Melalui inovasi layanan jemput bola <em>Mba Desi Manis</em> dan loket keliling pada Car Free Day (CFD) Jl. Slamet Riyadi, Dinas Sosial Kota Surakarta hadir langsung di tengah masyarakat untuk memudahkan konsultasi pengecekan desil DTSEN/DTKS, pemutakhiran data SIKS-NG melalui Kelurahan, serta layanan pengaduan sosial.</p>"
+    },
+    {
+      "id": 393,
+      "judul": "MEMPERINGATI MAULID NABI MUHAMMAD SAW",
+      "tanggal": "2026-08-25",
+      "tanggal_label": "25 Agustus 2026",
+      "penulis": "Admin Dinsos Surakarta",
+      "kategori": "Pengumuman",
+      "gambar": "assets/images/portal/img-gedung-dinsos.png",
+      "ringkasan": "Keluarga Besar Dinas Sosial Kota Surakarta mengucapkan Selamat Memperingati Maulid Nabi Muhammad SAW, meneladani akhlak mulia dalam melayani sesama.",
+      "isi": "<p>Keluarga Besar Dinas Sosial Kota Surakarta mengucapkan Selamat Memperingati Maulid Nabi Muhammad SAW. Mari kita jadikan momentum ini untuk meneladani kepedulian sosial, kasih sayang terhadap sesama, dan keikhlasan dalam melayani masyarakat pemerlu pelayanan kesejahteraan sosial di Kota Surakarta.</p>"
+    },
+    {
+      "id": 306,
+      "judul": "Penerapan Budaya layanan Kerja 5S (Senyum, Salam, Sapa, Sopan, dan Santun) kepada Masyarakat di Dinas Sosial Kota Surakarta",
+      "tanggal": "2025-09-02",
+      "tanggal_label": "02 September 2025",
+      "penulis": "Front Office Dinsos",
+      "kategori": "Zona Integritas",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "ringkasan": "Petugas Dinas Sosial Kota Surakarta senantiasa memberikan pelayanan terbaik dengan mengedepankan prinsip Senyum, Salam, Sapa, Sopan, dan Santun (5S).",
+      "isi": "<p>Petugas Dinas Sosial Kota Surakarta senantiasa memberikan pelayanan terbaik dengan mengedepankan prinsip <strong>Senyum, Salam, Sapa, Sopan, dan Santun (5S)</strong> dalam setiap interaksi dengan masyarakat. Setiap warga yang datang dilayani dengan penuh keramahan, kesabaran, dan perhatian, mulai dari proses penyambutan hingga penyelesaian kebutuhan.</p>"
+    },
+    {
+      "id": 279,
+      "judul": "Pengantaran PPKS ke Terminal Tirtonadi",
+      "tanggal": "2025-04-17",
+      "tanggal_label": "17 April 2025",
+      "penulis": "Bidang Rehabilitasi Sosial",
+      "kategori": "Rehabilitasi Sosial",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "ringkasan": "Bidang Rehabilitasi Sosial melakukan pengantaran PPKS beserta 4 anggota keluarga yang kehabisan bekal ke Terminal Tirtonadi.",
+      "isi": "<p>Surakarta, 17 April 2025 — Dinas Sosial Kota Surakarta melalui Bidang Rehabilitasi Sosial melakukan pengantaran PPKS beserta pengikut (4 anggota keluarga) yang kehabisan bekal ke Terminal Tirtonadi dibantu oleh petugas Kemenhub Terminal untuk selanjutnya bisa pulang kembali ke daerah asalnya yaitu tujuan Purwakarta diestafetkan melalui Dinas Sosial Provinsi Jawa Tengah di Semarang.</p>"
+    }
+  ],
+  "tb_instagram_feed": [
+    {
+      "id": 1,
+      "tanggal": "October 21, 2026",
+      "tipe": "Carousel",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg",
+      "caption": "Dinas Sosial menyelenggarakan Pelatihan Peningkatan Kapasitas Ekonomi Keluarga bagi PEKKA (Perempuan Kepala Keluarga) Kota Surakarta guna mendorong kemandirian usaha mikro.",
+      "url": "https://www.instagram.com/dinsos_surakarta/"
+    },
+    {
+      "id": 2,
+      "tanggal": "October 03, 2026",
+      "tipe": "Photo",
+      "gambar": "assets/images/slider/slide-ba-3.jpg",
+      "caption": "📢 SOSIALISASI PERLINSOS DIGITAL KOTA SURAKARTA — Dinas Sosial Kota Surakarta melaksanakan Sosialisasi Perlindungan Sosial Digital dan pemutakhiran DTSEN bersama operator SIKS-NG Kelurahan.",
+      "url": "https://www.instagram.com/dinsos_surakarta/"
+    },
+    {
+      "id": 3,
+      "tanggal": "October 01, 2026",
+      "tipe": "Photo",
+      "gambar": "assets/images/jam-pelayanan-poster.svg",
+      "caption": "⏰ JAM PELAYANAN DINAS SOSIAL KOTA SURAKARTA — Sahabat Sosial, yuk catat jam pelayanan kami! Senin–Kamis 07.30–15.30 WIB (Tanpa Istirahat), Jumat 07.30–14.30 WIB.",
+      "url": "https://www.instagram.com/dinsos_surakarta/"
+    },
+    {
+      "id": 4,
+      "tanggal": "September 28, 2026",
+      "tipe": "Photo",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "caption": "YEU YAKKUM bersama Dinas Sosial dan BPBD berkolaborasi dalam program Disability Inclusive Disaster Risk Reduction (Pengurangan Risiko Bencana Inklusif Disabilitas) di Kota Surakarta.",
+      "url": "https://www.instagram.com/dinsos_surakarta/"
+    },
+    {
+      "id": 5,
+      "tanggal": "September 27, 2026",
+      "tipe": "Video",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg",
+      "caption": "Minggu pagi di CFD pekan ini ditutup manis bersama Mba Desi Manis! 📱✨ Layanan konsultasi IKD, Desil DTSEN, dan Pengaduan Sosial makin dekat dengan warga Solo.",
+      "url": "https://www.instagram.com/dinsos_surakarta/"
+    },
+    {
+      "id": 6,
+      "tanggal": "September 25, 2026",
+      "tipe": "Photo",
+      "gambar": "assets/images/portal/img-gedung-dinsos.png",
+      "caption": "SOSIALISASI PENYEDIAAN ALAT BANTU DAN SEKALIGUS PERINGATAN HARI ALZHEIMER SE-DUNIA bersama Komda Lansia Kota Surakarta.",
+      "url": "https://www.instagram.com/dinsos_surakarta/"
+    }
+  ],
+  "tb_pengumuman": [
+    {
+      "id": 40,
+      "judul": "PENILAIAN MALADMINISTRASI PELAYANAN PUBLIK OMBUDSMAN RI TAHUN 2026",
+      "tanggal": "2026-08-04",
+      "tanggal_label": "04 Agustus 2026",
+      "gambar": "assets/images/maklumat-pelayanan.svg",
+      "ringkasan": "Dinas Sosial Kota Surakarta terus berkomitmen dalam meningkatkan kualitas penyelenggaraan pelayanan publik yang transparan, profesional, dan responsif.",
+      "isi": "<p>Dinas Sosial Kota Surakarta terus berkomitmen dalam meningkatkan kualitas penyelenggaraan pelayanan publik yang transparan, profesional, responsif, dan berorientasi pada kebutuhan masyarakat. Komitmen tersebut diwujudkan melalui berbagai upaya peningkatan standar pelayanan, penguatan tata kelola, serta pemenuhan hak masyarakat dalam memperoleh pelayanan sosial yang mudah, cepat, tepat, dan berkualitas.</p>\n        <p>Sebagai bentuk apresiasi terhadap upaya tersebut, Ombudsman Republik Indonesia (ORI) melalui penilaian penyelenggaraan pelayanan publik memberikan penghargaan/pengakuan atas kinerja pelayanan yang telah dilaksanakan oleh Dinas Sosial.</p>\n        <p>Penghargaan dari Ombudsman RI bukanlah akhir dari sebuah pencapaian, melainkan menjadi pemacu untuk terus berbenah, berinovasi, dan memberikan pelayanan terbaik bagi masyarakat Kota Surakarta.</p>"
+    },
+    {
+      "id": 39,
+      "judul": "SKM TRIWULAN 1 2026",
+      "tanggal": "2026-04-06",
+      "tanggal_label": "06 April 2026",
+      "gambar": "assets/images/skm-poster.svg",
+      "ringkasan": "Dinas Sosial Kota Surakarta terus berkomitmen untuk meningkatkan kualitas pelayanan publik melalui pelayanan yang mudah, cepat, transparan, dan gratis.",
+      "isi": "<p>Publikasi Hasil Survei Kepuasan Masyarakat (SKM) Triwulan I Tahun 2026 pada Dinas Sosial Kota Surakarta menunjukkan capaian Mutu Pelayanan <strong>A (Sangat Baik)</strong>. Terima kasih atas partisipasi dan masukan seluruh masyarakat pengguna layanan Dinas Sosial Kota Surakarta.</p>"
+    },
+    {
+      "id": 38,
+      "judul": "SKM TW 2 TAHUN 2026",
+      "tanggal": "2026-08-06",
+      "tanggal_label": "06 Agustus 2026",
+      "gambar": "assets/images/skm-poster.svg",
+      "ringkasan": "Dinas Sosial Kota Surakarta terus berkomitmen untuk meningkatkan kualitas pelayanan publik melalui pelayanan yang mudah, cepat, transparan, dan akuntabel.",
+      "isi": "<p>Publikasi Hasil Survei Kepuasan Masyarakat (SKM) Triwulan II Tahun 2026 Dinas Sosial Kota Surakarta dengan Nilai Indeks Kepuasan Masyarakat (IKM) sebesar <strong>89,64 (Kategori A - Sangat Baik)</strong>.</p>"
+    },
+    {
+      "id": 36,
+      "judul": "SKM TW 4 TAHUN 2025",
+      "tanggal": "2025-12-03",
+      "tanggal_label": "03 Desember 2025",
+      "gambar": "assets/images/skm-poster.svg",
+      "ringkasan": "Laporan Hasil Survei Kepuasan Masyarakat Triwulan IV Tahun 2025 Dinas Sosial Kota Surakarta.",
+      "isi": "<p>Berikut disampaikan hasil pengukuran Survei Kepuasan Masyarakat (SKM) Triwulan IV Tahun 2025 sebagai bentuk transparansi dan akuntabilitas penyelenggaraan layanan publik Dinas Sosial Kota Surakarta.</p>"
+    },
+    {
+      "id": 33,
+      "judul": "JAM PELAYANAN DINSOS",
+      "tanggal": "2025-01-06",
+      "tanggal_label": "06 Januari 2025",
+      "gambar": "assets/images/jam-pelayanan-poster.svg",
+      "ringkasan": "Informasi resmi jam operasional Loket Pelayanan Terpadu Dinas Sosial Kota Surakarta.",
+      "isi": "<p>Informasi Jam Pelayanan Loket Front Office Dinas Sosial Kota Surakarta: Senin–Kamis pukul 07.30–15.30 WIB dan Jumat pukul 07.30–14.30 WIB.</p>"
+    },
+    {
+      "id": 32,
+      "judul": "SKM TRIWULAN 1 2025",
+      "tanggal": "2025-03-24",
+      "tanggal_label": "24 Maret 2025",
+      "gambar": "assets/images/skm-poster.svg",
+      "ringkasan": "Publikasi Indeks Kepuasan Masyarakat Triwulan 1 Tahun 2025 pada Dinas Sosial Kota Surakarta.",
+      "isi": "<p>Publikasi resmi capaian Survei Kepuasan Masyarakat Triwulan 1 Tahun 2025 Dinas Sosial Kota Surakarta.</p>"
+    }
+  ],
+  "tb_artikel": [
+    {
+      "id": 6,
+      "judul": "Taruna Siaga Bencana (TAGANA) Dinas Sosial Kota Surakarta melaksanakan pendampingan Kegiatan Pramuka Peduli (PRAMULI) Tingkat KwaRan Kota Surakarta.",
+      "tanggal": "2021-11-03",
+      "tanggal_label": "03 November 2021",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "isi": "<p>Waktu pelaksanaan pada Hari Rabu, 3 November 2021 pukul 07.30 WIB – 17.00 WIB bertempat di Halaman Depan Kantor TMP (Taman Makam Pahlawan) Kusuma Bhakti Surakarta. Kegiatan meliputi simulasi manajemen dapur umum lapangan, pendirian tenda pengungsian, dan kesiapsiagaan bencana bagi anggota Pramuka Peduli.</p>"
+    },
+    {
+      "id": 5,
+      "judul": "Pembinaan Anggota Taruna Siaga Bencana (TAGANA) Kota Surakarta",
+      "tanggal": "2022-01-01",
+      "tanggal_label": "01 Januari 2022",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg",
+      "isi": "<p>Pembinaan rutin peningkatan kapasitas personel Taruna Siaga Bencana (TAGANA) Dinas Sosial Kota Surakarta dalam rangka kesiapsiagaan menghadapi potensi bencana hidrometeorologi dan pelayanan dukungan psikososial bagi warga terdampak.</p>"
+    },
+    {
+      "id": 3,
+      "judul": "PENYALURAN BANTUAN SOSIAL",
+      "tanggal": "2022-04-20",
+      "tanggal_label": "20 April 2022",
+      "gambar": "assets/images/berita/berita-tagana.jpg",
+      "isi": "<p>Pelaksanaan monitoring dan evaluasi penyaluran Bantuan Sosial Program Keluarga Harapan (PKH) dan Bantuan Pangan Non Tunai (BPNT) di 5 Kecamatan se-Kota Surakarta agar tepat sasaran, tepat jumlah, dan tepat waktu.</p>"
+    }
+  ],
+  "tb_agenda": [
+    {
+      "id": 1,
+      "acara": "Layanan Keliling Mba Desi Manis (Konsultasi DTSEN, SIKS-NG & Aduan Sosial)",
+      "tempat": "Car Free Day Jl. Slamet Riyadi (Depan Kantor Dinsos No. 368)",
+      "tanggal": "2026-10-25",
+      "jam": "06.00 – 09.00 WIB",
+      "status": "Terjadwal"
+    },
+    {
+      "id": 2,
+      "acara": "Rapat Koordinasi Pemutakhiran Data Kemiskinan & Verval SIKS-NG Kelurahan",
+      "tempat": "Aula Dinas Sosial Kota Surakarta",
+      "tanggal": "2026-11-04",
+      "jam": "09.00 – 12.00 WIB",
+      "status": "Terjadwal"
+    },
+    {
+      "id": 3,
+      "acara": "Monitoring Akreditasi Lembaga Kesejahteraan Sosial (LKS) Kota Surakarta",
+      "tempat": "Sekretariat LKS se-Kota Surakarta",
+      "tanggal": "2026-11-10",
+      "jam": "08.30 – 15.00 WIB",
+      "status": "Terjadwal"
+    }
+  ],
+  "tb_bank_data": [
+    {
+      "id": 1,
+      "nama": "HIBAH DAN BANSOS DINAS SOSIAL TAHUN 2025",
+      "kategori": "Keuangan & Bansos",
+      "tahun": "2025",
+      "file_url": "http://drive.google.com/file/d/1gmzK1OuOxZxpv1mLWuPgs-J1TK-Ogcox/view?usp=sharing"
+    },
+    {
+      "id": 2,
+      "nama": "REKAPITULASI DATA elektronik Sistem Informasi Kesejahteraan (e-SIK) Tahun 2022",
+      "kategori": "Data Kemiskinan (e-SIK)",
+      "tahun": "2022",
+      "file_url": "http://drive.google.com/file/d/12ZRpRxzjYeqh43qEM5CPemXzyvBXCGTq/view?usp=share_link"
+    },
+    {
+      "id": 3,
+      "nama": "REKAPITULASI DATA elektronik Sistem Informasi Kesejahteraan (e-SIK)",
+      "kategori": "Data Kemiskinan (e-SIK)",
+      "tahun": "2024",
+      "file_url": "#/pmks"
+    },
+    {
+      "id": 4,
+      "nama": "REKAPITULASI DATA PMKS & PSKS PER KECAMATAN KOTA SURAKARTA TAHUN 2026",
+      "kategori": "Statistik Sosial",
+      "tahun": "2026",
+      "file_url": "pmks.html"
+    }
+  ],
+  "tb_galeri": [
+    {
+      "id": 1,
+      "judul": "Pengarahan dan Pendampingan Pencairan Bantuan Kelompok Usaha Bersama (KUBE) Kota Surakarta Tahun 2024",
+      "kategori": "Pemberdayaan Sosial",
+      "tanggal": "2024-09-12",
+      "gambar": "assets/images/slider/slide-dkt-1.jpg"
+    },
+    {
+      "id": 2,
+      "judul": "Dokumentasi Pendampingan Kelompok Usaha Bersama (KUBE) Mandiri Sejahtera",
+      "kategori": "Pemberdayaan Sosial",
+      "tanggal": "2024-09-12",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg"
+    },
+    {
+      "id": 3,
+      "judul": "Penyerahan Bantuan Kursi Roda & Paket Sembako Bersama TAGANA Surakarta",
+      "kategori": "Rehabilitasi & Linjamsos",
+      "tanggal": "2026-08-28",
+      "gambar": "assets/images/berita/berita-tagana.jpg"
+    },
+    {
+      "id": 4,
+      "judul": "Rapat KTI (Kota Layak Anak & Kesejahteraan Sosial Integratif)",
+      "kategori": "Rapat Koordinasi",
+      "tanggal": "2025-11-18",
+      "gambar": "assets/images/slider/slide-ba-3.jpg"
+    },
+    {
+      "id": 5,
+      "judul": "Pelayanan Loket Terpadu (Front Office) Ramah Kelompok Rentan & Disabilitas",
+      "kategori": "Pelayanan Publik",
+      "tanggal": "2026-10-01",
+      "gambar": "assets/images/slider/slide-pelayanan-2.jpg"
+    },
+    {
+      "id": 6,
+      "judul": "Gedung Pelayanan Dinas Sosial Pemerintah Kota Surakarta",
+      "kategori": "Fasilitas Pelayanan",
+      "tanggal": "2026-01-10",
+      "gambar": "assets/images/portal/img-gedung-dinsos.png"
+    }
+  ],
+  "tb_galeri_video": [
+    {
+      "id": 1,
+      "judul": "Agen Perubahan Dinas Sosial Kota Surakarta #ASNBerAKHLAK #BanggaMelayaniBangsa",
+      "youtube_id": "CIzVPJ-A8Is",
+      "embed_url": "https://www.youtube.com/embed/CIzVPJ-A8Is",
+      "channel": "DINAS SOSIAL KOTA SURAKARTA"
+    },
+    {
+      "id": 2,
+      "judul": "Cara Mengatasi Kebosanan Dalam Belajar Daring - PLKSAI DINAS SOSIAL KOTA SURAKARTA",
+      "youtube_id": "0NoJhqS4NT0",
+      "embed_url": "https://www.youtube.com/embed/0NoJhqS4NT0",
+      "channel": "DINAS SOSIAL KOTA SURAKARTA"
+    },
+    {
+      "id": 3,
+      "judul": "Selamat Hari Anak Nasional (HAN) Tahun 2021 - PLKSAI Dinas Sosial Kota Surakarta",
+      "youtube_id": "dk_rjgkl4HU",
+      "embed_url": "https://www.youtube.com/embed/dk_rjgkl4HU",
+      "channel": "DINAS SOSIAL KOTA SURAKARTA"
+    },
+    {
+      "id": 4,
+      "judul": "MERDEKA !! HUT RI KE - 76 PLKSAI DINAS SOSIAL KOTA SURAKARTA",
+      "youtube_id": "NQEaOc4QJUg",
+      "embed_url": "https://www.youtube.com/embed/NQEaOc4QJUg",
+      "channel": "DINAS SOSIAL KOTA SURAKARTA"
+    },
+    {
+      "id": 5,
+      "judul": "Ayo Terapkan Pola Hidup Bersih Dan Sehat !! PLKSAI Dinas Sosial Kota Surakarta",
+      "youtube_id": "ttIzX7nIOX8",
+      "embed_url": "https://www.youtube.com/embed/ttIzX7nIOX8",
+      "channel": "DINAS SOSIAL KOTA SURAKARTA"
+    },
+    {
+      "id": 6,
+      "judul": "Rapat Koordinasi Kesejahteraan Sosial Dinas Sosial Kota Surakarta",
+      "youtube_id": "lm2B0mmv1B0",
+      "embed_url": "https://www.youtube.com/embed/lm2B0mmv1B0",
+      "channel": "DINAS SOSIAL KOTA SURAKARTA"
+    }
+  ],
+  "tb_ppid_pimpinan": [
+    {
+      "id": 1,
+      "nama": "Drs. SAMSU TRI WAHYUDIN, M.Si.",
+      "pangkat_golongan": "Pembina Tingkat I / IVb",
+      "jabatan": "Kepala Dinas Sosial Kota Surakarta",
+      "peran_ppid": "Atasan PPID Pelaksana",
+      "foto": "assets/images/pimpinan-kadis.svg"
+    },
+    {
+      "id": 2,
+      "nama": "MARGONO, S.STP, M.Si",
+      "pangkat_golongan": "Pembina (IV/a)",
+      "jabatan": "Sekretaris Dinas Sosial Kota Surakarta",
+      "peran_ppid": "Ketua PPID Pelaksana",
+      "foto": "assets/images/pimpinan-sekdin.svg"
+    }
+  ],
+  "ref_ppid_kategori": [
+    {
+      "id": 1,
+      "jenis": "berkala",
+      "nama": "INFORMASI TENTANG PROFIL BADAN PUBLIK"
+    },
+    {
+      "id": 2,
+      "jenis": "berkala",
+      "nama": "RINGKASAN PROGRAM DAN KEGIATAN YANG DIKERJAKAN"
+    },
+    {
+      "id": 3,
+      "jenis": "berkala",
+      "nama": "RINGKASAN INFORMASI KINERJA"
+    },
+    {
+      "id": 4,
+      "jenis": "berkala",
+      "nama": "RINGKASAN LAPORAN KEUANGAN"
+    },
+    {
+      "id": 5,
+      "jenis": "berkala",
+      "nama": "RINGKASAN LAPORAN AKSES INFORMASI PUBLIK"
+    },
+    {
+      "id": 16,
+      "jenis": "berkala",
+      "nama": "INFORMASI TENTANG PERATURAN, KEPUTUSAN ATAU KEBIJAKAN YANG MENGIKAT"
+    },
+    {
+      "id": 17,
+      "jenis": "berkala",
+      "nama": "INFORMASI TENTANG PROSEDUR MEMPEROLEH INFORMASI PUBLIK"
+    },
+    {
+      "id": 24,
+      "jenis": "berkala",
+      "nama": "INFORMASI TENTANG TATA CARA PENGADUAN PENYALAHGUNAAN WEWENANG ATAU PELANGGARAN"
+    },
+    {
+      "id": 25,
+      "jenis": "berkala",
+      "nama": "INFORMASI PENGADAAN BARANG DAN JASA"
+    },
+    {
+      "id": 26,
+      "jenis": "berkala",
+      "nama": "INFORMASI TENTANG PROSEDUR PERINGATAN DINI DAN PROSEDUR EVAKUASI KEADAAN DARURAT"
+    },
+    {
+      "id": 28,
+      "jenis": "berkala",
+      "nama": "Informasi Ketenagakerjaan"
+    },
+    {
+      "id": 13,
+      "jenis": "serta_merta",
+      "nama": "RADIO KONATA"
+    },
+    {
+      "id": 14,
+      "jenis": "serta_merta",
+      "nama": "PENGADUAN MASYARAKAT (ULAS)"
+    },
+    {
+      "id": 15,
+      "jenis": "serta_merta",
+      "nama": "OPEN DATA SURAKARTA"
+    },
+    {
+      "id": 38,
+      "jenis": "serta_merta",
+      "nama": "Definisi Bencana (BNPB)"
+    },
+    {
+      "id": 39,
+      "jenis": "serta_merta",
+      "nama": "Siaga Bencana (BNPB)"
+    },
+    {
+      "id": 42,
+      "jenis": "serta_merta",
+      "nama": "Informasi tentang Rencana Gangguan terhadap Utilitas Publik"
+    },
+    {
+      "id": 43,
+      "jenis": "serta_merta",
+      "nama": "Profil Dinas Sosial Kota Surakarta"
+    },
+    {
+      "id": 51,
+      "jenis": "setiap_saat",
+      "nama": "DAFTAR INFORMASI PUBLIK (DIP) DINAS SOSIAL"
+    },
+    {
+      "id": 52,
+      "jenis": "setiap_saat",
+      "nama": "DOKUMEN STANDAR OPERASIONAL PROSEDUR (SOP) PELAYANAN"
+    },
+    {
+      "id": 53,
+      "jenis": "setiap_saat",
+      "nama": "PERJANJIAN KERJA SAMA PIHAK KETIGA / LKS"
+    },
+    {
+      "id": 54,
+      "jenis": "setiap_saat",
+      "nama": "RENCANA STRATEGIS (RENSTRA) DAN RENCANA KERJA (RENJA)"
+    },
+    {
+      "id": 61,
+      "jenis": "dikecualikan",
+      "nama": "DATA PRIBADI BY NAME BY ADDRESS (BNBA) NIK PENERIMA MANFAAT DTKS/PKH"
+    },
+    {
+      "id": 62,
+      "jenis": "dikecualikan",
+      "nama": "REKAM MEDIS & ASESMEN PSIKOSOSIAL ANAK BERHADAPAN DENGAN HUKUM / ADOPSI COTA"
+    }
+  ],
+  "tb_ppid_informasi": [
+    {
+      "id": 1,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Anggaran DPA Dinas Sosial Kota Surakarta",
+      "tahun": "2025",
+      "file_url": "http://nas-noc.surakarta.go.id/share.cgi?ssid=5dff493c44ea452ebc03e056a8d84fa5"
+    },
+    {
+      "id": 2,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Daftar Aset / Barang Milik Daerah (BMD)",
+      "tahun": "2025",
+      "file_url": "http://drive.google.com/file/d/19n7NKGle7o4NF0dOHZPXoIkJz2oxKj9F/view?usp=share_link"
+    },
+    {
+      "id": 3,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Profil Pimpinan Dinas Sosial Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "#/ppid/profil"
+    },
+    {
+      "id": 4,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "LHKPN Pimpinan Badan Publik",
+      "tahun": "2025",
+      "file_url": "http://drive.google.com/file/d/10ZEBYnv5wq1e27CvCKQLEhqsK0fc3u0P/view?usp=share_link"
+    },
+    {
+      "id": 5,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Struktur Organisasi Dinas Sosial Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "assets/images/bagan-organisasi.svg"
+    },
+    {
+      "id": 6,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Tugas dan Fungsi Dinas Sosial Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "#/profil/detail/10"
+    },
+    {
+      "id": 7,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Visi dan Misi Pelayanan",
+      "tahun": "2026",
+      "file_url": "assets/images/maklumat-pelayanan.svg"
+    },
+    {
+      "id": 8,
+      "kategori_id": 1,
+      "jenis": "berkala",
+      "judul": "Kedudukan/Domisili Beserta Alamat Lengkap",
+      "tahun": "2026",
+      "file_url": "#/profil/detail/7"
+    },
+    {
+      "id": 9,
+      "kategori_id": 2,
+      "jenis": "berkala",
+      "judul": "Ringkasan Program dan Kegiatan Dinas Sosial Tahun Anggaran 2026",
+      "tahun": "2026",
+      "file_url": "#/profil/detail/14"
+    },
+    {
+      "id": 10,
+      "kategori_id": 3,
+      "jenis": "berkala",
+      "judul": "Laporan Kinerja Instansi Pemerintah (LKjIP) Dinas Sosial",
+      "tahun": "2025",
+      "file_url": "#/profil/detail/12"
+    },
+    {
+      "id": 11,
+      "kategori_id": 4,
+      "jenis": "berkala",
+      "judul": "Laporan Realisasi Anggaran (LRA), Neraca, dan CaLK Audited",
+      "tahun": "2025",
+      "file_url": "#/bank_data"
+    },
+    {
+      "id": 12,
+      "kategori_id": 5,
+      "jenis": "berkala",
+      "judul": "Laporan Tahunan Layanan Informasi Publik PPID Pelaksana",
+      "tahun": "2025",
+      "file_url": "#/ppid/profil"
+    },
+    {
+      "id": 13,
+      "kategori_id": 16,
+      "jenis": "berkala",
+      "judul": "SK Standar Pelayanan, Maklumat Pelayanan & Kode Etik Dinsos 2026",
+      "tahun": "2026",
+      "file_url": "#/standar_pelayanan"
+    },
+    {
+      "id": 14,
+      "kategori_id": 17,
+      "jenis": "berkala",
+      "judul": "SOP Tata Cara Permohonan & Keberatan Informasi Publik PPID",
+      "tahun": "2026",
+      "file_url": "assets/images/alur-pengaduan.svg"
+    },
+    {
+      "id": 15,
+      "kategori_id": 24,
+      "jenis": "berkala",
+      "judul": "Mekanisme Pengaduan Masyarakat, SP4N-LAPOR! & Whistleblowing System",
+      "tahun": "2026",
+      "file_url": "assets/images/alur-pengaduan.svg"
+    },
+    {
+      "id": 16,
+      "kategori_id": 25,
+      "jenis": "berkala",
+      "judul": "Rencana Umum Pengadaan (RUP) SiRUP LKPP Dinas Sosial Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "https://sirup.lkpp.go.id/"
+    },
+    {
+      "id": 17,
+      "kategori_id": 26,
+      "jenis": "berkala",
+      "judul": "SOP Peringatan Dini Kebencanaan & Dapur Umum TAGANA Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "#/standar_pelayanan/detail/9"
+    },
+    {
+      "id": 18,
+      "kategori_id": 28,
+      "jenis": "berkala",
+      "judul": "Informasi Pengadaan TKPK & Kepegawaian Dinas Sosial Kota Surakarta",
+      "tahun": "2025",
+      "file_url": "#/pengumuman"
+    },
+    {
+      "id": 19,
+      "kategori_id": 14,
+      "jenis": "serta_merta",
+      "judul": "Kanal Unit Layanan Aduan Surakarta (ULAS) Terintegrasi",
+      "tahun": "2026",
+      "file_url": "https://ulas.surakarta.go.id/"
+    },
+    {
+      "id": 20,
+      "kategori_id": 15,
+      "jenis": "serta_merta",
+      "judul": "Portal Open Data Sektor Kesejahteraan Sosial Kota Surakarta (29 Dataset)",
+      "tahun": "2026",
+      "file_url": "https://data.surakarta.go.id/organization/dinas-sosial-kota-surakarta"
+    },
+    {
+      "id": 21,
+      "kategori_id": 39,
+      "jenis": "serta_merta",
+      "judul": "Layanan Tanggap Darurat Sosial & Bencana TAGANA 24 Jam",
+      "tahun": "2026",
+      "file_url": "#/standar_pelayanan/detail/9"
+    },
+    {
+      "id": 22,
+      "kategori_id": 51,
+      "jenis": "setiap_saat",
+      "judul": "SK Penetapan Daftar Informasi Publik (DIP) Dinas Sosial Kota Surakarta Tahun 2026",
+      "tahun": "2026",
+      "file_url": "#/ppid/daftar_informasi_publik"
+    },
+    {
+      "id": 23,
+      "kategori_id": 52,
+      "jenis": "setiap_saat",
+      "judul": "Dokumen Lengkap 15 Standar Pelayanan Publik Dinas Sosial Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "#/standar_pelayanan"
+    },
+    {
+      "id": 24,
+      "kategori_id": 54,
+      "jenis": "setiap_saat",
+      "judul": "Dokumen RENSTRA 2021-2026 & RENJA Dinas Sosial Kota Surakarta",
+      "tahun": "2026",
+      "file_url": "#/profil/detail/14"
+    },
+    {
+      "id": 25,
+      "kategori_id": 61,
+      "jenis": "dikecualikan",
+      "judul": "Penetapan Uji Konsekuensi Data Pribadi BNBA NIK/KK dalam SIKS-NG & E-SIK (Pasal 17 huruf h UU KIP & UU PDP)",
+      "tahun": "2026",
+      "file_url": "#/ppid/informasi_dikecualikan"
+    },
+    {
+      "id": 26,
+      "kategori_id": 62,
+      "jenis": "dikecualikan",
+      "judul": "Penetapan Uji Konsekuensi Dokumen Rahasia Pengangkatan Anak (COTA) & Klien Rehabilitasi Anak",
+      "tahun": "2026",
+      "file_url": "#/ppid/informasi_dikecualikan"
+    }
+  ],
+  "tb_halaman_aduan": [
+    {
+      "id": 1,
+      "judul": "SK Kepala Diskominfo SP No.011 Tentang Susunan Tim Pengelola Pengaduan Dan Admin SP4N Tahun 2025",
+      "tipe": "dokumen",
+      "konten": "<p>Keputusan Kepala Dinas Komunikasi, Informatika, Statistik dan Persandian Kota Surakarta Nomor 011 Tahun 2025 tentang Susunan Tim Pengelola Pengaduan dan Admin Sistem Pengelolaan Pengaduan Pelayanan Publik Nasional (SP4N-LAPOR!) Pemerintah Kota Surakarta.</p>"
+    },
+    {
+      "id": 2,
+      "judul": "Mekanisme/Alur Penanganan Pengaduan Masyarakat",
+      "tipe": "gambar",
+      "gambar": "assets/images/alur-pengaduan.svg",
+      "konten": "<p>Alur resmi penanganan pengaduan masyarakat pada Dinas Sosial Kota Surakarta yang terintegrasi melalui Loket Pengaduan, Hotline WhatsApp 0811-2811-919, ULAS Pemkot Surakarta, dan SP4N-LAPOR!.</p>"
+    },
+    {
+      "id": 3,
+      "judul": "Pengelolaan Aduan Ulas",
+      "tipe": "ulas",
+      "konten": "<p>Unit Layanan Aduan Surakarta (ULAS) merupakan sistem pengelolaan aspirasi dan pengaduan masyarakat terpadu Pemerintah Kota Surakarta. Pada sistem produksi asli terdapat integrasi iframe ke portal ULAS (<code>ulas.surakarta.go.id</code>).</p>"
+    },
+    {
+      "id": 4,
+      "judul": "Sampaikan Aduan",
+      "tipe": "form_aduan",
+      "konten": "<p>Silakan sampaikan aspirasi, saran, permohonan informasi layanan, atau pengaduan kesejahteraan sosial melalui formulir resmi di bawah ini. Setiap aduan tercatat secara otomatis ke database BackEnd Dinas Sosial Kota Surakarta.</p>"
+    },
+    {
+      "id": 5,
+      "judul": "Publikasi & Tampilkan Aduan (Rekap TW I–III 2026)",
+      "tipe": "tabel_aduan",
+      "konten": "<p>Transparansi publikasi tindak lanjut aduan masyarakat yang masuk ke Dinas Sosial Kota Surakarta beserta status penyelesaian oleh Bidang terkait.</p>"
+    },
+    {
+      "id": 6,
+      "judul": "SK TIM PENGELOLA ADUAN SP4N LAPOR 2026",
+      "tipe": "dokumen",
+      "konten": "<p>Surat Keputusan Kepala Dinas Sosial Kota Surakarta Tahun 2026 tentang Pembentukan Tim Pengelola Pengaduan Pelayanan Publik, Pejabat Penghubung SP4N-LAPOR!, dan Admin ULAS Dinas Sosial Kota Surakarta Periode 2025–2027.</p>"
+    }
+  ],
+  "tb_aduan_masyarakat": [
+    {
+      "id": 1,
+      "tiket": "ADU-2026-0101",
+      "tanggal": "2026-10-18",
+      "nama_pelapor": "Bapak Suyanto (Warga Kel. Pajang, Laweyan)",
+      "nik_masked": "337201******0004",
+      "kontak": "0812****8821",
+      "kategori": "Pengecekan DTKS / Desil DTSEN",
+      "isi_aduan": "Mohon informasi cara sanggah desil DTSEN karena keluarga kami lansia tidak bekerja namun status KIS PBI sempat nonaktif.",
+      "tanggapan": "Terima kasih Bapak Suyanto. Silakan hadir ke Petugas Puskesos/SLRT Kelurahan Pajang membawa FC KTP dan KK untuk pemutakhiran SIKS-NG dan pengajuan Rekomendasi Reaktivasi PBI (bila nonaktif < 6 bulan). Petugas kami telah berkoordinasi dengan Puskesos Pajang.",
+      "status": "Selesai",
+      "kanal": "Website / ULAS"
+    },
+    {
+      "id": 2,
+      "tiket": "ADU-2026-0102",
+      "tanggal": "2026-10-20",
+      "nama_pelapor": "Ibu Siti Aminah (Warga Kel. Mojosongo, Jebres)",
+      "nik_masked": "337204******0012",
+      "kontak": "0857****3310",
+      "kategori": "Permohonan Alat Bantu Kursi Roda",
+      "isi_aduan": "Ingin menanyakan tindak lanjut pengajuan permohonan kursi roda untuk orang tua kami pasca stroke yang sudah diajukan awal bulan.",
+      "tanggapan": "Berkas permohonan atas nama keluarga Ibu Siti Aminah telah terverifikasi oleh Bidang Rehabilitasi Sosial dan dijadwalkan asesmen kunjungan rumah (Home Visit) oleh Pekerja Sosial pada pekan ini.",
+      "status": "Diproses",
+      "kanal": "WhatsApp 08112811919"
+    },
+    {
+      "id": 3,
+      "tiket": "ADU-2026-0103",
+      "tanggal": "2026-10-22",
+      "nama_pelapor": "Pengurus LKS Al-Ikhlas Surakarta",
+      "nik_masked": "337205******0009",
+      "kontak": "0813****9044",
+      "kategori": "Layanan PEKA (Keringanan Pajak Kendaraan Sosial)",
+      "isi_aduan": "Apakah pengajuan rekomendasi keringanan pajak mobil ambulans yayasan dikenakan biaya dan berapa lama prosesnya?",
+      "tanggapan": "Seluruh layanan di Dinas Sosial Kota Surakarta 100% GRATIS (Rp 0). Untuk inovasi layanan PEKA, waktu penyelesaian adalah 1 Hari Kerja dengan melampirkan Surat Permohonan, FC STNK, FC BPKB, dan Rekomendasi Kemenag/Tanda Daftar LKS.",
+      "status": "Selesai",
+      "kanal": "SP4N-LAPOR!"
+    }
+  ],
+  "tb_unduhan": [
+    {
+      "id": 1,
+      "dokumen": "Mekanisme / Alur Penanganan Pengaduan Masyarakat",
+      "kategori": "Pengaduan",
+      "ukuran": "420 KB",
+      "file_url": "assets/images/alur-pengaduan.svg"
+    },
+    {
+      "id": 2,
+      "dokumen": "SK. PEMBENTUKAN TIM KONSULTASI DAN PENGELOLAAN PENGADUAN PELAYANAN DINAS SOSIAL KOTA SURAKARTA TAHUN 2022",
+      "kategori": "Surat Keputusan",
+      "ukuran": "1.2 MB",
+      "file_url": "#/aduan/detail/1"
+    },
+    {
+      "id": 3,
+      "dokumen": "SK. Pengelola Ulas Dinas Sosial Kota Surakarta",
+      "kategori": "Surat Keputusan",
+      "ukuran": "890 KB",
+      "file_url": "#/aduan/detail/6"
+    },
+    {
+      "id": 4,
+      "dokumen": "SK Petugas Loket Layanan (Front Office) Dinas Sosial Kota Surakarta",
+      "kategori": "Pelayanan Publik",
+      "ukuran": "950 KB",
+      "file_url": "#/profil/detail/18"
+    },
+    {
+      "id": 5,
+      "dokumen": "Pengaruh Disiplin Kerja terhadap Prestasi Kerja Pelayanan Sosial",
+      "kategori": "Kajian & Publikasi",
+      "ukuran": "1.5 MB",
+      "file_url": "#/profil/detail/12"
+    },
+    {
+      "id": 6,
+      "dokumen": "Maklumat Pelayanan & Jam Pelayanan Dinas Sosial Kota Surakarta Tahun 2026",
+      "kategori": "Standar Pelayanan",
+      "ukuran": "540 KB",
+      "file_url": "assets/images/maklumat-pelayanan.svg"
+    }
+  ],
+  "tb_faq": [
+    {
+      "id": 1,
+      "pertanyaan": "Bagaimana cara mendaftar Gakin?",
+      "jawaban": "Persyaratan Gakin:\n- Surat pengantar RT/RW untuk pengajuan Home Visit di Kelurahan\n- Fotokopi KK dan KTP Kepala Keluarga\nBerkas diserahkan ke petugas Home Visit / Puskesos SLRT di Kelurahan setempat."
+    },
+    {
+      "id": 2,
+      "pertanyaan": "Bagaimana cara mengaktifkan JKN-KIS?",
+      "jawaban": "Persyaratan reaktivasi JKN-KIS (PBI):\n- Terdaftar dalam ID SEMESTA / data DTKS (SIKS-NG)\n- Status kepesertaan nonaktif kurang dari 6 bulan\n- Membawa FC KK, FC KTP, dan Surat Keterangan Sakit/Kontrol dari Faskes jika kondisi emergency."
+    },
+    {
+      "id": 3,
+      "pertanyaan": "Bagaimana beralih dari Iuran Mandiri BPJS ke KIS PBI?",
+      "jawaban": "Untuk pengalihan dari iuran Mandiri ke KIS PBI APBD silakan ke Kelurahan dengan membawa persyaratan:\n- Surat keterangan RT/RW\n- Fotokopi KTP dan KK\n- Membuat surat pernyataan bahwa sudah tidak mampu melanjutkan pembayaran iuran Mandiri diberi meterai 10.000 (dimohon agar tidak ada tunggakan dalam pembayaran iuran; jika ada tunggakan harus dilunasi terlebih dahulu)."
+    },
+    {
+      "id": 4,
+      "pertanyaan": "Bagaimana Solusi Kartu ATM KKS hilang ?",
+      "jawaban": "Datang menemui pendamping PKH/Bansos di Kecamatan setempat untuk meminta surat rekomendasi pencetakan ATM KKS ke Bank BNI/Himbara.\nPersyaratan Percepatan ATM KKS:\n1. KTP Asli\n2. Surat Rekomendasi Pendampingan PKH\n3. Surat Kehilangan dari Kepolisian."
+    },
+    {
+      "id": 5,
+      "pertanyaan": "Bagaimana prosedur untuk memasukkan lansia ke panti ?",
+      "jawaban": "Prosedur Lansia yang akan masuk ke Panti Lansia ada 2 kategori: terlantar yang sebatang kara dan masih memiliki keluarga/kakak/adik/anak. Untuk kategori yang bisa masuk di panti milik pemerintah adalah lansia yang sebatang kara dan tidak ada keluarga. Sesuai dengan UU Nomor 23 Tahun 2014 kewenangan pengelolaan Panti berada di Provinsi.\nAdapun syarat lansia yang bisa dirujuk ke panti milik pemerintah/provinsi:\n- Usia 60 tahun ke atas\n- Tidak memiliki keluarga/kakak/adik/anak\n- Domisili dan KTP Surakarta (untuk luar Kota Surakarta dikoordinasikan ke Dinas Sosial setempat sesuai alamat identitasnya)\n- Mandiri atau ADL (Aktivitas sehari-hari) bisa beraktivitas tanpa bantuan orang lain."
+    },
+    {
+      "id": 6,
+      "pertanyaan": "Bagaimana cara mendapatkan bantuan orang kehabisan bekal?",
+      "jawaban": "Penanganan Orang Kehabisan Bekal:\n- Menyerahkan surat keterangan kehabisan bekal dari pihak Kepolisian\n- Menunjukkan KTP atau jika kehilangan KTP wajib menyerahkan surat keterangan kehilangan KTP dari pihak Kepolisian\n- Menyerahkan surat estafet atau penerusan pemulangan dari Dinas Sosial lain yang mengestafetkan jika proses pemulangan dilakukan dengan cara pengestafetan\n- Dinas Sosial tidak akan memproses atau memberikan bantuan pemulangan jika orang kehabisan bekal tersebut sudah pernah dibantu pemulangannya di lain waktu baik dari Dinas Sosial Kota Surakarta atau Dinas Sosial daerah lain\n- Tujuan pemulangan PPKS harus sesuai dengan KTP."
+    },
+    {
+      "id": 7,
+      "pertanyaan": "Bagaimana cara menangani orang yang terlantar dan tidak dikenali identitas dirinya?",
+      "jawaban": "Penanganan orang yang terlantar dan tidak dikenali identitasnya (Alur Penanganan):\n- PPKS (Pemerlu Pelayanan Kesejahteraan Sosial) diantar oleh Satpol PP / petugas Kelurahan / relawan ke Rumsing (Rumah Singgah)\n- Petugas Rumsing membuat Berita Acara penerimaan PPKS + foto + kronologi penyerahan dari pengirim PPKS ke petugas Rumsing\n- Petugas Rumsing melakukan assessment awal kepada PPKS mengenai data diri PPKS\n- Apabila tidak ada identitas diri, dibawa ke Dukcapil untuk perekaman Biometrik guna mengetahui alamat asal PPKS\n- Apabila PPKS dalam keadaan sakit akan dirujuk untuk dilakukan pengobatan/perawatan awal terlebih dahulu\n- Apabila sehat, PPKS dimasukkan dalam Rumsing dengan masa singgah 1–7 hari untuk assessment lanjutan dan penelusuran keluarga/kerabat\n- Apabila diketahui keluarga PPKS, Petugas Rumsing melaksanakan penyerahan/reunifikasi PPKS ke keluarganya dengan Berita Acara penyerahan."
+    },
+    {
+      "id": 8,
+      "pertanyaan": "Bagaimana cara mendapatkan bantuan permohonan alat bantu ?",
+      "jawaban": "Syarat-syarat permohonan alat bantu:\n- Fotokopi KK dan KTP PM (Penerima Manfaat)\n- Foto diri seluruh badan PM\n- Surat Keterangan Tidak Mampu (SKTM) / Surat Keterangan dari Kelurahan keperluan permohonan bantuan ke Walikota Surakarta\n- Surat permohonan bantuan kepada Walikota yang ditandatangani PM tanpa meterai\n- Pengajuan berkas ke Dinas Sosial Kota Surakarta."
+    },
+    {
+      "id": 9,
+      "pertanyaan": "Bagaimana cara mendaftar mendirikan LKS (Lembaga Kesejahteraan Sosial) ?",
+      "jawaban": "Persyaratan pengajuan Tanda Daftar LKS:\n1. Surat Permohonan Keterangan Terdaftar LKS kepada Kepala Dinas Sosial Kota Surakarta\n2. AD/ART\n3. FC Akta Notaris\n4. FC Surat Kemenkumham\n5. FC KTP (Ketua, Bendahara, dan Sekretaris)\n6. FC NPWP\n7. Surat Keterangan Domisili dari Kelurahan\n8. Susunan Pengurus LKS\n9. Foto Sekretariat dan Kegiatan-kegiatan\n10. Rekomendasi dari LKKS."
+    },
+    {
+      "id": 10,
+      "pertanyaan": "Apa saja persyaratan pengajuan keringanan pajak kendaraan bagi LKS/Yayasan Sosial Keagamaan?",
+      "jawaban": "Persyaratan pengajuan keringanan pajak kendaraan bagi LKS/Yayasan Sosial Keagamaan (Layanan PEKA):\n1. Surat Permohonan\n2. FC STNK\n3. FC BPKB\n4. Rekomendasi dari Kementerian Agama (Khusus Masjid / Gereja)."
+    },
+    {
+      "id": 11,
+      "pertanyaan": "Bagaimana cara mendapatkan bantuan untuk korban bencana alam?",
+      "jawaban": "Persyaratan Permohonan Pengajuan Bantuan untuk Korban Bencana Alam:\n1. Surat Permohonan / Nota Dinas dari Kelurahan\n2. FC KK dan KTP yang terdampak\n3. Foto kejadian / rumah terdampak\n4. Laporan Assessment dari TAGANA Surakarta."
+    }
+  ],
+  "tb_pmks_psks": [
+    {
+      "id": 1,
+      "kecamatan": "Laweyan",
+      "kelurahan_jml": 11,
+      "fakir_miskin_kk": 6420,
+      "lansia_terlantar": 412,
+      "disabilitas": 538,
+      "anak_terlantar": 145,
+      "kpm_pkh": 2890,
+      "kpm_bpnt": 5140,
+      "lks_terdaftar": 18,
+      "tksk_psm_tagana": 64
+    },
+    {
+      "id": 2,
+      "kecamatan": "Serengan",
+      "kelurahan_jml": 7,
+      "fakir_miskin_kk": 4310,
+      "lansia_terlantar": 298,
+      "disabilitas": 342,
+      "anak_terlantar": 96,
+      "kpm_pkh": 1940,
+      "kpm_bpnt": 3680,
+      "lks_terdaftar": 11,
+      "tksk_psm_tagana": 45
+    },
+    {
+      "id": 3,
+      "kecamatan": "Pasar Kliwon",
+      "kelurahan_jml": 10,
+      "fakir_miskin_kk": 7180,
+      "lansia_terlantar": 486,
+      "disabilitas": 495,
+      "anak_terlantar": 182,
+      "kpm_pkh": 3420,
+      "kpm_bpnt": 6120,
+      "lks_terdaftar": 15,
+      "tksk_psm_tagana": 58
+    },
+    {
+      "id": 4,
+      "kecamatan": "Jebres",
+      "kelurahan_jml": 11,
+      "fakir_miskin_kk": 10450,
+      "lansia_terlantar": 695,
+      "disabilitas": 814,
+      "anak_terlantar": 264,
+      "kpm_pkh": 4980,
+      "kpm_bpnt": 8740,
+      "lks_terdaftar": 27,
+      "tksk_psm_tagana": 86
+    },
+    {
+      "id": 5,
+      "kecamatan": "Banjarsari",
+      "kelurahan_jml": 15,
+      "fakir_miskin_kk": 12190,
+      "lansia_terlantar": 784,
+      "disabilitas": 946,
+      "anak_terlantar": 298,
+      "kpm_pkh": 5640,
+      "kpm_bpnt": 9890,
+      "lks_terdaftar": 31,
+      "tksk_psm_tagana": 102
+    }
+  ],
+  "tb_users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password_hint": "dinsos2026",
+      "nama_lengkap": "Administrator Utama Dinsos",
+      "role": "Superadmin",
+      "bidang": "Sekretariat / TI",
+      "aktif": 1,
+      "last_login": "2026-10-23 02:34:16"
+    },
+    {
+      "id": 2,
+      "username": "ppid_dinsos",
+      "password_hint": "ppid2026",
+      "nama_lengkap": "Admin PPID Pelaksana",
+      "role": "Admin PPID",
+      "bidang": "Sekretariat",
+      "aktif": 1,
+      "last_login": "2026-10-22 14:20:00"
+    },
+    {
+      "id": 3,
+      "username": "admin_dayasos",
+      "password_hint": "dayasos2026",
+      "nama_lengkap": "Operator Pemberdayaan Sosial",
+      "role": "Admin Bidang",
+      "bidang": "Bidang Pemberdayaan Sosial",
+      "aktif": 1,
+      "last_login": "2026-10-22 11:05:00"
+    },
+    {
+      "id": 4,
+      "username": "admin_rehabsos",
+      "password_hint": "rehabsos2026",
+      "nama_lengkap": "Operator Rehabilitasi Sosial",
+      "role": "Admin Bidang",
+      "bidang": "Bidang Rehabilitasi Sosial",
+      "aktif": 1,
+      "last_login": "2026-10-21 15:10:00"
+    },
+    {
+      "id": 5,
+      "username": "admin_linjamsos",
+      "password_hint": "linjamsos2026",
+      "nama_lengkap": "Operator Linjamsos & SIKS-NG",
+      "role": "Admin Bidang",
+      "bidang": "Bidang Perlindungan & Jaminan Sosial",
+      "aktif": 1,
+      "last_login": "2026-10-23 07:45:00"
+    }
+  ]
+}

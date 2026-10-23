@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 680" width="1100" height="680">
+  <rect width="1100" height="680" rx="16" fill="#f9fbfe" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="0" y="0" width="1100" height="68" rx="16" fill="#30296c"/>
+  <rect x="0" y="40" width="1100" height="28" fill="#30296c"/>
+  <text x="550" y="34" font-family="Barlow, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">BAGAN STRUKTUR ORGANISASI DINAS SOSIAL KOTA SURAKARTA</text>
+  <text x="550" y="55" font-family="Nunito, Arial, sans-serif" font-size="12.5" fill="#ffa203" text-anchor="middle">Berdasarkan Peraturan Wali Kota Surakarta tentang Kedudukan, Susunan Organisasi, Tugas dan Fungsi Perangkat Daerah</text>
+
+  <!-- Connector Lines -->
+  <g stroke="#30296c" stroke-width="2.2" fill="none">
+    <line x1="550" y1="158" x2="550" y2="310"/>
+    <!-- To Kelompok Jabfung & Sekretariat -->
+    <path d="M550 185 L220 185 L220 205"/>
+    <path d="M550 185 L830 185 L830 205"/>
+    <!-- Sekretariat Subbag -->
+    <line x1="830" y1="265" x2="830" y2="285"/>
+    <path d="M680 285 L980 285"/>
+    <line x1="680" y1="285" x2="680" y2="302"/>
+    <line x1="830" y1="285" x2="830" y2="302"/>
+    <line x1="980" y1="285" x2="980" y2="302"/>
+    <!-- 3 Bidang + UPT -->
+    <path d="M165 390 L935 390"/>
+    <line x1="550" y1="310" x2="550" y2="390"/>
+    <line x1="165" y1="390" x2="165" y2="415"/>
+    <line x1="425" y1="390" x2="425" y2="415"/>
+    <line x1="695" y1="390" x2="695" y2="415"/>
+    <line x1="935" y1="390" x2="935" y2="415"/>
+    <!-- Seksi lines -->
+    <line x1="165" y1="485" x2="165" y2="595"/>
+    <line x1="425" y1="485" x2="425" y2="595"/>
+    <line x1="695" y1="485" x2="695" y2="635"/>
+  </g>
+
+  <!-- Kepala Dinas -->
+  <rect x="395" y="92" width="310" height="66" rx="10" fill="#30296c" stroke="#f68820" stroke-width="3"/>
+  <text x="550" y="118" font-family="Barlow, Arial, sans-serif" font-size="15" font-weight="800" fill="#ffa203" text-anchor="middle">KEPALA DINAS SOSIAL</text>
+  <text x="550" y="140" font-family="Nunito, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">Drs. SAMSU TRI WAHYUDIN, M.Si.</text>
+
+  <!-- Kelompok Jabatan Fungsional -->
+  <rect x="90" y="205" width="260" height="60" rx="8" fill="#ffffff" stroke="#30296c" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="220" y="232" font-family="Barlow, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#30296c" text-anchor="middle">KELOMPOK JABATAN FUNGSIONAL</text>
+  <text x="220" y="251" font-family="Nunito, Arial, sans-serif" font-size="11.5" fill="#696687" text-anchor="middle">Pekerja Sosial (PEKSOS) &amp; Penyuluh Sosial</text>
+
+  <!-- Sekretariat -->
+  <rect x="695" y="205" width="270" height="60" rx="8" fill="#f68820"/>
+  <text x="830" y="230" font-family="Barlow, Arial, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">SEKRETARIAT</text>
+  <text x="830" y="250" font-family="Nunito, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#fff8f0" text-anchor="middle">MARGONO, S.STP, M.Si</text>
+
+  <!-- 3 Subbagian -->
+  <rect x="610" y="302" width="140" height="54" rx="6" fill="#ffffff" stroke="#f68820" stroke-width="1.8"/>
+  <text x="680" y="325" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Subbag Perencanaan</text>
+  <text x="680" y="341" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">&amp; Penganggaran</text>
+
+  <rect x="760" y="302" width="140" height="54" rx="6" fill="#ffffff" stroke="#f68820" stroke-width="1.8"/>
+  <text x="830" y="325" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Subbag Administrasi</text>
+  <text x="830" y="341" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">&amp; Umum</text>
+
+  <rect x="910" y="302" width="140" height="54" rx="6" fill="#ffffff" stroke="#f68820" stroke-width="1.8"/>
+  <text x="980" y="325" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Subbag Kepegawaian</text>
+  <text x="980" y="341" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">&amp; Organisasi</text>
+
+  <!-- Bidang 1 -->
+  <rect x="45" y="415" width="240" height="70" rx="8" fill="#30296c"/>
+  <text x="165" y="440" font-family="Barlow, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffa203" text-anchor="middle">BIDANG PEMBERDAYAAN SOSIAL,</text>
+  <text x="165" y="457" font-family="Barlow, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">KEPAHLAWANAN &amp; PENANGANAN</text>
+  <text x="165" y="473" font-family="Barlow, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">BENCANA</text>
+
+  <rect x="55" y="505" width="220" height="46" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="165" y="532" font-family="Nunito, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Pemberdayaan Sosial</text>
+
+  <rect x="55" y="565" width="220" height="52" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="165" y="587" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Pengelolaan TMP &amp;</text>
+  <text x="165" y="603" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Penanganan Bencana</text>
+
+  <!-- Bidang 2 -->
+  <rect x="305" y="415" width="240" height="70" rx="8" fill="#30296c"/>
+  <text x="425" y="447" font-family="Barlow, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#ffa203" text-anchor="middle">BIDANG REHABILITASI</text>
+  <text x="425" y="466" font-family="Barlow, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#ffffff" text-anchor="middle">SOSIAL</text>
+
+  <rect x="315" y="505" width="220" height="46" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="425" y="532" font-family="Nunito, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Rehabilitasi Sosial Dasar</text>
+
+  <rect x="315" y="565" width="220" height="52" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="425" y="587" font-family="Nunito, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Rehabilitasi Sosial</text>
+  <text x="425" y="603" font-family="Nunito, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#30296c" text-anchor="middle">PMKS Lainnya</text>
+
+  <!-- Bidang 3 -->
+  <rect x="570" y="415" width="250" height="70" rx="8" fill="#30296c"/>
+  <text x="695" y="442" font-family="Barlow, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffa203" text-anchor="middle">BIDANG PERLINDUNGAN DAN</text>
+  <text x="695" y="459" font-family="Barlow, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">JAMINAN SOSIAL / PENANGANAN</text>
+  <text x="695" y="475" font-family="Barlow, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">FAKIR MISKIN</text>
+
+  <rect x="585" y="500" width="220" height="44" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="695" y="520" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Pendataan &amp; Pengelolaan</text>
+  <text x="695" y="535" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Data Kemiskinan (DTKS/E-SIK)</text>
+
+  <rect x="585" y="554" width="220" height="44" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="695" y="574" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Penanganan Fakir Miskin</text>
+  <text x="695" y="589" font-family="Nunito, Arial, sans-serif" font-size="11" font-weight="700" fill="#30296c" text-anchor="middle">&amp; Anak Terlantar</text>
+
+  <rect x="585" y="608" width="220" height="40" rx="6" fill="#ffffff" stroke="#30296c" stroke-width="1.5"/>
+  <text x="695" y="632" font-family="Nunito, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#30296c" text-anchor="middle">Seksi Perlindungan Sosial</text>
+
+  <!-- UPTD -->
+  <rect x="840" y="415" width="215" height="70" rx="8" fill="#0d9488"/>
+  <text x="947" y="444" font-family="Barlow, Arial, sans-serif" font-size="13.5" font-weight="800" fill="#ffffff" text-anchor="middle">UPT / RUMAH SINGGAH</text>
+  <text x="947" y="464" font-family="Nunito, Arial, sans-serif" font-size="11.5" fill="#ccfbf1" text-anchor="middle">&amp; Layanan SLRT Puskesos</text>
+</svg>

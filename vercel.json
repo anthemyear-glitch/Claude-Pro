@@ -1,0 +1,28 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/layanan", "destination": "/index.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/dashboard", "destination": "/admin.html" },
+    { "source": "/pmks", "destination": "/pmks.html" },
+    { "source": "/research", "destination": "/research.html" },
+    { "source": "/home", "destination": "/home.html" },
+    { "source": "/profil/:path*", "destination": "/home.html" },
+    { "source": "/layanan/:path*", "destination": "/home.html" },
+    { "source": "/standar_pelayanan/:path*", "destination": "/home.html" },
+    { "source": "/standar_pelayanan", "destination": "/home.html" },
+    { "source": "/berita/:path*", "destination": "/home.html" },
+    { "source": "/berita", "destination": "/home.html" },
+    { "source": "/pengumuman/:path*", "destination": "/home.html" },
+    { "source": "/pengumuman", "destination": "/home.html" },
+    { "source": "/artikel/:path*", "destination": "/home.html" },
+    { "source": "/artikel", "destination": "/home.html" },
+    { "source": "/agenda", "destination": "/home.html" },
+    { "source": "/bank_data", "destination": "/home.html" },
+    { "source": "/galeri/:path*", "destination": "/home.html" },
+    { "source": "/ppid/:path*", "destination": "/home.html" },
+    { "source": "/aduan/:path*", "destination": "/home.html" },
+    { "source": "/unduhan", "destination": "/home.html" },
+    { "source": "/faq", "destination": "/home.html" }
+  ]
+}

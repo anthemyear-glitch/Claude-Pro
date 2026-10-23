@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500">
+  <rect width="1000" height="500" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect width="1000" height="68" rx="16" fill="#30296c"/>
+  <rect y="40" width="1000" height="28" fill="#30296c"/>
+  <text x="500" y="34" font-family="Barlow, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">MEKANISME / ALUR PENANGANAN PENGADUAN MASYARAKAT</text>
+  <text x="500" y="54" font-family="Nunito, Arial, sans-serif" font-size="12.5" fill="#ffa203" text-anchor="middle">DINAS SOSIAL KOTA SURAKARTA — TERINTEGRASI ULAS &amp; SP4N-LAPOR!</text>
+
+  <!-- Step boxes -->
+  <g transform="translate(40,115)">
+    <rect width="190" height="145" rx="12" fill="#fff8f0" stroke="#f68820" stroke-width="2.5"/>
+    <circle cx="95" cy="30" r="18" fill="#f68820"/><text x="95" y="36" font-family="Barlow" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">1</text>
+    <text x="95" y="68" font-family="Barlow" font-size="15" font-weight="800" fill="#30296c" text-anchor="middle">PENYAMPAIAN ADUAN</text>
+    <text x="95" y="90" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">• Loket Pengaduan Dinsos</text>
+    <text x="95" y="107" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">• WA: 0811-2811-919</text>
+    <text x="95" y="124" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">• ULAS &amp; SP4N-LAPOR!</text>
+  </g>
+  <path d="M235 188 L270 188" stroke="#f68820" stroke-width="3" marker-end="url(#arr)"/>
+
+  <g transform="translate(278,115)">
+    <rect width="190" height="145" rx="12" fill="#f0f9ff" stroke="#0284c7" stroke-width="2.5"/>
+    <circle cx="95" cy="30" r="18" fill="#0284c7"/><text x="95" y="36" font-family="Barlow" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">2</text>
+    <text x="95" y="68" font-family="Barlow" font-size="15" font-weight="800" fill="#30296c" text-anchor="middle">PENCATATAN &amp; VERVAL</text>
+    <text x="95" y="90" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">Admin Pengelola Aduan</text>
+    <text x="95" y="107" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">memeriksa kelengkapan</text>
+    <text x="95" y="124" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">identitas &amp; substansi (Maks 1 HK)</text>
+  </g>
+  <path d="M473 188 L508 188" stroke="#f68820" stroke-width="3"/>
+
+  <g transform="translate(516,115)">
+    <rect width="195" height="145" rx="12" fill="#eef2ff" stroke="#30296c" stroke-width="2.5"/>
+    <circle cx="97" cy="30" r="18" fill="#30296c"/><text x="97" y="36" font-family="Barlow" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">3</text>
+    <text x="97" y="68" font-family="Barlow" font-size="15" font-weight="800" fill="#30296c" text-anchor="middle">KOORDINASI BIDANG</text>
+    <text x="97" y="90" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">Disposisi ke Bidang Teknis</text>
+    <text x="97" y="107" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">(Dayasos / Rehabsos / Linjamsos)</text>
+    <text x="97" y="124" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">&amp; Cek Lapangan / Home Visit</text>
+  </g>
+  <path d="M716 188 L752 188" stroke="#f68820" stroke-width="3"/>
+
+  <g transform="translate(760,115)">
+    <rect width="200" height="145" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2.5"/>
+    <circle cx="100" cy="30" r="18" fill="#059669"/><text x="100" y="36" font-family="Barlow" font-size="16" font-weight="800" fill="#fff" text-anchor="middle">4</text>
+    <text x="100" y="68" font-family="Barlow" font-size="15" font-weight="800" fill="#30296c" text-anchor="middle">TINDAK LANJUT &amp; JAWAB</text>
+    <text x="100" y="90" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">Penyampaian jawaban resmi</text>
+    <text x="100" y="107" font-family="Nunito" font-size="11.5" fill="#696687" text-anchor="middle">kepada pelapor &amp; publikasi</text>
+    <text x="100" y="124" font-family="Nunito" font-size="11.5" fill="#059669" font-weight="700" text-anchor="middle">SLA: 1 s.d. 5 Hari Kerja</text>
+  </g>
+
+  <!-- Bottom SLA & Channels bar -->
+  <rect x="40" y="305" width="920" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="500" y="335" font-family="Barlow" font-size="16" font-weight="800" fill="#30296c" text-anchor="middle">KANAL RESMI PENGADUAN, SARAN DAN MASUKAN DINAS SOSIAL KOTA SURAKARTA</text>
+  <text x="80" y="368" font-family="Nunito" font-size="13" font-weight="700" fill="#30296c">1. WhatsApp Hotline: +62 811-2811-919</text>
+  <text x="80" y="394" font-family="Nunito" font-size="13" font-weight="700" fill="#30296c">2. ULAS Pemkot Surakarta: ulas.surakarta.go.id</text>
+  <text x="80" y="420" font-family="Nunito" font-size="13" font-weight="700" fill="#30296c">3. SP4N-LAPOR!: surakarta.lapor.go.id</text>
+  <text x="530" y="368" font-family="Nunito" font-size="13" font-weight="700" fill="#30296c">4. Telepon Kantor: (0271) 734123</text>
+  <text x="530" y="394" font-family="Nunito" font-size="13" font-weight="700" fill="#30296c">5. Email Resmi: dinsos@surakarta.go.id</text>
+  <text x="530" y="420" font-family="Nunito" font-size="13" font-weight="700" fill="#30296c">6. Loket Pengaduan: Jl. Slamet Riyadi No.368, Laweyan</text>
+</svg>

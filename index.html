@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PORTAL | Dinas Sosial Kota Surakarta</title>
+  <meta name="description" content="Portal Layanan Terintegrasi Dinas Sosial Pemerintah Kota Surakarta — 15 Layanan Kesejahteraan Sosial, DTKS, PKH, BPNT, Rehabilitasi Sosial, LKS, dan TMP.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/lambang-surakarta.svg">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/portal-style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+</head>
+<body>
+
+  <!-- Top Portal Navigation -->
+  <header class="portal-navbar">
+    <div class="container d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <a href="index.html" class="d-flex align-items-center text-decoration-none">
+        <img src="assets/images/logo-dinsos-surakarta.svg" alt="Dinas Sosial Kota Surakarta" style="height:54px;">
+      </a>
+      <nav class="d-flex flex-wrap align-items-center gap-2">
+        <a href="home.html" class="btn btn-sm fw-bold px-3 py-2" style="background:#fff8f0;color:#f68820;border:1px solid #fed7aa;">
+          <i class="bx bx-globe me-1"></i>Website Utama (/home)
+        </a>
+        <a href="pmks.html" class="btn btn-sm btn-outline-secondary fw-bold px-3 py-2">
+          <i class="bx bx-bar-chart-alt-2 me-1"></i>SIM PMKS &amp; PSKS
+        </a>
+        <a href="research.html" class="btn btn-sm btn-outline-primary fw-bold px-3 py-2">
+          <i class="bx bx-code-block me-1"></i>Deep Research
+        </a>
+        <a href="login.html" class="btn btn-sm fw-bold px-3 py-2 text-white" style="background:#30296c;">
+          <i class="bx bx-lock-alt me-1"></i>Login Sistem
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section (Mirrors https://dinsos.surakarta.go.id/ 1:1) -->
+  <section class="portal-hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="portal-badge-sugeng">
+            <i class="bx bxs-institution fs-6"></i>
+            <span id="portalTagline">SUGENG RAWUH WONTEN</span>
+          </div>
+          <h1>Layanan Dinas Sosial <span>Kota Surakarta</span></h1>
+          <p class="lead-desc" id="portalDesc">
+            Pada Laman Website ini, terdapat 15 layanan yang terintegrasi pada Dinas Sosial Kota Surakarta.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="home.html" class="btn-portal-primary">
+              <span>Kunjungi Website</span>
+              <i class="bx bx-right-arrow-alt fs-4"></i>
+            </a>
+            <a href="#daftar-layanan" class="btn-portal-outline">
+              <i class="bx bx-grid-alt"></i>
+              <span>Lihat 15 Layanan</span>
+            </a>
+          </div>
+          <div class="row g-3 pt-2">
+            <div class="col-sm-6">
+              <div class="portal-stat-floating">
+                <div class="fw-bold" style="color:#30296c;font-size:15px;"><i class="bx bx-time-five text-warning me-1"></i>Jam Pelayanan Loket</div>
+                <div class="small text-muted">Senin–Kamis 07.30–15.30 WIB<br>Jumat 07.30–14.30 WIB</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="portal-stat-floating" style="border-left-color:#059669;">
+                <div class="fw-bold" style="color:#30296c;font-size:15px;"><i class="bx bx-shield-quarter text-success me-1"></i>Standar Biaya Layanan</div>
+                <div class="small text-muted">100% GRATIS (Rp 0,-)<br>IKM 89,64 — Mutu A (Sangat Baik)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="portal-gedung-card">
+            <img src="assets/images/portal/img-gedung-dinsos.png" alt="Gedung Dinas Sosial Kota Surakarta">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 Integrated Services Grid -->
+  <section id="daftar-layanan" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="fw-bold text-uppercase" style="color:#f68820;letter-spacing:1.2px;font-size:13.5px;">STANDAR PELAYANAN TERPADU</span>
+        <h2 class="display-6 fw-bold mt-1 mb-2">15 Layanan Terintegrasi Dinas Sosial</h2>
+        <p class="text-muted mx-auto" style="max-width:650px;">
+          Pilih layanan di bawah ini untuk melihat rincian persyaratan, alur mekanisme prosedur, jangka waktu penyelesaian, serta kanal konsultasi &amp; pengaduan resmi.
+        </p>
+      </div>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="bg-white p-3 rounded-4 shadow-sm border mb-4">
+        <div class="row g-3 align-items-center">
+          <div class="col-lg-7">
+            <div class="d-flex flex-wrap gap-2">
+              <button type="button" class="portal-filter-btn active" data-bidang="all">Semua (15)</button>
+              <button type="button" class="portal-filter-btn" data-bidang="1">Pemberdayaan Sosial</button>
+              <button type="button" class="portal-filter-btn" data-bidang="2">Rehabilitasi Sosial</button>
+              <button type="button" class="portal-filter-btn" data-bidang="3">Perlindungan &amp; Jamsos</button>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="input-group">
+              <span class="input-group-text bg-light border-end-0"><i class="bx bx-search text-warning fs-5"></i></span>
+              <input type="search" id="portalSearchInput" class="form-control border-start-0" placeholder="Cari layanan (misal: DTKS, PKH, Alat Bantu, PEKA, LKS)...">
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 px-1 small text-muted fw-semibold" id="portalServiceCount">15 dari 15 Layanan Terintegrasi</div>
+      </div>
+
+      <!-- Dynamic 15 Cards Container -->
+      <div class="row g-4" id="portalServicesGrid"></div>
+    </div>
+  </section>
+
+  <!-- Ekosistem Portal & Aplikasi Terintegrasi -->
+  <section class="py-5 bg-white border-top">
+    <div class="container">
+      <div class="text-center mb-4">
+        <span class="fw-bold text-uppercase" style="color:#f68820;font-size:13px;">EKOSISTEM DIGITAL E-GOVERNMENT</span>
+        <h3 class="fw-bold mt-1">Kanal &amp; Sistem Informasi Terintegrasi</h3>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <a href="home.html" class="ecosystem-card">
+            <div class="fs-2 text-warning mb-2"><i class="bx bx-buildings"></i></div>
+            <h5 class="fw-bold">Website Utama Dinsos</h5>
+            <p class="small text-muted mb-0">Profil, Berita Terkini, Pengumuman, PPID, Standar Pelayanan, Unduhan &amp; FAQ.</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="pmks.html" class="ecosystem-card">
+            <div class="fs-2 text-primary mb-2"><i class="bx bx-pie-chart-alt-2"></i></div>
+            <h5 class="fw-bold">SIM PMKS &amp; PSKS</h5>
+            <p class="small text-muted mb-0">Sistem Informasi Manajemen data PMKS &amp; PSKS di 5 Kecamatan Kota Surakarta.</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="home.html#/aduan/detail/4" class="ecosystem-card">
+            <div class="fs-2 text-success mb-2"><i class="bx bx-message-square-dots"></i></div>
+            <h5 class="fw-bold">Layanan Pengaduan &amp; ULAS</h5>
+            <p class="small text-muted mb-0">Sampaikan aspirasi &amp; pantau tindak lanjut pengaduan masyarakat secara transparan.</p>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="admin.html" class="ecosystem-card">
+            <div class="fs-2 text-danger mb-2"><i class="bx bx-slider-alt"></i></div>
+            <h5 class="fw-bold">BackEnd CMS (Frest Admin)</h5>
+            <p class="small text-muted mb-0">Panel manajemen konten penuh (CRUD Berita, Layanan, PPID, Aduan, Export SQL).</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="portal-footer">
+    <div class="container">
+      <div class="row g-4 align-items-center pb-4 border-bottom border-secondary border-opacity-25">
+        <div class="col-lg-5">
+          <img src="assets/images/logo-dinsos-white.svg" alt="Dinas Sosial Kota Surakarta" style="height:56px;" class="mb-2">
+          <p class="small mb-0 text-light opacity-75">
+            "Menyapa dengan Senyum, Melayani dengan Ikhlas" — Dinsos Hadir Di Tengah Masyarakat Kota Surakarta.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-2 small">
+            <div class="col-md-6">
+              <div class="fw-bold text-warning mb-1"><i class="bx bx-map me-1"></i>Alamat Kantor</div>
+              <div id="portalFooterAddress">Jl. Slamet Riyadi No.368, Penumping, Kec. Laweyan, Kota Surakarta, Jawa Tengah 57141</div>
+            </div>
+            <div class="col-md-6">
+              <div class="fw-bold text-warning mb-1"><i class="bx bx-phone-call me-1"></i>Kontak Resmi</div>
+              <div id="portalFooterEmail">dinsos@surakarta.go.id</div>
+              <div id="portalFooterPhone">(0271) 734123 / WA +628112811919</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 small">
+        <div>Hak Cipta &copy; 2026 <strong>Dinas Sosial Kota Surakarta</strong>. Pemerintah Kota Surakarta.</div>
+        <div class="d-flex gap-3">
+          <a href="home.html" class="text-warning text-decoration-none fw-bold">Beranda</a>
+          <a href="home.html#/ppid/profil" class="text-light text-decoration-none">PPID</a>
+          <a href="home.html#/faq" class="text-light text-decoration-none">FAQ</a>
+          <a href="login.html" class="text-light text-decoration-none">Admin CMS</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Standar Pelayanan Detail -->
+  <div class="modal fade" id="sopDetailModal" tabindex="-1" aria-labelledby="sopModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header text-white border-0" style="background:linear-gradient(135deg,#30296c,#1e1b4b);">
+          <div>
+            <span class="badge bg-warning text-dark mb-1">STANDAR PELAYANAN DINSOS SURAKARTA</span>
+            <h5 class="modal-title text-white fw-bold" id="sopModalLabel">Detail Layanan</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="sopModalBody"></div>
+        <div class="modal-footer bg-light border-0 d-flex justify-content-between">
+          <a href="home.html#/aduan/detail/4" class="btn btn-outline-primary fw-bold">
+            <i class="bx bx-message-dots me-1"></i>Konsultasi / Pengaduan Layanan
+          </a>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            <a href="home.html#/standar_pelayanan" id="sopModalFullLink" class="btn text-white fw-bold" style="background:linear-gradient(to right,#ffa203,#ff5e29);">
+              Buka di Website Utama <i class="bx bx-link-external ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/seed-data.js"></script>
+  <script src="assets/js/db-engine.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/portal-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+/*
+ * PIXINVENT FREST — BOOTSTRAP HTML ADMIN TEMPLATE STYLESHEET (1:1 BackEnd Clone)
+ * Palette: Primary #5A8DEE | Heading #475F7B | Body #727E8C | Canvas #F2F4F4
+ */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --frest-primary: #5a8dee;
+  --frest-primary-dark: #3f74db;
+  --frest-success: #39da8a;
+  --frest-warning: #fdac41;
+  --frest-danger: #ff5b5c;
+  --frest-info: #00cfdd;
+  --frest-heading: #475f7b;
+  --frest-body: #727e8c;
+  --frest-bg: #f2f4f4;
+  --frest-sidebar-w: 265px;
+}
+
+body.frest-body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--frest-bg);
+  color: var(--frest-body);
+  font-size: 14.5px;
+  margin: 0;
+}
+
+body.frest-body h1,
+body.frest-body h2,
+body.frest-body h3,
+body.frest-body h4,
+body.frest-body h5,
+body.frest-body h6 {
+  font-family: "Rubik", sans-serif;
+  color: var(--frest-heading);
+  font-weight: 600;
+}
+
+/* LOGIN PAGE (/login — Web Dinas Sosial) */
+.frest-auth-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8eff9 0%, #f2f4f4 55%, #fef5ea 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.frest-auth-card {
+  max-width: 940px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: -8px 12px 24px 0 rgba(25, 42, 70, 0.13);
+}
+.frest-auth-right {
+  background: #f8fafd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  border-left: 1px solid #edf1f7;
+}
+.btn-frest-primary {
+  background-color: var(--frest-primary);
+  border-color: var(--frest-primary);
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(90, 141, 238, 0.35);
+}
+.btn-frest-primary:hover {
+  background-color: var(--frest-primary-dark);
+  border-color: var(--frest-primary-dark);
+}
+
+/* ADMIN LAYOUT */
+.frest-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+.frest-sidebar {
+  width: var(--frest-sidebar-w);
+  background: #ffffff;
+  border-right: 1px solid #dfe3e7;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.28s ease;
+}
+.frest-sidebar-brand {
+  padding: 16px 20px;
+  border-bottom: 1px solid #edf1f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.frest-sidebar-menu {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 12px 28px;
+  list-style: none;
+  margin: 0;
+}
+.frest-nav-header {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #a3afbd;
+  padding: 14px 12px 6px;
+}
+.frest-menu-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--frest-heading);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  margin-bottom: 2px;
+}
+.frest-menu-btn i {
+  font-size: 19px;
+  color: #8494a7;
+}
+.frest-menu-btn:hover {
+  background: rgba(90, 141, 238, 0.09);
+  color: var(--frest-primary);
+}
+.frest-menu-btn.active {
+  background: rgba(90, 141, 238, 0.16);
+  color: var(--frest-primary);
+  font-weight: 600;
+}
+.frest-menu-btn.active i {
+  color: var(--frest-primary);
+}
+
+.frest-main {
+  margin-left: var(--frest-sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.frest-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #dfe3e7;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.frest-content {
+  padding: 24px;
+  flex: 1;
+}
+
+.frest-card {
+  background: #ffffff;
+  border-radius: 8px;
+  border: none;
+  box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.08);
+  padding: 22px;
+}
+
+.frest-kpi-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+@media (max-width: 991.98px) {
+  .frest-sidebar {
+    transform: translateX(-100%);
+  }
+  .frest-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  }
+  .frest-main {
+    margin-left: 0;
+  }
+}

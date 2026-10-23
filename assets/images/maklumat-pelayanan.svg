@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900" height="540">
+  <defs>
+    <linearGradient id="bgMaklumat" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#30296c"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="540" rx="20" fill="url(#bgMaklumat)"/>
+  <rect x="24" y="24" width="852" height="492" rx="14" fill="none" stroke="#ffa203" stroke-width="3"/>
+  <text x="450" y="85" font-family="Barlow, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffa203" text-anchor="middle" letter-spacing="2">PEMERINTAH KOTA SURAKARTA — DINAS SOSIAL</text>
+  <text x="450" y="132" font-family="Barlow, Arial, sans-serif" font-size="36" font-weight="800" fill="#ffffff" text-anchor="middle">MAKLUMAT PELAYANAN</text>
+  <line x1="300" y1="152" x2="600" y2="152" stroke="#f68820" stroke-width="4"/>
+  <rect x="85" y="185" width="730" height="190" rx="14" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)"/>
+  <text x="450" y="232" font-family="Nunito, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">"DENGAN INI KAMI MENYATAKAN SANGGUP MENYELENGGARAKAN PELAYANAN</text>
+  <text x="450" y="264" font-family="Nunito, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">SESUAI STANDAR PELAYANAN YANG TELAH DITETAPKAN DAN APABILA</text>
+  <text x="450" y="296" font-family="Nunito, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">TIDAK MENEPATI JANJI INI, KAMI SIAP MENERIMA SANKSI DAN/ATAU</text>
+  <text x="450" y="328" font-family="Nunito, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffa203" text-anchor="middle">MEMBERIKAN KOMPENSASI SESUAI PERATURAN PERUNDANG-UNDANGAN."</text>
+  <text x="450" y="418" font-family="Nunito, Arial, sans-serif" font-size="15" fill="#cbd5e1" text-anchor="middle">Surakarta, Januari 2026 — Kepala Dinas Sosial Kota Surakarta</text>
+  <text x="450" y="452" font-family="Barlow, Arial, sans-serif" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">Drs. SAMSU TRI WAHYUDIN, M.Si.</text>
+  <text x="450" y="476" font-family="Nunito, Arial, sans-serif" font-size="13" fill="#ffa203" text-anchor="middle">Pembina Tingkat I (IV/b)</text>
+</svg>

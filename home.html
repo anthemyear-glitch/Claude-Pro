@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      var p = window.location.pathname;
+      if (window.location.protocol !== "file:" && !p.endsWith(".html") && p.split("/").filter(Boolean).length > 1) {
+        var base = document.createElement("base");
+        base.href = "/";
+        document.head.appendChild(base);
+      }
+    })();
+  </script>
+  <title>Beranda - Dinas Sosial Kota Surakarta</title>
+  <meta name="description" content="Website Resmi Dinas Sosial Pemerintah Kota Surakarta — Menyapa dengan Senyum, Melayani dengan Ikhlas.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/lambang-surakarta.svg">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/bkro-style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+</head>
+<body>
+
+  <!-- TOP HEADER BAR (Mirrors Bkro .top-header on dinsos.surakarta.go.id) -->
+  <div class="top-header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 col-md-7">
+          <ul class="header-left-content" id="topHeaderLeft">
+            <li><a href="mailto:dinsos@surakarta.go.id"><i class="bx bx-envelope"></i> dinsos@surakarta.go.id</a></li>
+            <li><a href="tel:0271734123"><i class="bx bx-phone-call"></i> (0271) 734123</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-5">
+          <div class="header-right-content">
+            <a href="index.html" class="small fw-bold text-warning"><i class="bx bx-grid-alt me-1"></i>Portal 15 Layanan</a>
+            <a href="research.html" class="small fw-bold text-primary d-none d-sm-inline"><i class="bx bx-code-alt me-1"></i>Deep Research</a>
+            <div class="my-account" title="Login Sistem BackEnd CMS">
+              <a href="login.html" aria-label="Login Sistem"><i class="bx bx-user"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY MAIN NAVBAR (Mirrors Bkro .navbar-area + Exact Menu Hierarchy of dinsos.surakarta.go.id) -->
+  <header class="navbar-area" id="mainNavbarArea">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2 py-lg-0">
+        <a href="#/home" class="navbar-brand py-2">
+          <img src="assets/images/logo-dinsos-surakarta.svg" alt="Dinas Sosial Kota Surakarta" style="height:54px;">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-only-nav d-flex align-items-center gap-2">
+          <ul class="dinsos-nav-list">
+            <li class="dinsos-nav-item">
+              <a href="#/home" class="dinsos-nav-link">Beranda</a>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/profil/detail/7" class="dinsos-nav-link">Profil <i class="bx bx-chevron-down"></i></a>
+              <ul class="dinsos-dropdown" id="navDropdownProfil"></ul>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="index.html" class="dinsos-nav-link">Layanan <i class="bx bx-chevron-down"></i></a>
+              <ul class="dinsos-dropdown" id="navDropdownLayanan"></ul>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/berita" class="dinsos-nav-link">Informasi Terkait <i class="bx bx-chevron-down"></i></a>
+              <ul class="dinsos-dropdown">
+                <li><a href="#/berita">Berita</a></li>
+                <li><a href="#/artikel">Artikel</a></li>
+                <li><a href="#/standar_pelayanan">Standart Pelayanan</a></li>
+                <li><a href="#/pengumuman">Pengumuman</a></li>
+                <li><a href="#/agenda">Agenda</a></li>
+                <li><a href="#/bank_data">Bank Data</a></li>
+              </ul>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/galeri/gambar" class="dinsos-nav-link">Galeri <i class="bx bx-chevron-down"></i></a>
+              <ul class="dinsos-dropdown">
+                <li><a href="#/galeri/gambar">Galeri Gambar</a></li>
+                <li><a href="#/galeri/video">Galeri Video</a></li>
+              </ul>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/ppid/profil" class="dinsos-nav-link">PPID <i class="bx bx-chevron-down"></i></a>
+              <ul class="dinsos-dropdown">
+                <li><a href="#/ppid/profil">Profil PPID</a></li>
+                <li><a href="#/ppid/daftar_informasi_publik">Daftar Informasi Publik</a></li>
+                <li><a href="#/ppid/informasi_berkala">Informasi Berkala</a></li>
+                <li><a href="#/ppid/informasi_serta_merta">Informasi Serta Merta</a></li>
+                <li><a href="#/ppid/informasi_setiap_saat">Informasi Setiap Saat</a></li>
+                <li><a href="#/ppid/informasi_dikecualikan">Informasi Dikecualikan</a></li>
+              </ul>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/aduan/detail/4" class="dinsos-nav-link">Aduan <i class="bx bx-chevron-down"></i></a>
+              <ul class="dinsos-dropdown" id="navDropdownAduan"></ul>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/unduhan" class="dinsos-nav-link">Unduhan</a>
+            </li>
+            <li class="dinsos-nav-item">
+              <a href="#/faq" class="dinsos-nav-link">FAQ</a>
+            </li>
+          </ul>
+
+          <!-- Search Overlay Popup -->
+          <div class="nav-search-wrap ms-2">
+            <button type="button" class="nav-search-btn" id="navSearchToggle" aria-label="Pencarian">
+              <i class="bx bx-search"></i>
+            </button>
+            <div class="search-popup-box" id="navSearchPopup">
+              <form id="navSearchForm" class="input-group">
+                <input type="search" class="form-control" placeholder="Cari berita, layanan, PPID..." required style="height:44px;">
+                <button type="submit" class="btn text-white px-3" style="background:#f68820;"><i class="bx bx-search"></i></button>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="btn mobile-only-toggle border px-3 py-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-label="Menu Navigasi">
+          <i class="bx bx-menu fs-3" style="color:#30296c;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title fw-bold" id="mobileNavLabel">Menu Dinas Sosial</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-grid gap-2 mb-3">
+        <a href="index.html" class="btn btn-warning fw-bold"><i class="bx bx-grid-alt me-1"></i>Portal 15 Layanan</a>
+        <a href="login.html" class="btn btn-outline-dark fw-bold"><i class="bx bx-lock-alt me-1"></i>Login BackEnd CMS</a>
+      </div>
+      <div class="accordion accordion-flush" id="mobNavAcc">
+        <div class="py-2 border-bottom"><a href="#/home" class="fw-bold text-dark d-block">Beranda</a></div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed px-0 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mProfil">Profil</button></h2>
+          <div id="mProfil" class="accordion-collapse collapse" data-bs-parent="#mobNavAcc">
+            <ul class="list-unstyled ps-3 py-2 d-grid gap-2 small" id="mobDropdownProfil"></ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed px-0 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mLayanan">Layanan</button></h2>
+          <div id="mLayanan" class="accordion-collapse collapse" data-bs-parent="#mobNavAcc">
+            <ul class="list-unstyled ps-3 py-2 d-grid gap-2 small" id="mobDropdownLayanan"></ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed px-0 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mInfo">Informasi Terkait</button></h2>
+          <div id="mInfo" class="accordion-collapse collapse" data-bs-parent="#mobNavAcc">
+            <ul class="list-unstyled ps-3 py-2 d-grid gap-2 small">
+              <li><a href="#/berita">Berita</a></li>
+              <li><a href="#/artikel">Artikel</a></li>
+              <li><a href="#/standar_pelayanan">Standart Pelayanan</a></li>
+              <li><a href="#/pengumuman">Pengumuman</a></li>
+              <li><a href="#/agenda">Agenda</a></li>
+              <li><a href="#/bank_data">Bank Data</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed px-0 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mGaleri">Galeri</button></h2>
+          <div id="mGaleri" class="accordion-collapse collapse" data-bs-parent="#mobNavAcc">
+            <ul class="list-unstyled ps-3 py-2 d-grid gap-2 small">
+              <li><a href="#/galeri/gambar">Galeri Gambar</a></li>
+              <li><a href="#/galeri/video">Galeri Video</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed px-0 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mPpid">PPID</button></h2>
+          <div id="mPpid" class="accordion-collapse collapse" data-bs-parent="#mobNavAcc">
+            <ul class="list-unstyled ps-3 py-2 d-grid gap-2 small">
+              <li><a href="#/ppid/profil">Profil PPID</a></li>
+              <li><a href="#/ppid/daftar_informasi_publik">Daftar Informasi Publik</a></li>
+              <li><a href="#/ppid/informasi_berkala">Informasi Berkala</a></li>
+              <li><a href="#/ppid/informasi_serta_merta">Informasi Serta Merta</a></li>
+              <li><a href="#/ppid/informasi_setiap_saat">Informasi Setiap Saat</a></li>
+              <li><a href="#/ppid/informasi_dikecualikan">Informasi Dikecualikan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header"><button class="accordion-button collapsed px-0 fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#mAduan">Aduan</button></h2>
+          <div id="mAduan" class="accordion-collapse collapse" data-bs-parent="#mobNavAcc">
+            <ul class="list-unstyled ps-3 py-2 d-grid gap-2 small" id="mobDropdownAduan"></ul>
+          </div>
+        </div>
+        <div class="py-2 border-bottom"><a href="#/unduhan" class="fw-bold text-dark d-block">Unduhan</a></div>
+        <div class="py-2 border-bottom"><a href="#/faq" class="fw-bold text-dark d-block">FAQ</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN DYNAMIC VIEWPORT -->
+  <main id="frontendAppRoot" style="min-height:60vh;"></main>
+
+  <!-- FOOTER AREA (Mirrors 4-Column Bkro Footer on dinsos.surakarta.go.id) -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="single-footer-widget">
+            <a href="#/home" class="d-inline-block mb-3">
+              <img src="assets/images/logo-dinsos-surakarta.svg" alt="Dinas Sosial Kota Surakarta" style="height:52px;">
+            </a>
+            <p class="fw-semibold" id="footerTagline">Dinsos Hadir Di Tengah Masyarakat Kota Surakarta</p>
+            <ul class="social-icon-list">
+              <li><a href="https://www.instagram.com/dinsos_surakarta/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bx bxl-instagram"></i></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100092218391317" target="_blank" rel="noopener" aria-label="Facebook"><i class="bx bxl-facebook"></i></a></li>
+              <li><a href="https://twitter.com/dinsosjateng" target="_blank" rel="noopener" aria-label="Twitter"><i class="bx bxl-twitter"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCRqfUK0smUc3LY4XCF_y68A" target="_blank" rel="noopener" aria-label="YouTube"><i class="bx bxl-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-footer-widget">
+            <h3>Layanan Inovasi</h3>
+            <ul class="import-link">
+              <li><a href="#/layanan/detail/33"><i class="bx bx-chevron-right text-warning"></i><span id="footerInovasi">PEKA (Penerbitan rEkomendasi Keringanan pAjak Kendaraan Bermotor)</span></a></li>
+              <li><a href="index.html"><i class="bx bx-chevron-right text-warning"></i>15 Layanan Terintegrasi</a></li>
+              <li><a href="pmks.html"><i class="bx bx-chevron-right text-warning"></i>SIM PMKS &amp; PSKS Surakarta</a></li>
+              <li><a href="#/layanan/detail/22"><i class="bx bx-chevron-right text-warning"></i>Pengecekan DTKS / SIKS-NG</a></li>
+              <li><a href="admin.html"><i class="bx bx-chevron-right text-warning"></i>Panel Admin BackEnd CMS</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-footer-widget">
+            <h3>Tautan Terkait</h3>
+            <ul class="import-link">
+              <li><a href="https://surakarta.go.id/" target="_blank" rel="noopener"><i class="bx bx-chevron-right text-warning"></i>Pemkot Kota Surakarta</a></li>
+              <li><a href="#/aduan/detail/4"><i class="bx bx-chevron-right text-warning"></i>Layanan Pengaduan</a></li>
+              <li><a href="https://jatengprov.go.id/" target="_blank" rel="noopener"><i class="bx bx-chevron-right text-warning"></i>Pemprov Jawa Tengah</a></li>
+              <li><a href="https://ppid.surakarta.go.id/" target="_blank" rel="noopener"><i class="bx bx-chevron-right text-warning"></i>PPID Kota Surakarta</a></li>
+              <li><a href="#/ppid/profil"><i class="bx bx-chevron-right text-warning"></i>PPID Dinas Sosial</a></li>
+              <li><a href="#/faq"><i class="bx bx-chevron-right text-warning"></i>FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="single-footer-widget">
+            <h3>Kontak &amp; Jam Layanan</h3>
+            <ul class="address" id="footerAddressList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COPYRIGHT AREA -->
+  <div class="copy-right-area">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <p class="mb-0">Hak Cipta &copy; 2026 <a href="#/home">Dinas Sosial Kota Surakarta</a></p>
+      <div class="small">
+        <a href="index.html" class="me-3 fw-bold">Portal Layanan</a>
+        <a href="research.html" class="me-3 fw-bold">Deep Research</a>
+        <a href="login.html" class="fw-bold">Login Admin</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal for Galeri Gambar -->
+  <div class="modal fade" id="galeriLightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content border-0 bg-dark text-white rounded-4 overflow-hidden">
+        <div class="modal-header border-0">
+          <h6 class="modal-title text-white mb-0" id="lightboxModalCaption">Dokumentasi</h6>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0 text-center">
+          <img src="" id="lightboxModalImg" alt="Preview Galeri" class="w-100" style="max-height:75vh;object-fit:contain;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/seed-data.js"></script>
+  <script src="assets/js/db-engine.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script src="assets/js/frontend-app.js"></script>
+</body>
+</html>

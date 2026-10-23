@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deep Research Blueprint (FrontEnd–BackEnd) — Dinas Sosial Kota Surakarta</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/lambang-surakarta.svg">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/bkro-style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+</head>
+<body class="bg-color">
+
+  <header class="bg-white border-bottom sticky-top shadow-sm">
+    <div class="container py-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <a href="index.html" class="d-flex align-items-center gap-2 text-decoration-none">
+        <img src="assets/images/logo-dinsos-surakarta.svg" alt="Dinsos Surakarta" style="height:48px;">
+      </a>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="index.html" class="btn btn-sm btn-outline-dark fw-bold"><i class="bx bx-grid-alt me-1"></i>Portal (/)</a>
+        <a href="home.html" class="btn btn-sm btn-outline-primary fw-bold"><i class="bx bx-globe me-1"></i>Website (/home)</a>
+        <a href="pmks.html" class="btn btn-sm btn-outline-success fw-bold"><i class="bx bx-bar-chart-alt-2 me-1"></i>SIM PMKS</a>
+        <a href="admin.html" class="btn btn-sm text-white fw-bold" style="background:#30296c;"><i class="bx bx-slider-alt me-1"></i>BackEnd CMS</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-title-area">
+    <div class="container">
+      <span class="badge bg-warning text-dark px-3 py-2 mb-2">DOKUMENTASI FORENSIK &amp; ARSITEKTUR SISTEM</span>
+      <h2>Deep Research FrontEnd hingga BackEnd</h2>
+      <p class="text-light opacity-90 mx-auto mb-0" style="max-width:740px;">
+        Hasil bedah arsitektur menyeluruh terhadap <code>https://dinsos.surakarta.go.id/</code> mencakup UI Template, Routing Controller, Struktur 22 Tabel Database Relasional, API DataTables, Ekosistem Integrasi, dan Audit Teknis.
+      </p>
+    </div>
+  </section>
+
+  <main class="container py-5">
+    <!-- 4-Layer Architecture Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-lg-3 col-md-6">
+        <div class="bg-white p-4 rounded-4 border shadow-sm h-100">
+          <span class="badge bg-warning text-dark mb-2">LAYER 1 • ENTRY PORTAL</span>
+          <h4 class="fs-5">Portal 15 Layanan (<code>/</code>)</h4>
+          <p class="small text-muted mb-3">Halaman sambutan <em>"SUGENG RAWUH WONTEN"</em> dengan ilustrasi gedung Dinsos &amp; katalog 15 Layanan Kesejahteraan Sosial Terintegrasi.</p>
+          <a href="index.html" class="btn btn-sm btn-outline-warning text-dark fw-bold w-100">Buka Layer 1 &rarr;</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="bg-white p-4 rounded-4 border shadow-sm h-100">
+          <span class="badge bg-primary mb-2">LAYER 2 • PUBLIC FRONTEND</span>
+          <h4 class="fs-5">Bkro Bootstrap 5 (<code>/home</code>)</h4>
+          <p class="small text-muted mb-3">Template EnvyTheme Bkro v5.3.3 (Font <code>Barlow</code> + <code>Nunito</code>, <code>#30296c</code> + <code>#f68820</code>), 30+ route dinamis, EmbedSocial IG, QR SKM, &amp; UserWay.</p>
+          <a href="home.html" class="btn btn-sm btn-outline-primary fw-bold w-100">Buka Layer 2 &rarr;</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="bg-white p-4 rounded-4 border shadow-sm h-100">
+          <span class="badge bg-danger mb-2">LAYER 3 • BACKEND CMS</span>
+          <h4 class="fs-5">Frest Admin + CI3 (<code>/login</code>)</h4>
+          <p class="small text-muted mb-3">Boilerplate Phicos e-Gov CMS di atas CodeIgniter 3 + PIXINVENT Frest Admin, DataTables Server-Side, &amp; penyimpanan hash MD5.</p>
+          <a href="admin.html" class="btn btn-sm btn-outline-danger fw-bold w-100">Buka Layer 3 &rarr;</a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="bg-white p-4 rounded-4 border shadow-sm h-100">
+          <span class="badge bg-success mb-2">LAYER 4 • DATA SUB-APP</span>
+          <h4 class="fs-5">SIM PMKS &amp; PSKS (<code>/pmks</code>)</h4>
+          <p class="small text-muted mb-3">Sub-aplikasi analitik kesejahteraan sosial 5 Kecamatan (54 Kelurahan) Kota Surakarta, persebaran DTKS, &amp; program ANAKAN MERI.</p>
+          <a href="pmks.html" class="btn btn-sm btn-outline-success fw-bold w-100">Buka Layer 4 &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack Comparison Matrix -->
+    <div class="bg-white p-4 p-lg-5 rounded-4 border shadow-sm mb-5">
+      <h3 class="fs-4 mb-3"><i class="bx bx-chip text-warning me-2"></i>1. Matriks Spesifikasi Teknis Asli vs Hasil Kloning 1:1</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Komponen Arsitektur</th>
+              <th>Temuan pada Server Asli (<code>dinsos.surakarta.go.id</code>)</th>
+              <th>Implementasi Kloning Siap Deploy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold">FrontEnd UI Framework</td>
+              <td>EnvyTheme <strong>Bkro</strong> Bootstrap 5.3.3 (<code>/assets/frontend/css/style.css</code>), <code>Barlow</code> &amp; <code>Nunito</code>, <code>#30296c</code> &amp; <code>#f68820</code></td>
+              <td><span class="badge bg-success me-1">100% Identik</span> <code>assets/css/bkro-style.css</code> + Bootstrap 5.3.3 lokal + Boxicons lokal</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">BackEnd Admin UI</td>
+              <td>PIXINVENT <strong>Frest</strong> Bootstrap HTML Admin Template + Split-Card <code>/login</code> dengan ilustrasi <code>people.png</code></td>
+              <td><span class="badge bg-success me-1">100% Identik</span> <code>login.html</code> + <code>admin.html</code> (<code>assets/css/frest-admin.css</code>) dengan Full CRUD 20+ modul</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Server &amp; Data Engine</td>
+              <td>PHP CodeIgniter 3 MVC + MySQL/MariaDB + Server-Side DataTables AJAX</td>
+              <td><span class="badge bg-primary me-1">Dual-Mode</span> <code>server.js</code> (Node REST + DataTables API + SQL Dump) + Fallback otomatis <code>LocalStorage</code> untuk Static HTML Hosting</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Integrasi Eksternal</td>
+              <td>ULAS (<code>oid=85</code>), Appbagor SKM (<code>isi/25</code>), EmbedSocial IG <code>@dinsos_surakarta</code>, UserWay A11y, SP4N-LAPOR!, SIPPN, MONIKS</td>
+              <td><span class="badge bg-success me-1">100% Aktif</span> QR SVG lokal Appbagor, Feed IG, Widget Disabilitas 8-fitur, Form &amp; Tabel Aduan terintegrasi</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Stabilitas &amp; Keamanan</td>
+              <td><code>/ppid/informasi_setiap_saat</code> &amp; <code>dikecualikan</code> error HTTP 500; iframe <code>egov.phicos.co.id</code> terblokir CSP</td>
+              <td><span class="badge bg-warning text-dark me-1">Diperbaiki &amp; Diperkuat</span> Seluruh halaman PPID &amp; Aduan berjalan 200 OK tanpa error + masking NIK UU PDP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Live Database Table Inspector -->
+    <div class="bg-white p-4 p-lg-5 rounded-4 border shadow-sm mb-5">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+        <div>
+          <h3 class="fs-4 mb-1"><i class="bx bx-data text-warning me-2"></i>2. Inspektor Struktur Data Relasional Live</h3>
+          <p class="small text-muted mb-0">Menampilkan jumlah baris aktif pada setiap tabel dalam database kloning saat ini.</p>
+        </div>
+        <a href="database/dinsos_surakarta.sql" download class="btn btn-sm btn-primary fw-bold">
+          <i class="bx bx-download me-1"></i>Unduh Skema Penuh MySQL (.sql)
+        </a>
+      </div>
+      <div class="row g-3" id="schemaStatsGrid"></div>
+    </div>
+
+    <!-- Audit Temuan Forensik -->
+    <div class="bg-white p-4 p-lg-5 rounded-4 border shadow-sm">
+      <h3 class="fs-4 mb-3"><i class="bx bx-shield-quarter text-warning me-2"></i>3. Temuan Forensik &amp; Detail Otentik Produksi</h3>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="p-3 rounded-3 bg-light border h-100">
+            <h6 class="fw-bold text-dark">1. Jejak Boilerplate OPD Surakarta</h6>
+            <p class="small text-muted mb-0">Halaman error 404 pada route <code>/admin</code> dan <code>/auth</code> menampilkan judul <em>"Error 404 - Frest - Bootstrap HTML admin template"</em> dengan path <code>localhost:8080/surakarta/sim-surat-dispertan-surakarta/assets/backend/images/pages/404.png</code> yang mengonfirmasi basis kode bersama antar-OPD Pemkot Surakarta.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 rounded-3 bg-light border h-100">
+            <h6 class="fw-bold text-dark">2. Pola Obfuscation ID pada URL</h6>
+            <p class="small text-muted mb-0">Selain integer murni (<code>/profil/detail/7</code>, <code>/berita/detail/398</code>), helper URL di sebagian menu menghasilkan token seperti <code>6573turnups14658</code> dan <code>dff3sunshades384473</code> untuk menyamarkan parameter kunci database.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 rounded-3 bg-light border h-100">
+            <h6 class="fw-bold text-dark">3. Struktur Penyimpanan Media Hash MD5</h6>
+            <p class="small text-muted mb-0">Setiap berkas berita, pengumuman, standar pelayanan, dan unduhan disimpan dalam folder <code>/uploads/{modul}/{32_hex_md5}.{ext}</code> guna mencegah tabrakan nama berkas dan serangan <em>path traversal</em> pada saat unggah dokumen.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-3 rounded-3 bg-light border h-100">
+            <h6 class="fw-bold text-dark">4. Remediasi Bug HTTP 500 &amp; Iframe</h6>
+            <p class="small text-muted mb-0">Endpoint <code>/ppid/informasi_setiap_saat</code> dan <code>/ppid/informasi_dikecualikan</code> yang mengalami HTTP 500 di produksi serta blokir <code>X-Frame-Options</code> pada <code>egov.phicos.co.id</code> telah direkonstruksi penuh agar 100% fungsional.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 bg-white border-top text-center small">
+    Dokumentasi Deep Research &amp; Kloning Full-Stack — <strong>Dinas Sosial Kota Surakarta</strong>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/seed-data.js"></script>
+  <script src="assets/js/db-engine.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const state = await window.DinsosDB.init();
+      const grid = document.getElementById("schemaStatsGrid");
+      const tables = Object.keys(state).filter((k) => k !== "meta");
+      grid.innerHTML = tables
+        .map((t) => {
+          const val = state[t];
+          const count = Array.isArray(val) ? val.length : 1;
+          const cols = Array.isArray(val) ? (val[0] ? Object.keys(val[0]).slice(0, 5).join(", ") : "-") : Object.keys(val).slice(0, 5).join(", ");
+          return `
+            <div class="col-lg-4 col-md-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <code class="fw-bold text-primary">${t}</code>
+                  <span class="badge bg-dark">${count} baris</span>
+                </div>
+                <div class="small text-muted text-truncate" title="${cols}">Kolom: ${cols}...</div>
+              </div>
+            </div>
+          `;
+        })
+        .join("");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Informasi Manajemen DINSOS Kota Surakarta (PMKS &amp; PSKS)</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/lambang-surakarta.svg">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="assets/css/bkro-style.css">
+  <link rel="stylesheet" href="assets/css/accessibility.css">
+</head>
+<body class="bg-color">
+
+  <!-- PMKS Sub-Portal Navbar (Mirrors https://dinsos.surakarta.go.id/pmks/) -->
+  <header class="bg-white border-bottom sticky-top shadow-sm">
+    <div class="container py-2 d-flex flex-wrap align-items-center justify-content-between gap-3">
+      <a href="pmks.html" class="d-flex align-items-center gap-2 text-decoration-none">
+        <img src="assets/images/lambang-surakarta.svg" alt="Surakarta" style="height:44px;">
+        <div>
+          <div class="fw-bold" style="color:#30296c;font-size:17px;line-height:1.1;">SIM PMKS &amp; PSKS</div>
+          <small class="text-warning fw-bold">DINAS SOSIAL PEMERINTAH KOTA SURAKARTA</small>
+        </div>
+      </a>
+      <nav class="d-flex flex-wrap align-items-center gap-2">
+        <a href="#beranda-pmks" class="btn btn-sm btn-light fw-bold">BERANDA</a>
+        <a href="#data-pmks" class="btn btn-sm btn-light fw-bold">DATA PMKS &amp; PSKS</a>
+        <a href="#persebaran-pmks" class="btn btn-sm btn-light fw-bold">PERSEBARAN</a>
+        <a href="#anakan-meri" class="btn btn-sm btn-light fw-bold">ANAKAN MERI</a>
+        <a href="home.html#/ppid/profil" class="btn btn-sm btn-light fw-bold">PPID</a>
+        <a href="index.html" class="btn btn-sm btn-warning fw-bold"><i class="bx bx-arrow-back me-1"></i>Portal Utama</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section id="beranda-pmks" class="py-5 text-white" style="background:linear-gradient(135deg,#30296c 0%,#0f172a 100%);">
+    <div class="container py-3">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <span class="badge bg-warning text-dark px-3 py-2 mb-3">DINAS SOSIAL PEMERINTAH KOTA SURAKARTA</span>
+          <h1 class="text-white display-5 fw-bold mb-3">Sistem Informasi Manajemen PMKS &amp; PSKS</h1>
+          <p class="fs-5 text-light opacity-90 mb-4">
+            Mencakup data mengenai Pemerlu Pelayanan / Penyandang Masalah Kesejahteraan Sosial (PMKS) dan Potensi serta Sumber Kesejahteraan Sosial (PSKS) di 5 Kecamatan (54 Kelurahan) Kota Surakarta.
+          </p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#data-pmks" class="default-btn"><span>Eksplorasi Data Kecamatan</span><i class="bx bx-table"></i></a>
+            <a href="home.html" class="btn btn-outline-light fw-bold px-4 py-3">Website Utama Dinsos</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="bg-white text-dark p-4 rounded-4 shadow" id="pmksSummaryCard"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Persebaran & Charts -->
+  <section id="persebaran-pmks" class="py-5">
+    <div class="container">
+      <div class="section-title mb-4">
+        <span>PETA &amp; GRAFIK PERSEBARAN</span>
+        <h2>Persebaran PMKS &amp; PSKS 5 Kecamatan Kota Surakarta</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+            <h5 class="mb-3">Grafik Komparasi Keluarga DTKS, PKH &amp; BPNT per Kecamatan</h5>
+            <div style="height:320px;"><canvas id="pmksMainChart"></canvas></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="bg-white p-4 rounded-4 shadow-sm border h-100">
+            <h5 class="mb-3">Pilih Kecamatan untuk Detail Cepat</h5>
+            <div class="d-flex flex-wrap gap-2 mb-3" id="kecSelectorBtns"></div>
+            <div id="kecDetailPanel" class="p-3 rounded-3 bg-light border"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full DataTables PMKS & PSKS -->
+  <section id="data-pmks" class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="section-title mb-4">
+        <span>TABEL REKAPITULASI</span>
+        <h2>Data Agregat PMKS &amp; PSKS Kota Surakarta</h2>
+      </div>
+      <div id="dtPmksTable"></div>
+    </div>
+  </section>
+
+  <!-- ANAKAN MERI & Arsip Berita PMKS -->
+  <section id="anakan-meri" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center mb-5">
+        <div class="col-lg-6">
+          <img src="assets/images/slider/slide-pelayanan-2.jpg" alt="PLKSAI Goes To School" class="rounded-4 shadow border">
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-warning text-dark mb-2">INOVASI PLKSAI SURAKARTA</span>
+          <h2>ANAKAN MERI &amp; PLKSAI Goes To School</h2>
+          <p>
+            Program Pusat Layanan Kesejahteraan Sosial Anak Integratif (PLKSAI) Dinas Sosial Kota Surakarta bersama jejaring Sakti Peksos melakukan pencegahan keterlantaran anak, edukasi ramah anak di sekolah (PGTS), konseling keluarga rentan, serta pemenuhan hak dasar anak di Kota Surakarta.
+          </p>
+          <a href="home.html#/layanan/detail/27" class="default-btn py-3 px-4"><span>Standar Layanan Anak</span><i class="bx bx-right-arrow-alt"></i></a>
+        </div>
+      </div>
+
+      <h3 class="mb-3">Arsip Berita SIM PMKS Dinas Sosial Surakarta</h3>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="bg-white p-3 rounded-4 border h-100">
+            <span class="small text-warning fw-bold">Aplikasi E-SIK</span>
+            <h6 class="mt-1 fw-bold">Data Gakin Solo Diperbarui Pakai Aplikasi E-SIK</h6>
+            <p class="small text-muted mb-0">Pemutakhiran basis data keluarga miskin terintegrasi Puskesos Kelurahan se-Kota Surakarta.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="bg-white p-3 rounded-4 border h-100">
+            <span class="small text-warning fw-bold">Inklusi Disabilitas</span>
+            <h6 class="mt-1 fw-bold">Pekerja Difabel Layak Diperhatikan</h6>
+            <p class="small text-muted mb-0">Penguatan aksesibilitas dan pemberdayaan ekonomi produktif penyandang disabilitas di Kota Solo.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="bg-white p-3 rounded-4 border h-100">
+            <span class="small text-warning fw-bold">Jaminan Sosial</span>
+            <h6 class="mt-1 fw-bold">Pekerja Rentan di Solo Mendapatkan BPJS Ketenagakerjaan</h6>
+            <p class="small text-muted mb-0">Perlindungan jaminan sosial ketenagakerjaan bagi pekerja sektor informal rentan di Surakarta.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="bg-white p-3 rounded-4 border h-100">
+            <span class="small text-warning fw-bold">Perlindungan Anak</span>
+            <h6 class="mt-1 fw-bold">PLKSAI GOES TO SCHOOL (PGTS)</h6>
+            <p class="small text-muted mb-0">Sosialisasi pencegahan perundungan dan perlindungan kesejahteraan sosial anak integratif.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center bg-white border-top small">
+    Hak Cipta &copy; 2026 <strong>Sistem Informasi Manajemen PMKS &amp; PSKS — Dinas Sosial Pemerintah Kota Surakarta</strong>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chartjs/chart.umd.js"></script>
+  <script src="assets/js/seed-data.js"></script>
+  <script src="assets/js/db-engine.js"></script>
+  <script src="assets/js/accessibility.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const state = await window.DinsosDB.init();
+      const rows = state.tb_pmks_psks || [];
+      const fmt = (n) => Number(n || 0).toLocaleString("id-ID");
+
+      const totDtks = rows.reduce((a, b) => a + Number(b.fakir_miskin_kk || 0), 0);
+      const totDis = rows.reduce((a, b) => a + Number(b.disabilitas || 0), 0);
+      const totLks = rows.reduce((a, b) => a + Number(b.lks_terdaftar || 0), 0);
+      const totRelawan = rows.reduce((a, b) => a + Number(b.tksk_psm_tagana || 0), 0);
+
+      document.getElementById("pmksSummaryCard").innerHTML = `
+        <h5 class="fw-bold mb-3 border-bottom pb-2">Ringkasan Kota Surakarta</h5>
+        <div class="d-flex justify-content-between py-1 border-bottom"><span>Total Keluarga DTKS/E-SIK:</span><strong class="text-primary">${fmt(totDtks)} KK</strong></div>
+        <div class="d-flex justify-content-between py-1 border-bottom"><span>Penyandang Disabilitas:</span><strong>${fmt(totDis)} Jiwa</strong></div>
+        <div class="d-flex justify-content-between py-1 border-bottom"><span>LKS Terdaftar Aktif:</span><strong class="text-success">${fmt(totLks)} Lembaga</strong></div>
+        <div class="d-flex justify-content-between pt-2"><span>Pilar Sosial (TKSK/PSM/TAGANA):</span><strong class="text-warning">${fmt(totRelawan)} Personel</strong></div>
+      `;
+
+      // Kecamatan interactive selector
+      const btnWrap = document.getElementById("kecSelectorBtns");
+      const detailBox = document.getElementById("kecDetailPanel");
+      function showKec(k) {
+        if (!k) return;
+        detailBox.innerHTML = `
+          <h5 class="fw-bold mb-2" style="color:#30296c;">Kecamatan ${k.kecamatan} (${k.kelurahan_jml} Kelurahan)</h5>
+          <div class="row g-2 small">
+            <div class="col-6"><div class="p-2 bg-white rounded border">DTKS/Gakin: <strong>${fmt(k.fakir_miskin_kk)} KK</strong></div></div>
+            <div class="col-6"><div class="p-2 bg-white rounded border">KPM PKH: <strong>${fmt(k.kpm_pkh)} KPM</strong></div></div>
+            <div class="col-6"><div class="p-2 bg-white rounded border">KPM BPNT: <strong>${fmt(k.kpm_bpnt)} KPM</strong></div></div>
+            <div class="col-6"><div class="p-2 bg-white rounded border">Disabilitas: <strong>${fmt(k.disabilitas)} Jiwa</strong></div></div>
+            <div class="col-6"><div class="p-2 bg-white rounded border">Lansia Rentan: <strong>${fmt(k.lansia_terlantar)} Jiwa</strong></div></div>
+            <div class="col-6"><div class="p-2 bg-white rounded border">LKS Aktif: <strong>${fmt(k.lks_terdaftar)} LKS</strong></div></div>
+          </div>
+        `;
+      }
+      btnWrap.innerHTML = rows
+        .map((r, i) => `<button type="button" class="btn btn-sm ${i === 0 ? "btn-primary" : "btn-outline-primary"} fw-bold kec-btn" data-idx="${i}">${r.kecamatan}</button>`)
+        .join("");
+      showKec(rows[0]);
+      btnWrap.querySelectorAll(".kec-btn").forEach((b) => {
+        b.addEventListener("click", () => {
+          btnWrap.querySelectorAll(".kec-btn").forEach((x) => (x.className = "btn btn-sm btn-outline-primary fw-bold kec-btn"));
+          b.className = "btn btn-sm btn-primary fw-bold kec-btn";
+          showKec(rows[Number(b.dataset.idx)]);
+        });
+      });
+
+      if (window.Chart) {
+        new Chart(document.getElementById("pmksMainChart"), {
+          type: "bar",
+          data: {
+            labels: rows.map((r) => r.kecamatan),
+            datasets: [
+              { label: "Keluarga DTKS (KK)", data: rows.map((r) => r.fakir_miskin_kk), backgroundColor: "#30296c" },
+              { label: "Penerima BPNT/BSP", data: rows.map((r) => r.kpm_bpnt), backgroundColor: "#f68820" },
+              { label: "Penerima PKH", data: rows.map((r) => r.kpm_pkh), backgroundColor: "#059669" }
+            ]
+          },
+          options: { responsive: true, maintainAspectRatio: false }
+        });
+      }
+
+      window.DinsosDB.renderDataTable("#dtPmksTable", {
+        data: rows,
+        columns: [
+          { label: "#", key: "__index", width: "55px" },
+          { label: "Kecamatan", key: "kecamatan" },
+          { label: "Jml Kelurahan", key: "kelurahan_jml" },
+          { label: "DTKS / Fakir Miskin (KK)", render: (r) => fmt(r.fakir_miskin_kk) },
+          { label: "Disabilitas", render: (r) => fmt(r.disabilitas) },
+          { label: "Lansia Rentan", render: (r) => fmt(r.lansia_terlantar) },
+          { label: "KPM PKH", render: (r) => fmt(r.kpm_pkh) },
+          { label: "KPM BPNT", render: (r) => fmt(r.kpm_bpnt) },
+          { label: "LKS Terdaftar", key: "lks_terdaftar" }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>

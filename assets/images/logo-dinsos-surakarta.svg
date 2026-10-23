@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 72" width="380" height="72">
+  <g transform="translate(4,4) scale(0.46)">
+    
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e6b3a"/>
+      <stop offset="100%" stop-color="#0f4423"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd54f"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <path d="M60 6 L110 24 L106 82 C103 108 84 126 60 135 C36 126 17 108 14 82 L10 24 Z" fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="5"/>
+  <path d="M60 14 L101 29 L98 80 C95 101 80 117 60 125 C40 117 25 101 22 80 L19 29 Z" fill="none" stroke="#a7f3d0" stroke-width="1.2" opacity="0.5"/>
+  <polygon points="60,20 63,28 71,28 65,33 67,41 60,36 53,41 55,33 49,28 57,28" fill="#ffd54f"/>
+  <!-- Tugu Kebangkitan Nasional / Radya Pustaka Stylized Monument -->
+  <rect x="55" y="45" width="10" height="40" rx="1" fill="#ffffff"/>
+  <polygon points="60,38 52,47 68,47" fill="#f68820"/>
+  <rect x="46" y="85" width="28" height="6" rx="1" fill="#ffd54f"/>
+  <rect x="40" y="91" width="40" height="5" rx="1" fill="#ffffff"/>
+  <!-- Padi & Kapas -->
+  <path d="M32 50 C26 68 32 92 48 106" fill="none" stroke="#ffd54f" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M88 50 C94 68 88 92 72 106" fill="none" stroke="#86efac" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Ribbon -->
+  <path d="M22 106 Q60 118 98 106 L94 117 Q60 129 26 117 Z" fill="#f68820"/>
+  <text x="60" y="116" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.8">SURAKARTA</text>
+
+  </g>
+  <text x="68" y="29" font-family="Barlow, Arial, sans-serif" font-size="21" font-weight="800" fill="#30296c" letter-spacing="0.4">DINAS SOSIAL</text>
+  <text x="68" y="48" font-family="Nunito, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#f68820" letter-spacing="1.2">PEMERINTAH KOTA SURAKARTA</text>
+  <text x="68" y="62" font-family="Nunito, Arial, sans-serif" font-size="10.5" font-weight="600" fill="#696687">Menyapa dengan Senyum, Melayani dengan Ikhlas</text>
+</svg>

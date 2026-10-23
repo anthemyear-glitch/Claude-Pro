@@ -1,0 +1,20 @@
+# Netlify / Cloudflare Pages Clean URL Rewrites
+/layanan                  /index.html     200
+/login                    /login.html     200
+/dashboard                /admin.html     200
+/pmks                     /pmks.html      200
+/research                 /research.html  200
+/home                     /home.html      200
+/profil/*                 /home.html      200
+/layanan/*                /home.html      200
+/standar_pelayanan*       /home.html      200
+/berita*                  /home.html      200
+/pengumuman*              /home.html      200
+/artikel*                 /home.html      200
+/agenda                   /home.html      200
+/bank_data                /home.html      200
+/galeri/*                 /home.html      200
+/ppid/*                   /home.html      200
+/aduan/*                  /home.html      200
+/unduhan                  /home.html      200
+/faq                      /home.html      200
